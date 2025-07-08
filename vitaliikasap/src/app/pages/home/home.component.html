@@ -1,0 +1,69 @@
+<div class="relative min-h-screen flex bg-neutral-100 dark:bg-neutral-900 transition-colors">
+  <!-- Левое вертикальное меню -->
+  <aside class="fixed left-0 top-0 z-40 flex flex-col items-center bg-white dark:bg-neutral-800 shadow-lg h-full w-16 py-6 gap-4 border-r border-neutral-200 dark:border-neutral-700">
+    hover:bg-emerald-100 dark:hover:bg-emerald-800 transition">
+    <button class="hover:bg-emerald-100 dark:hover:bg-emerald-800 transition">
+      <svg class="w-6 h-6 text-neutral-400" fill="none"><use href="#icon-menu"/></svg>
+    </button>
+    <!-- Пример иконок, замени на свои SVG или иконки lucide/heroicons -->
+    <a routerLink="" class="group w-12 h-12 flex items-center justify-center rounded-xl text-emerald-500 bg-emerald-100 dark:bg-emerald-900">
+      <svg class="w-6 h-6"><use href="#icon-home"/></svg>
+    </a>
+    <a routerLink="" class="hover:bg-emerald-100 hover:text-emerald-800 transition">
+      <svg class="w-6 h-6"><use href="#icon-user"/></svg>
+    </a>
+    <!-- ... другие иконки -->
+  </aside>
+  <!-- Контентный блок -->
+  <section class="flex-1 flex justify-center items-center px-4 lg:px-0 ml-16 w-full">
+    <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 py-20">
+      <!-- Левая карточка с фото -->
+      <div class="relative flex flex-col items-center bg-white dark:bg-neutral-800 rounded-3xl shadow-2xl p-8">
+        <img src="/assets/avatar.jpg" alt="Vitalii Kasap" class="w-72 h-72 object-cover rounded-3xl shadow-lg" />
+        <div class="w-full mt-8 text-center">
+          <h2 class="text-3xl font-bold">Vitalii Kasap</h2>
+          <div class="text-lg uppercase text-neutral-400 mt-1">FRONTEND ENGINEER</div>
+        </div>
+        <button class="hover:bg-emerald-500 text-black font-semibold py-3 rounded-2xl transition text-lg">
+          Hire Me
+        </button>
+      </div>
+      <!-- Правая карточка: приветствие, описание, кнопки -->
+      <div class="flex flex-col justify-center bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8">
+        <span class="inline-block mb-2 px-3 py-1 rounded-xl bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 text-xs font-semibold tracking-widest">INTRO</span>
+        <h1 class="text-4xl font-bold mb-4">
+          Say Hi from <span class="text-emerald-400">Vitalii Kasap</span>,<br>
+          Frontend Engineer and Developer
+        </h1>
+        <p class="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
+          Я увлечён созданием современных, производительных и красивых интерфейсов.<br>
+          Сильная экспертиза в Angular/TypeScript, чистой архитектуре, UI/UX и автоматизации.<br>
+          Люблю превращать сложное — в простое!
+        </p>
+        <div class="flex gap-4 items-center mb-10">
+          <a href="/assets/vitalii-cv.pdf" download
+             class="bg-emerald-400 hover:bg-emerald-500 px-6 py-3 rounded-2xl text-lg font-semibold shadow transition flex items-center gap-2">
+            <svg class="w-5 h-5"><use href="#icon-download"/></svg>
+            Download CV
+          </a>
+        </div>
+        <!-- Круглый бейдж — my projects (можно реализовать SVG/Canvas) -->
+        <div class="flex justify-center">
+          <div class="w-32 h-32 flex items-center justify-center rounded-full border-2 border-dashed border-emerald-400 text-center text-neutral-500 dark:text-neutral-400">
+            <span class="text-sm uppercase tracking-widest">my projects</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Переключатель темы справа сверху -->
+    <app-theme-switcher class="fixed top-4 right-8 z-50"/>
+    <!-- Соцсети вертикально справа -->
+    <div class="hidden lg:flex flex-col gap-2 fixed right-8 top-1/3 z-40">
+      hover:text-emerald-400 transition">FB
+      hover:text-emerald-400 transition">TW
+      hover:text-emerald-400 transition">IG
+      <!-- ... -->
+    </div>
+  </section>
+  <!-- TODO: Canvas/Fancy BG network (можно позже, libs: particles.js, tsparticles, canvas) -->
+</div>
