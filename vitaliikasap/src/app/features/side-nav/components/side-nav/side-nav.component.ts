@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { IconComponent } from '../../../../shared/ui/components/icon/icon.component';
-import {RouterLink} from '@angular/router'; // для @for
+import { RouterLink } from '@angular/router';
+import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
 
 interface NavItem {
   route: string;
@@ -12,20 +12,20 @@ interface NavItem {
 @Component({
   selector: 'app-side-nav',
   standalone: true,
-  imports: [IconComponent, RouterLink],
+  imports: [LucideIconsModule, RouterLink],
   template: `
     <aside [class.w-16]="!expanded()" [class.w-56]="expanded()"
            class="fixed left-0 top-0 z-40 h-full flex flex-col bg-white dark:bg-neutral-800 shadow-lg transition-all duration-200">
       <button type="button"
               (click)="toggle()"
               class="mb-6 p-2 mx-auto rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-800">
-        <app-icon [icon]="expanded() ? 'x' : 'menu'" [size]="28"></app-icon>
+        <lucide-icon [name]="expanded() ? 'x' : 'menu'" [size]="28"></lucide-icon>
       </button>
       @for (item of items; track item.route) {
         <a [routerLink]="item.route"
            class="w-12 h-12 flex items-center justify-center rounded-xl text-neutral-400 hover:bg-emerald-100 hover:text-emerald-600 dark:hover:bg-emerald-800 transition mb-2"
            [class.bg-emerald-100]="item.active">
-          <app-icon [icon]="item.icon"></app-icon>
+          <lucide-icon [name]="item.icon" [size]="24"></lucide-icon>
           @if (expanded()) {
             <span class="ml-4 text-base font-medium">{{ item.label }}</span>
           }

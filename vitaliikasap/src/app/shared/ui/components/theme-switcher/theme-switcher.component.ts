@@ -1,6 +1,7 @@
-import { Component, Inject, PLATFORM_ID, computed, signal } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, computed, effect } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { LucideIconsModule } from '../../../modules/lucide-icons/lucide-icons.module';
+import { themeSignal } from '../../../../features/animated-bg/services/theme-signal.service';
 
 @Component({
   selector: 'app-theme-switcher',
@@ -20,30 +21,30 @@ import { LucideIconsModule } from '../../../modules/lucide-icons/lucide-icons.mo
 })
 export class ThemeSwitcherComponent {
   isBrowser = false;
-  private theme = signal<'dark' | 'light'>('light');
 
-  // icon выбирается реактивно
-  icon = computed(() => this.isDark() ? 'moon' : 'sun');
+  icon = computed(() => themeSignal() === 'dark' ? 'moon' : 'sun');
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
+
     if (this.isBrowser) {
       const saved = localStorage.getItem('theme');
       if (saved === 'dark' || saved === 'light') {
-        this.theme.set(saved);
+        themeSignal.set(saved);
       } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        this.theme.set('dark');
+        themeSignal.set('dark');
       }
-      this.applyTheme(this.theme());
+
+      effect(() => {
+        this.applyTheme(themeSignal());
+      });
     }
   }
 
-  isDark = () => this.theme() === 'dark';
-
   toggle() {
-    const next = this.isDark() ? 'light' : 'dark';
-    this.theme.set(next);
-    this.applyTheme(next);
+    const next = themeSignal() === 'dark' ? 'light' : 'dark';
+    themeSignal.set(next);
+    // Ничего больше вызывать не нужно, effect сработает автоматически
   }
 
   private applyTheme(theme: 'dark' | 'light') {

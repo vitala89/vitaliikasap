@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
   template: `
     <app-theme-switcher></app-theme-switcher>
     <app-nav></app-nav>
-    <main class="bg-white dark:bg-neutral-800">
+    <main>
       <router-outlet></router-outlet>
     </main>
   `,

@@ -4,6 +4,7 @@ import {ThemeSwitcherComponent} from '../../shared/ui/components/theme-switcher/
 import {AnimatedBgComponent} from '../../features/animated-bg/component/animated-bg/animated-bg.component';
 import {PhotoCardComponent} from '../../features/home-intro/components/photo-card/photo-card.component';
 import {IntroCardComponent} from '../../features/home-intro/components/intro-card/intro-card.component';
+import { themeSignal } from '../../features/animated-bg/services/theme-signal.service';
 
 
 @Component({
@@ -17,7 +18,11 @@ import {IntroCardComponent} from '../../features/home-intro/components/intro-car
     IntroCardComponent
   ],
   template: `
-    <app-animated-bg />
+    @if (themeSignal() === 'dark') {
+      <app-animated-bg></app-animated-bg>
+    } @else {
+      <app-animated-bg></app-animated-bg>
+    }
     <app-side-nav />
     <app-theme-switcher />
     <main class="flex justify-center items-center min-h-screen ml-16 px-4">
@@ -28,4 +33,7 @@ import {IntroCardComponent} from '../../features/home-intro/components/intro-car
     </main>
   `
 })
-export class HomeComponent {}
+export class HomeComponent {
+  themeSignal = themeSignal;
+
+}
