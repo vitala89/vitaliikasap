@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
         <div class="text-lg uppercase text-neutral-400 mt-1 tracking-widest">FRONTEND ENGINEER</div>
       </div>
       <button
-        class="mt-8 w-full bg-emerald-400 hover:bg-emerald-500 text-black font-semibold py-3 rounded-2xl transition text-lg"
+        class="cursor-hover mt-8 w-full bg-emerald-400 hover:bg-emerald-500 text-black font-semibold py-3 rounded-2xl transition text-lg"
         type="button"
         (click)="onHire()"
       >

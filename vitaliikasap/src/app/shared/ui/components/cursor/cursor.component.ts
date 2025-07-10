@@ -9,19 +9,23 @@ import { gsap } from 'gsap';
       pointer-events: none;
       position: fixed;
       z-index: 10000;
-      left: 0; top: 0;
-      width: 40px; height: 40px;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
       border: 2px solid #7c3aed;
       border-radius: 50%;
       transform: translate(-50%, -50%);
       transition: background 0.2s;
       mix-blend-mode: difference;
       will-change: transform;
-      background: rgba(0,0,0,0.0);
+      background: rgba(0, 0, 0, 0.0);
     }
+
     .cursor.active {
-      background: rgba(73,246,232,0.2);
-      transform: translate(-50%, -50%) scale(1.5);
+      background: #ffff;
+      mix-blend-mode: difference;
+      border: none;
     }
   `],
   template: `
@@ -53,7 +57,8 @@ export class CursorComponent implements AfterViewInit {
   onMouseOver(e: MouseEvent) {
     const target = e.target as HTMLElement;
     if (target.tagName === 'A' || target.classList.contains('cursor-hover')) {
-      this.cursor.classList.add('active');
+      gsap.to(this.cursor, { scale: 2, duration: 0.2, ease: 'power3.out' });
+      this.cursor.classList.add('active'); // For bg or other effects
     }
   }
 
@@ -61,6 +66,7 @@ export class CursorComponent implements AfterViewInit {
   onMouseOut(e: MouseEvent) {
     const target = e.target as HTMLElement;
     if (target.tagName === 'A' || target.classList.contains('cursor-hover')) {
+      gsap.to(this.cursor, { scale: 1, duration: 0.2, ease: 'power3.out' });
       this.cursor.classList.remove('active');
     }
   }
