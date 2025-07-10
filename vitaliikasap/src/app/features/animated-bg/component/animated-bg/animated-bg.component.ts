@@ -1,7 +1,7 @@
 import { Component, OnInit, computed, effect } from '@angular/core';
 import { NgxParticlesModule, NgParticlesService } from "@tsparticles/angular";
 import { loadSlim } from "@tsparticles/slim";
-import { themeSignal } from '../../services/theme-signal.service';
+import { themeSignal } from '../../../../shared/services/theme-signal.service';
 import { MoveDirection, OutMode, Container } from "@tsparticles/engine";
 
 @Component({
