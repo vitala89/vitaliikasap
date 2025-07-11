@@ -1,51 +1,75 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
+import {NgClass, NgFor, NgIf} from '@angular/common';
 
-interface NavItem {
-  route: string;
+type MenuItem = {
   icon: string;
   label: string;
-  active?: boolean;
-}
+  route: string;
+  color?: string;
+};
 
 @Component({
   selector: 'app-side-nav',
   standalone: true,
-  imports: [LucideIconsModule, RouterLink],
+  imports: [LucideIconsModule, RouterLink, RouterLinkActive, NgIf, NgFor, NgClass],
   template: `
-    <aside [class.w-16]="!expanded()" [class.w-56]="expanded()"
-           class="fixed left-0 top-0 z-40 h-full flex flex-col bg-white dark:bg-neutral-800 shadow-lg transition-all duration-200">
-      <button type="button"
-              (click)="toggle()"
-              class="mb-6 p-2 mx-auto rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-800">
-        <lucide-icon [name]="expanded() ? 'x' : 'menu'" [size]="28"></lucide-icon>
-      </button>
-      @for (item of items; track item.route) {
-        <a [routerLink]="item.route"
-           class="w-12 h-12 flex items-center justify-center rounded-xl text-neutral-400 hover:bg-emerald-100 hover:text-emerald-600 dark:hover:bg-emerald-800 transition mb-2"
-           [class.bg-emerald-100]="item.active">
-          <lucide-icon [name]="item.icon" [size]="24"></lucide-icon>
-          @if (expanded()) {
-            <span class="ml-4 text-base font-medium">{{ item.label }}</span>
-          }
-        </a>
-      }
+    <aside
+      class="fixed left-4 top-16 z-50 flex flex-col bg-white/90 dark:bg-neutral-900/80 rounded-[2rem] shadow-lg py-2 px-1 gap-1 items-center"
+      style="width: 72px;">
+      <ng-container *ngFor="let item of items; let idx = index">
+        <div class="relative group flex w-full justify-center">
+          <a [routerLink]="item.route"
+             routerLinkActive="active"
+             #rla="routerLinkActive"
+             class="w-14 h-14 flex items-center justify-center mb-0.5 transition-all duration-150
+                    rounded-xl hover:bg-emerald-50 dark:hover:bg-neutral-800
+                    group"
+             [class]="{
+               'border-l-4 border-emerald-400 bg-emerald-50 dark:bg-neutral-800': rla.isActive,
+               'border-l-4 border-transparent': !rla.isActive
+             }"
+          >
+            <lucide-icon [name]="item.icon"
+                         [className]="
+                           rla.isActive
+                             ? 'text-emerald-500'
+                             : 'text-neutral-800 dark:text-neutral-300 group-hover:text-emerald-400 transition'
+                         "
+                         size="28"
+            ></lucide-icon>
+          </a>
+          <!-- Tooltip (название секции) -->
+          <div
+            class="absolute left-16 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none
+                   px-5 py-1.5 rounded-full bg-neutral-900 text-white font-bold text-lg shadow-lg select-none"
+            [style.background]="rla.isActive ? '#232323' : '#232323ee'"
+            style="min-width: 92px"
+          >
+            {{ item.label }}
+          </div>
+        </div>
+        <div *ngIf="idx !== items.length - 1"
+             class="w-full"
+             [ngClass]="{
+               'border-b-2 border-emerald-400': rla.isActive,
+               'border-b border-neutral-200 dark:border-neutral-700': !rla.isActive,
+             }">
+        </div>
+      </ng-container>
     </aside>
-  `
+  `,
 })
 export class SideNavComponent {
-  expanded = signal(false);
-
-  toggle() {
-    this.expanded.update(exp => !exp);
-  }
-
-  readonly items: NavItem[] = [
-    { route: '', icon: 'home', label: 'Главная', active: true },
-    { route: '/about', icon: 'user', label: 'Обо мне' },
-    { route: '/resume', icon: 'briefcase', label: 'Резюме' },
-    { route: '/portfolio', icon: 'layers', label: 'Портфолио' },
-    { route: '/contact', icon: 'mail', label: 'Контакты' },
+  items: MenuItem[] = [
+    { icon: 'home', label: 'HOME', route: '' },
+    { icon: 'user', label: 'ABOUT', route: '/about' },
+    { icon: 'briefcase', label: 'RESUME', route: '/resume' },
+    { icon: 'layers', label: 'PORTFOLIO', route: '/portfolio' },
+    { icon: 'users', label: 'TEAM', route: '/team' },
+    { icon: 'mail', label: 'CONTACT', route: '/contact' },
+    { icon: 'message-circle', label: 'BLOG', route: '/blog' },
+    { icon: 'book-open', label: 'NOTES', route: '/notes' },
   ];
 }
