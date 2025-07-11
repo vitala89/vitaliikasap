@@ -6,7 +6,7 @@ import {MyProjectsBadgeComponent} from '../my-projects-badge/my-projects-badge.c
   standalone: true,
   imports: [MyProjectsBadgeComponent],
   template: `
-    <div class="flex flex-col justify-center bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8">
+    <div class="flex flex-col justify-center h-full bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 min-h-[600px]">
       <span class="inline-block mb-2 px-3 py-1 rounded-xl bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 text-xs font-semibold tracking-widest">INTRO</span>
       <h1 class="text-4xl font-bold mb-4 font-rounded">
         Say Hi from <span class="text-emerald-400">Vitalii Kasap</span>,<br>

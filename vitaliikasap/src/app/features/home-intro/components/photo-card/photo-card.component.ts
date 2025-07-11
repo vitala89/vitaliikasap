@@ -8,7 +8,7 @@ import {t} from '../../../../shared/i18n/i18n.signal';
   imports: [NgOptimizedImage],
   template: `
     <div
-      class="relative flex flex-col items-center rounded-[2.5rem] overflow-hidden shadow-2xl min-h-[800px] aspect-[4/5] w-full max-w-4/5 font-main bg-[#23212c]">
+      class="relative flex flex-col items-center rounded-[2.5rem] overflow-hidden shadow-2xl h-full w-full aspect-[3/4] min-h-[800px]">
       <!-- Фото (фон, absolute) -->
       <img
         [ngSrc]="avatarImg"
@@ -72,6 +72,7 @@ import {t} from '../../../../shared/i18n/i18n.signal';
   ],
 })
 export class PhotoCardComponent {
+  protected readonly t = t;
   avatarImg = 'avatar.webp';
 
   private state = signal(true); // true = Frontend, false = Developer
@@ -86,8 +87,6 @@ export class PhotoCardComponent {
   }
 
   onHire() {
-    window.open('mailto:your@email.com?subject=Hire%20Vitalii%20Kasap', '_blank');
+    window.open('mailto:vitalii.kasap@icloud.com?subject=Hire%20Vitalii%20Kasap', '_blank');
   }
-
-  protected readonly t = t;
 }
