@@ -8,7 +8,7 @@ import {t} from '../../../../shared/i18n/i18n.signal';
   imports: [NgOptimizedImage],
   template: `
     <div
-      class="relative flex flex-col items-center rounded-[2.5rem] overflow-hidden shadow-2xl h-full w-full aspect-[3/4] min-h-[800px]">
+      class="relative flex flex-col items-center rounded-[2.5rem] overflow-hidden shadow-2xl h-full w-full aspect-[3/4] min-h-[800px] [&::-webkit-scrollbar-thumb]:bg-indigo-300">
       <!-- Фото (фон, absolute) -->
       <img
         [ngSrc]="avatarImg"

@@ -6,7 +6,7 @@ import { t } from '../../../../shared/i18n/i18n.signal';
   standalone: true,
   template: `
     <div
-      class="flex flex-col h-full bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 min-h-[600px] transition-colors duration-300">
+      class="flex gap-2 mb-4  flex-col h-full bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 min-h-[600px] transition-colors duration-300">
       <!-- Badge with translation -->
       <span
         class="inline-block mb-4 px-3 py-1 rounded-xl bg-neutral-200/80 dark:bg-neutral-700/80 text-neutral-600 dark:text-neutral-300 text-md font-semibold tracking-widest w-fit hover cursor-hover">

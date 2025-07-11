@@ -11,7 +11,7 @@ export const routes: Routes = [
   },
   {
     path: 'resume',
-    loadComponent: () => import('./pages/resume/resume.component').then(m => m.ResumeComponent),
+    loadComponent: () => import('./pages/resume-page/resume-page.component').then(m => m.ResumePageComponent),
   },
   {
     path: 'portfolio',

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import {PhotoCardComponent} from '../../features/home-intro/components/photo-card/photo-card.component';
-import {AboutInfoCardComponent} from '../../features/about-info-card/about-info-card.component';
-import {IntroCardComponent} from '../../features/home-intro/components/intro-card/intro-card.component';
+import {PhotoCardComponent} from '../home-intro/components/photo-card/photo-card.component';
+import {ResumeCardComponent} from './components/resume-card/resume-card.component';
+
 
 @Component({
-  selector: 'app-about',
-  imports: [
-    PhotoCardComponent,
-    AboutInfoCardComponent],
+  selector: 'app-resume',
+  standalone: true,
+  imports: [PhotoCardComponent, ResumeCardComponent],
   template: `
     <div class="flex justify-center items-center min-h-screen ml-16 px-4">
       <div class="max-w-6xl w-full py-20">
@@ -19,14 +18,11 @@ import {IntroCardComponent} from '../../features/home-intro/components/intro-car
 
           <!-- Intro Card - Wider but shorter -->
           <div class="w-full md:w-3/5">
-            <app-about-info-card />
+            <app-resume-card class="h-full"/>
           </div>
         </div>
       </div>
     </div>
-  `,
-  styleUrl: './about.component.scss'
+  `
 })
-export class AboutComponent {
-
-}
+export class ResumeComponent {}
