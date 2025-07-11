@@ -28,7 +28,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ])
   ],
   template: `
-    <div class="fixed inset-0 z-50 flex">
+    <div class="fixed inset-0 z-500 flex">
       <!-- Background overlay with fade animation -->
       <div
         class="fixed inset-0 bg-black/30 backdrop-blur-sm"
