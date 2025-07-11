@@ -19,7 +19,6 @@ import {BurgerMenuComponent} from '../../features/burger-menu/components/burger-
     NetAnimationComponent,
     CursorComponent,
     BurgerMenuComponent,
-    SideNavComponent
   ],
   template: `
     <app-net-animation></app-net-animation>
