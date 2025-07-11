@@ -1,5 +1,6 @@
 import { Component, computed, signal, effect } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
+import {t} from '../../../../shared/i18n/i18n.signal';
 
 @Component({
   selector: 'app-photo-card',
@@ -26,28 +27,28 @@ import { NgOptimizedImage } from '@angular/common';
       <div class="text-center relative z-20 flex flex-col w-full h-full justify-end p-5">
         <div class="mb-4 ">
           <h2 class="text-4xl md:text-5xl font-bold mb-2 text-white font-main">
-            Vitalii Kasap
+            {{ t('name') }}
           </h2>
           <div
             class="text-xl md:text-2xl font-bold transition-all duration-700 h-[32px] flex items-center justify-center font-main text-white text-center"
           >
             @if (showFrontend()) {
               <span class="transition-opacity duration-700 opacity-100 animate-fade-in-out">
-      Frontend
+      {{ t('frontend') }}
     </span>
             } @else {
               <span class="transition-opacity duration-700 opacity-100 animate-fade-in-out">
-      Developer
+            {{ t('developer') }}
     </span>
             }
           </div>
         </div>
         <button
-          class="cursor-hover mt-2 w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 rounded-2xl transition text-lg font-main"
+          class="cursor-hover mt-2 w-full bg-indigo-500 text-white font-semibold py-3 rounded-2xl border-2 border-transparent transition-all duration-200 text-lg font-main hover:bg-transparent hover:border-indigo-500 hover:rounded-none"
           type="button"
           (click)="onHire()"
         >
-          Hire Me
+          {{ t('hireMe') }}
         </button>
       </div>
     </div>
@@ -87,4 +88,6 @@ export class PhotoCardComponent {
   onHire() {
     window.open('mailto:your@email.com?subject=Hire%20Vitalii%20Kasap', '_blank');
   }
+
+  protected readonly t = t;
 }

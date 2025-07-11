@@ -17,7 +17,7 @@ import {themeSignal} from '../../../services/theme-signal.service';
     @if (isBrowser) {
       <button
         (click)="toggle()"
-        class="cursor-hover fixed top-4 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-yellow-400 focus:ring-blue-500 dark:focus:ring-yellow-400"
+        class="cursor-hover top-4 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-yellow-400 focus:ring-blue-500 dark:focus:ring-yellow-400"
         [attr.aria-label]="ariaLabel()"
         type="button"
       >
