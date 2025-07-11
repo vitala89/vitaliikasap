@@ -1,32 +1,89 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal, effect } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-photo-card',
   standalone: true,
+  imports: [NgOptimizedImage],
   template: `
-    <div class="relative flex flex-col items-center bg-white dark:bg-neutral-800 rounded-3xl shadow-2xl p-8">
+    <div
+      class="relative flex flex-col items-center rounded-[2.5rem] overflow-hidden shadow-2xl min-h-[800px] aspect-[4/5] w-full max-w-4/5 font-main bg-[#23212c]">
+      <!-- Фото (фон, absolute) -->
       <img
-        src="../../../../../assets/avatar.jpg"
+        [ngSrc]="avatarImg"
         alt="Vitalii Kasap"
-        width="288" height="288"
-        class="w-72 h-72 object-cover rounded-3xl shadow-lg"
-        loading="lazy"
+        width="480" height="600"
+        class="absolute inset-0 w-full h-full object-cover z-[1]"
+        priority
       />
-      <div class="w-full mt-8 text-center">
-        <h2 class="text-3xl font-bold font-rounded">Vitalii Kasap</h2>
-        <div class="text-lg uppercase text-neutral-400 mt-1 tracking-widest">FRONTEND ENGINEER</div>
+      <!-- Блюр и градиент -->
+      <div
+        class="absolute bottom-0 left-0 w-full h-1/4 z-10
+          bg-gradient-to-t from-black/70 via-black/30 to-transparent
+          backdrop-blur-[8px] pointer-events-none"
+      ></div>
+      <!-- Контент -->
+      <div class="text-center relative z-20 flex flex-col w-full h-full justify-end p-5">
+        <div class="mb-4 ">
+          <h2 class="text-4xl md:text-5xl font-bold mb-2 text-white font-main">
+            Vitalii Kasap
+          </h2>
+          <div
+            class="text-xl md:text-2xl font-bold transition-all duration-700 h-[32px] flex items-center justify-center font-main text-white text-center"
+          >
+            @if (showFrontend()) {
+              <span class="transition-opacity duration-700 opacity-100 animate-fade-in-out">
+      Frontend
+    </span>
+            } @else {
+              <span class="transition-opacity duration-700 opacity-100 animate-fade-in-out">
+      Developer
+    </span>
+            }
+          </div>
+        </div>
+        <button
+          class="cursor-hover mt-2 w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 rounded-2xl transition text-lg font-main"
+          type="button"
+          (click)="onHire()"
+        >
+          Hire Me
+        </button>
       </div>
-      <button
-        class="cursor-hover mt-8 w-full bg-emerald-400 hover:bg-emerald-500 text-black font-semibold py-3 rounded-2xl transition text-lg"
-        type="button"
-        (click)="onHire()"
-      >
-        &nbsp;Hire Me
-      </button>
     </div>
   `,
+  styles: [
+    `
+      @keyframes fade-in-out {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        10%,
+        90% {
+          opacity: 1;
+        }
+      }
+      .animate-fade-in-out {
+        animation: fade-in-out 2.6s linear;
+      }
+    `,
+  ],
 })
 export class PhotoCardComponent {
+  avatarImg = 'avatar.webp';
+
+  private state = signal(true); // true = Frontend, false = Developer
+
+  showFrontend = this.state.asReadonly();
+
+  constructor() {
+    // Меняем state каждые 1.6 секунды (можно регулировать)
+    setInterval(() => {
+      this.state.set(!this.state());
+    }, 2600);
+  }
+
   onHire() {
     window.open('mailto:your@email.com?subject=Hire%20Vitalii%20Kasap', '_blank');
   }
