@@ -6,24 +6,26 @@ import {IntroCardComponent} from '../../features/home-intro/components/intro-car
 import { themeSignal } from '../../shared/services/theme-signal.service';
 import {NetAnimationComponent} from '../../features/net-animation/components/net-animation.component';
 import {CursorComponent} from '../../shared/ui/components/cursor/cursor.component';
+import {BurgerMenuComponent} from '../../features/burger-menu/components/burger-menu/burger-menu.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    SideNavComponent,
     ThemeSwitcherComponent,
     PhotoCardComponent,
     IntroCardComponent,
     NetAnimationComponent,
-    CursorComponent
+    CursorComponent,
+    BurgerMenuComponent,
+    SideNavComponent
   ],
   template: `
     <app-net-animation></app-net-animation>
     <app-cursor></app-cursor>
-    <app-side-nav/>
     <app-theme-switcher/>
+    <app-burger-menu />
     <main class="flex justify-center items-center min-h-screen ml-16 px-4">
       <div class="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 w-full py-20">
         <app-photo-card/>
