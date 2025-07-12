@@ -57,8 +57,8 @@ import { trigger, transition, style, animate } from '@angular/animations';
           <a routerLink="/resume" class="flex items-center gap-3 text-lg font-medium hover:text-emerald-500 transition-colors" (click)="closeMenu()">
             <lucide-icon name="briefcase"/> Резюме
           </a>
-          <a routerLink="/portfolio" class="flex items-center gap-3 text-lg font-medium hover:text-emerald-500 transition-colors" (click)="closeMenu()">
-            <lucide-icon name="layers"/> Портфолио
+          <a routerLink="/testimonials" class="flex items-center gap-3 text-lg font-medium hover:text-emerald-500 transition-colors" (click)="closeMenu()">
+            <lucide-icon name="message-square-more"/> Портфолио
           </a>
           <a routerLink="/contact" class="flex items-center gap-3 text-lg font-medium hover:text-emerald-500 transition-colors" (click)="closeMenu()">
             <lucide-icon name="mail"/> Контакты
