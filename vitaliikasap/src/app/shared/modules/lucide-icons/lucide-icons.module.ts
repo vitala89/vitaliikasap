@@ -1,10 +1,9 @@
-// lucide-icons.module.ts
 import { NgModule } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
-import { Sun, Moon, Home, User, Briefcase, Layers, Mail, X, Menu, Users, MessageCircle, BookOpen } from 'lucide-angular';
+import { Sun, Moon, Home, User, Briefcase, Layers, Mail, X, Menu, Users, MessageCircle, BookOpen, Code } from 'lucide-angular';
 
 @NgModule({
-  imports: [LucideAngularModule.pick({ Sun, Moon, Home, User, Briefcase, Layers, Mail, X, Menu, Users, MessageCircle, BookOpen })],
+  imports: [LucideAngularModule.pick({ Sun, Moon, Home, User, Briefcase, Layers, Mail, X, Menu, Users, MessageCircle, BookOpen, Code })],
   exports: [LucideAngularModule]
 })
 export class LucideIconsModule {}

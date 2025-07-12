@@ -66,7 +66,7 @@ export class SideNavComponent {
     { icon: 'home', label: 'HOME', route: '' },
     { icon: 'user', label: 'ABOUT', route: '/about' },
     { icon: 'briefcase', label: 'RESUME', route: '/resume' },
-    { icon: 'layers', label: 'PORTFOLIO', route: '/portfolio' },
+    { icon: 'layers', label: 'SKILLS', route: '/skills' },
     { icon: 'users', label: 'TEAM', route: '/team' },
     { icon: 'mail', label: 'CONTACT', route: '/contact' },
     { icon: 'message-circle', label: 'BLOG', route: '/blog' },

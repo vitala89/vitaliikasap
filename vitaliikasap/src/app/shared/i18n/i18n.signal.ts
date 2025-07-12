@@ -54,6 +54,31 @@ type Dictionary = {
           description: string;
         }[];
       };
+    },
+    skills: {
+      badge: string;
+      title: string;
+      description: string;
+      language: {
+        title: string;
+        list: Array<{
+          name: string;
+          value: number;
+        }>;
+      };
+      hard: {
+        title: string;
+        list: Array<{
+          name: string;
+          value: number;
+          icon: string;
+        }>;
+      };
+      soft: {
+        title: string;
+        list: string[];
+      };
+
     }
   };
 };
@@ -142,6 +167,67 @@ My professional experience spans a wide range of projects and teams, from large 
         ]
       }
     },
+    skills: {
+      badge: 'MY SKILLS',
+      title: 'Technologies and tools I work with every day',
+      description: '  My skill set is the result of years of hands-on engineering, continuous learning, and curiosity about new technologies. I combine deep expertise in modern frontend frameworks with practical experience across the entire web development stack. Below are some of the key technologies and tools I use to build scalable, user-focused, and maintainable applications.',
+      language: {
+        title: 'Language Skills',
+        list: [
+          {name: 'English', value: 75},
+          {name: 'Russian', value: 100},
+          {name: 'Ukrainian', value: 90},
+          {name: 'German', value: 20}
+        ]
+      },
+      hard: {
+        title: 'Hard Skills',
+        list: [
+          { name: 'Angular', value: 95, icon: 'angular' },
+          { name: 'React', value: 90, icon: 'react' },
+          { name: 'TypeScript', value: 94, icon: 'typescript' },
+          { name: 'JavaScript', value: 92, icon: 'javascript' },
+          { name: 'HTML5', value: 96, icon: 'html5' },
+          { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
+          { name: 'StencilJS', value: 80, icon: 'stenciljs' },  // если есть иконка, если нет — убрать
+          { name: 'Redux', value: 85, icon: 'redux' }, // можно оставить только Redux для иконки
+          { name: 'Nx', value: 80, icon: 'nx' }, // если нет иконки — можно generic, например 'tools'
+          { name: 'Node.js', value: 78, icon: 'nodejs' },
+          { name: 'Express.js', value: 75, icon: 'express' },
+          { name: 'Jest', value: 82, icon: 'jest' },
+          { name: 'Docker', value: 70, icon: 'docker' },
+          { name: 'Git', value: 88, icon: 'git' },
+          { name: 'Webpack', value: 77, icon: 'webpack' },
+          { name: 'Vite', value: 80, icon: 'vite' },
+          { name: 'Figma', value: 65, icon: 'figma' }, // базовые навыки для работы с UI
+          { name: 'REST API', value: 90, icon: 'api' }, // generic API иконка
+          { name: 'CI/CD', value: 75, icon: 'cicd' },  // generic иконка
+          { name: 'React Native', value: 30, icon: 'react' },
+        ]
+      },
+      soft: {
+        title: 'Soft Skills',
+        list: [
+          'Teamwork',
+          'Communication',
+          'Problem Solving',
+          'Time Management',
+          'Adaptability',
+          'Attention to Detail',
+          'Critical Thinking',
+          'Self-motivation',
+          'Creativity',
+          'Agile Mindset',
+          'Continuous Learning',
+          'Collaboration',
+          'Leadership',
+          'Empathy',
+          'Conflict Resolution',
+          'Client Orientation',
+          'Accountability'
+        ]
+      }
+    }
   },
   de: {
     hireMe: 'Einstellen',
@@ -226,7 +312,69 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
         ]
       }
 
+    },
+    skills: {
+      badge: 'MEINE FÄHIGKEITEN',
+      title: 'Technologien und Tools, die ich täglich verwende',
+      description: 'Mein Skillset ist das Ergebnis jahrelanger praktischer Erfahrung, kontinuierlichen Lernens und echter Neugier für neue Technologien. Ich kombiniere fundiertes Know-how in modernen Frontend-Frameworks mit praktischer Erfahrung im gesamten Webentwicklungs-Stack. Unten finden Sie einige der wichtigsten Technologien und Werkzeuge, die ich für den Aufbau skalierbarer, benutzerorientierter und wartbarer Anwendungen verwende.',
+      language: {
+        title: 'Sprachkenntnisse',
+        list: [
+          { name: 'Englisch', value: 75 },
+          { name: 'Russisch', value: 100 },
+          { name: 'Ukrainisch', value: 90 },
+          { name: 'Deutsch', value: 20 }
+        ]
+      },
+      hard: {
+        title: 'Hard Skills',
+        list: [
+          { name: 'Angular', value: 95, icon: 'angular' },
+          { name: 'React', value: 90, icon: 'react' },
+          { name: 'TypeScript', value: 94, icon: 'typescript' },
+          { name: 'JavaScript', value: 92, icon: 'javascript' },
+          { name: 'HTML5', value: 96, icon: 'html5' },
+          { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
+          { name: 'StencilJS', value: 80, icon: 'stenciljs' },  // если есть иконка, если нет — убрать
+          { name: 'Redux', value: 85, icon: 'redux' }, // можно оставить только Redux для иконки
+          { name: 'Nx', value: 80, icon: 'nx' }, // если нет иконки — можно generic, например 'tools'
+          { name: 'Node.js', value: 78, icon: 'nodejs' },
+          { name: 'Express.js', value: 75, icon: 'express' },
+          { name: 'Jest', value: 82, icon: 'jest' },
+          { name: 'Docker', value: 70, icon: 'docker' },
+          { name: 'Git', value: 88, icon: 'git' },
+          { name: 'Webpack', value: 77, icon: 'webpack' },
+          { name: 'Vite', value: 80, icon: 'vite' },
+          { name: 'Figma', value: 65, icon: 'figma' }, // базовые навыки для работы с UI
+          { name: 'REST API', value: 90, icon: 'api' }, // generic API иконка
+          { name: 'CI/CD', value: 75, icon: 'cicd' },  // generic иконка
+          { name: 'React Native', value: 30, icon: 'react' },
+        ]
+      },
+      soft: {
+        title: 'Soziale Kompetenzen',
+        list: [
+          'Teamarbeit',
+          'Kommunikation',
+          'Problemlösungsfähigkeit',
+          'Zeitmanagement',
+          'Anpassungsfähigkeit',
+          'Aufmerksamkeit für Details',
+          'Kritisches Denken',
+          'Selbstmotivation',
+          'Kreativität',
+          'Agiles Mindset',
+          'Lernbereitschaft',
+          'Zusammenarbeit',
+          'Führungsqualitäten',
+          'Empathie',
+          'Konfliktlösung',
+          'Kundenorientierung',
+          'Verantwortungsbewusstsein'
+        ]
+      }
     }
+
   },
   ru: {
     hireMe: 'Нанять',
@@ -287,7 +435,7 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
         title: 'Опыт работы',
         description: `Мой путь в веб-разработке начался с хобби в 14 лет — я создавал сайты и небольшие приложения для друзей. После десяти лет работы в море инженером-механиком я решил следовать своей страсти к технологиям и полностью перейти во frontend-разработку, превратив любимое дело в профессию.
 
-Мой профессиональный опыт охватывает широкий спектр проектов и команд: от крупных международных компаний до гибкой работы на фрилансе. Я руководил миграцией проектов, строил масштабируемые архитектуры и реализовывал важные функции в динамичной командной среде. Такой разносторонний опыт дал мне целостное понимание frontend-разработки — от практического программирования до командной работы и технического лидерства.`,
+          Мой профессиональный опыт охватывает широкий спектр проектов и команд: от крупных международных компаний до гибкой работы на фрилансе. Я руководил миграцией проектов, строил масштабируемые архитектуры и реализовывал важные функции в динамичной командной среде. Такой разносторонний опыт дал мне целостное понимание frontend-разработки — от практического программирования до командной работы и технического лидерства.`,
         items: [
           {
             title: 'Frontend Software Engineer',
@@ -311,8 +459,69 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           },
         ]
       }
-
+    },
+    skills: {
+      badge: 'МОИ НАВЫКИ',
+      title: 'Технологии и инструменты, с которыми я работаю каждый день',
+      description: 'Мой набор навыков — это результат многих лет практического опыта, постоянного обучения и интереса к новым технологиям. Я совмещаю глубокую экспертизу в современных frontend-фреймворках с практическим опытом во всех слоях веб-разработки. Ниже приведены ключевые технологии и инструменты, которые я использую для создания масштабируемых, ориентированных на пользователя и поддерживаемых приложений.',
+      language: {
+        title: 'Языковые навыки',
+        list: [
+          { name: 'Английский', value: 75 },
+          { name: 'Русский', value: 100 },
+          { name: 'Украинский', value: 90 },
+          { name: 'Немецкий', value: 20 }
+        ]
+      },
+      hard: {
+        title: 'Hard Skills',
+        list: [
+          { name: 'Angular', value: 95, icon: 'angular' },
+          { name: 'React', value: 90, icon: 'react' },
+          { name: 'TypeScript', value: 94, icon: 'typescript' },
+          { name: 'JavaScript', value: 92, icon: 'javascript' },
+          { name: 'HTML5', value: 96, icon: 'html5' },
+          { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
+          { name: 'StencilJS', value: 80, icon: 'stenciljs' },  // если есть иконка, если нет — убрать
+          { name: 'Redux', value: 85, icon: 'redux' }, // можно оставить только Redux для иконки
+          { name: 'Nx', value: 80, icon: 'nx' }, // если нет иконки — можно generic, например 'tools'
+          { name: 'Node.js', value: 78, icon: 'nodejs' },
+          { name: 'Express.js', value: 75, icon: 'express' },
+          { name: 'Jest', value: 82, icon: 'jest' },
+          { name: 'Docker', value: 70, icon: 'docker' },
+          { name: 'Git', value: 88, icon: 'git' },
+          { name: 'Webpack', value: 77, icon: 'webpack' },
+          { name: 'Vite', value: 80, icon: 'vite' },
+          { name: 'Figma', value: 65, icon: 'figma' }, // базовые навыки для работы с UI
+          { name: 'REST API', value: 90, icon: 'api' }, // generic API иконка
+          { name: 'CI/CD', value: 75, icon: 'cicd' },  // generic иконка
+          { name: 'React Native', value: 30, icon: 'react' },
+        ]
+      },
+      soft: {
+        title: 'Гибкие навыки',
+        list: [
+          'Работа в команде',
+          'Коммуникация',
+          'Решение проблем',
+          'Тайм-менеджмент',
+          'Адаптивность',
+          'Внимательность к деталям',
+          'Критическое мышление',
+          'Самомотивация',
+          'Креативность',
+          'Гибкое мышление (Agile)',
+          'Постоянное обучение',
+          'Сотрудничество',
+          'Лидерство',
+          'Эмпатия',
+          'Разрешение конфликтов',
+          'Ориентация на клиента',
+          'Ответственность'
+        ]
+      }
     }
+
   },
 };
 
