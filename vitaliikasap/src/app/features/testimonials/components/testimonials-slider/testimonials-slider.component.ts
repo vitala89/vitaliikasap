@@ -71,10 +71,10 @@ interface Testimonial {
         <!-- Custom Navigation -->
         <div class="flex items-center gap-2 mt-4 justify-center">
           <button
-            class="swiper-button-prev-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-emerald-900 transition"
+            class="swiper-button-prev-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
             [disabled]="testimonials().length <= 1"
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 dark:text-white" viewBox="0 0 24 24">
               <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none"/>
             </svg>
           </button>
@@ -84,10 +84,10 @@ interface Testimonial {
           </span>
 
           <button
-            class="swiper-button-next-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-emerald-900 transition"
+            class="swiper-button-next-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
             [disabled]="testimonials().length <= 1"
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 dark:text-white" viewBox="0 0 24 24">
               <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
             </svg>
           </button>
