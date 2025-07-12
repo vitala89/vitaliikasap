@@ -8,13 +8,13 @@ import { SkillIconComponent } from '../skill-icon/skill-icon.component';
   standalone: true,
   imports: [SkillCircleComponent, SkillIconComponent],
   template: `
-    <div class="flex flex-col gap-8 bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto">
+    <div class="flex flex-col bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto">
       <div class="mb-3 flex items-center gap-2">
         <span class="inline-block mb-4 px-3 py-1 rounded-xl bg-neutral-200/80 dark:bg-neutral-700/80 text-neutral-600 dark:text-neutral-300 text-md font-semibold tracking-widest w-fit hover cursor-hover">
           {{ t('skills.badge') }}
         </span>
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold font-main mb-3 text-neutral-900 dark:text-white leading-tight">{{ t('skills.title') }}</h1>
+      <h1 class="text-4xl md:text-4xl font-bold font-main mb-3 text-neutral-900 dark:text-white leading-tight">{{ t('skills.title') }}</h1>
       <p class="mb-8 text-lg text-neutral-600 dark:text-neutral-300">{{ t('skills.description') }}</p>
 
       <!-- Language Skills -->
