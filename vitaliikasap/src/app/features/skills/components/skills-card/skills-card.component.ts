@@ -18,7 +18,7 @@ import { SkillIconComponent } from '../skill-icon/skill-icon.component';
       <p class="mb-8 text-lg text-neutral-600 dark:text-neutral-300">{{ t('skills.description') }}</p>
 
       <!-- Language Skills -->
-      <h2 class="text-xl font-bold mb-5 dark:text-white">
+      <h2 class="text-xl font-bold mb-5 dark:text-white xl:text-2xl">
         {{ t('skills.language.title') }}
       </h2>
       <div class="flex flex-wrap gap-6 mb-10">
