@@ -2,6 +2,7 @@ import {
   Component,
   signal,
   computed,
+  effect,
   OnInit,
   OnDestroy,
   ViewChild,
@@ -70,7 +71,7 @@ interface Testimonial {
         <!-- Custom Navigation -->
         <div class="flex items-center gap-2 mt-4 justify-center">
           <button
-            class="swiper-button-prev-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-emerald-100 dark:hover:bg-emerald-900 transition"
+            class="swiper-button-prev-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-emerald-900 transition"
             [disabled]="testimonials().length <= 1"
           >
             <svg class="w-5 h-5" viewBox="0 0 24 24">
@@ -83,7 +84,7 @@ interface Testimonial {
           </span>
 
           <button
-            class="swiper-button-next-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-emerald-100 dark:hover:bg-emerald-900 transition"
+            class="swiper-button-next-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-emerald-900 transition"
             [disabled]="testimonials().length <= 1"
           >
             <svg class="w-5 h-5" viewBox="0 0 24 24">
@@ -146,10 +147,25 @@ export class TestimonialsSliderComponent implements OnInit, AfterViewInit, OnDes
   readonly t = t;
   private swiperInstance: Swiper | null = null;
 
-  // Reactive state using signals
-  readonly testimonials = signal<Testimonial[]>(this.t('testimonials.items') as unknown as Testimonial[]);
+  // Create a computed signal that reacts to language changes
+  readonly testimonials = computed<Testimonial[]>(() => {
+    const testimonialsData = this.t('testimonials.items');
+    return Array.isArray(testimonialsData) ? testimonialsData as Testimonial[] : [];
+  });
+
   readonly currentSlideIndex = signal(0);
   readonly isPaused = signal(false);
+
+  constructor() {
+    // Effect to reinitialize Swiper when testimonials change
+    effect(() => {
+      const testimonialsList = this.testimonials();
+      if (testimonialsList.length > 0 && this.swiperInstance) {
+        // Reinitialize Swiper with new data
+        this.reinitializeSwiper();
+      }
+    });
+  }
 
   ngOnInit(): void {
     // Component initialization logic if needed
@@ -308,5 +324,18 @@ export class TestimonialsSliderComponent implements OnInit, AfterViewInit, OnDes
         }
       }, 200);
     }
+  }
+
+  private reinitializeSwiper(): void {
+    // Destroy existing instance
+    if (this.swiperInstance) {
+      this.swiperInstance.destroy(true, true);
+      this.swiperInstance = null;
+    }
+
+    // Reinitialize with new data
+    setTimeout(() => {
+      this.initializeSwiper();
+    }, 50);
   }
 }
