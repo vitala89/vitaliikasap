@@ -78,7 +78,19 @@ type Dictionary = {
         title: string;
         list: string[];
       };
-
+    },
+    testimonials: {
+      badge: string;
+      title: string;
+      description: string;
+      items: Array<{
+        rating: number;
+        name: string;
+        role: string;
+        avatar: string;
+        stars: number;
+        text: string;
+      }>;
     }
   };
 };
@@ -189,9 +201,9 @@ My professional experience spans a wide range of projects and teams, from large 
           { name: 'JavaScript', value: 92, icon: 'javascript' },
           { name: 'HTML5', value: 96, icon: 'html5' },
           { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
-          { name: 'StencilJS', value: 80, icon: 'stenciljs' },  // если есть иконка, если нет — убрать
-          { name: 'Redux', value: 85, icon: 'redux' }, // можно оставить только Redux для иконки
-          { name: 'Nx', value: 80, icon: 'nx' }, // если нет иконки — можно generic, например 'tools'
+          { name: 'StencilJS', value: 80, icon: 'stenciljs' },
+          { name: 'Redux', value: 85, icon: 'redux' },
+          { name: 'Nx', value: 80, icon: 'nx' },
           { name: 'Node.js', value: 78, icon: 'nodejs' },
           { name: 'Express.js', value: 75, icon: 'express' },
           { name: 'Jest', value: 82, icon: 'jest' },
@@ -199,9 +211,9 @@ My professional experience spans a wide range of projects and teams, from large 
           { name: 'Git', value: 88, icon: 'git' },
           { name: 'Webpack', value: 77, icon: 'webpack' },
           { name: 'Vite', value: 80, icon: 'vite' },
-          { name: 'Figma', value: 65, icon: 'figma' }, // базовые навыки для работы с UI
-          { name: 'REST API', value: 90, icon: 'api' }, // generic API иконка
-          { name: 'CI/CD', value: 75, icon: 'cicd' },  // generic иконка
+          { name: 'Figma', value: 65, icon: 'figma' },
+          { name: 'REST API', value: 90, icon: 'api' },
+          { name: 'CI/CD', value: 75, icon: 'cicd' },
           { name: 'React Native', value: 30, icon: 'react' },
         ]
       },
@@ -227,7 +239,112 @@ My professional experience spans a wide range of projects and teams, from large 
           'Accountability'
         ]
       }
-    }
+    },
+    testimonials: {
+      badge: 'TESTIMONIALS',
+      title: 'Feedback from colleagues and managers',
+      description: 'A few words from those who have worked with me.',
+      items: [
+        {
+          rating: 99,
+          name: 'Maksimilian Koita',
+          role: 'Driving Innovation and Business Growth as a Product Owner at NIQ/GFK',
+          avatar: 'testimonials/koita.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working with Vitalii, an outstanding front-end engineer whose technical skills and attention to detail consistently impressed me. His ability to create seamless, user-friendly interfaces and solve complex design challenges made a significant impact on our projects. Beyond his expertise, Vitalii was a collaborative and reliable team member, always willing to support others and share valuable insights. I highly recommend Vitalii to any team looking for a skilled and dedicated front-end developer.'
+        },
+        {
+          rating: 99,
+          name: 'TEJASWINI MAHARANA',
+          role: 'Junior Software Test Engineer | QA and Testing at NIQ/GFK',
+          avatar: 'testimonials/teja.jpeg',
+          stars: 5,
+          text: 'I worked alongside Vitalii for several years, and his contributions as a front-end engineer consistently elevated the quality of our products. He brings a thoughtful, user-first mindset to every project, combining technical precision with an intuitive understanding of design and usability.\n' +
+            '\n' +
+            'Vitalii has a natural ability to break down complex UI problems and deliver clean, maintainable solutions. He\'s proactive, dependable, and always engaged—whether he\'s building new features or optimizing performance . His calm, solution-oriented approach makes him a key asset on any engineering team.\n' +
+            '\n' +
+            'I’d strongly recommend Vitalii to any organization looking for a front-end developer who brings both technical depth and collaborative spirit to the table.'
+        },
+        {
+          rating: 99,
+          name: 'Philipp Bruchner',
+          role: 'Senior Front-end Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/bruchner.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working in parallel with Vitalii within the same frontend chapter, and he consistently stood out as a humble, approachable, and highly capable engineer. Despite being on different teams, it was easy to recognize his quick perception and pragmatic approach to problem-solving. Vitalii brings calm focus and solid judgment to his work - qualities that make collaboration with him both effective and enjoyable. A great asset to any team.'
+        },
+        {
+          rating: 99,
+          name: 'Maximilian Sponsel',
+          role: 'Data Scientist at NIQ/GFK',
+          avatar: 'testimonials/sponsel.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working with Vitalii for a few years. His front-end capabilities massively helped us in improving and extending our internal product and improve our client adoption. \n' +
+            '\n' +
+            'He was always willing to go beyond to achieve the next steps in the project phases. As a teammate he was always approachable and ready to help! \n' +
+            '\n' +
+            'I can dearly recommend hin to anyone looking to hire a skilled engineer and empethatic teammate!'
+        },
+        {
+          rating: 99,
+          name: 'Mahesh S Manjunatha',
+          role: 'Machine Learning Engineer at NIQ/GFK',
+          avatar: 'testimonials/manjunatha.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working with Vitalii Kasap on design and building of AI systems for outlier detection in the customer data for providing market insights. \n' +
+            '\n' +
+            'He consistently demonstrated excellent software engineering skills like JavaScript/jQuery , Angular, React etc. He has strong analytical abilities and excellent communication.\n' +
+            'He is a valuable asset to any team and I highly recommend him for future opportunities.'
+        },
+        {
+          rating: 99,
+          name: 'Pricillia Gunawan',
+          role: 'Agile Coach | Digital & Agile Transformation at NIQ/GFK',
+          avatar: 'testimonials/gunawan.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working with Vitalii, and was always impressed by his positive attitude, team spirit, and eagerness to learn. He’s a friendly and collaborative front-end engineer who brings great energy to any team.\n' +
+            'Vitalii also shows strong potential and a real commitment to improvement. He’s a joy to work with, and I’m confident he’ll thrive in the right environment. Any team would be lucky to have him! :)'
+        },
+        {
+          rating: 99,
+          name: 'Dmitri Vasilev',
+          role: 'Principal Software Engineer/Tech Lead Data Enrichment at NIQ/GFK',
+          avatar: 'testimonials/vasilev.jpeg',
+          stars: 5,
+          text: 'I wholeheartedly recommend Vitalii, a promising Software Engineer I worked with over two years. Vitalii possesses a good knowledge of front-end technologies like Angular and consistently produces high-quality work, demonstrating a strong commitment to excellence. He proved his adaptability by successfully contributing to projects across two different teams, embracing new challenges with ease. What truly stands out is his remarkable willingness and ability to quickly learn and adopt new technologies and best practices. Coupled with his genuine and open communication style, Vitalii is an excellent team player with immense potential. \n' +
+            'I\'m confident he will continue to achieve great things in his career.'
+        },
+        {
+          rating: 99,
+          name: 'Ibrahim Izirov ',
+          role: 'Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/izirov.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working closely with Vitalii for over two years, and I can confidently say he is one of the most reliable and capable front-end engineers I’ve collaborated with. His strong command of Angular and modern front-end practices consistently translated into clean, maintainable, and efficient code. What impressed me most was Vitalii’s mindset—he approaches challenges with curiosity and determination, always eager to expand his skill set and stay aligned with evolving standards\n' +
+            'I have no doubt that he will continue to excel in any engineering team lucky to have him.'
+        },
+        {
+          rating: 99,
+          name: 'Ivan Sirosh',
+          role: 'Principal Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/sirosh.jpeg',
+          stars: 5,
+          text: 'I supervised Vitalii at our previous company. Together, we implemented several projects where he consistently demonstrated strong frontend development skills, quickly picking up tasks and delivering reliable solutions.\n' +
+            '\n' +
+            'Over time, Vitalii demonstrated the potential to grow into a senior role, designing and building complex, high-load frontend applications. He was a key contributor to the project success and provided valuable support to other teams in handling complex feature requirements.\n' +
+            '\n' +
+            'I highly recommend Vitalii as a frontend developer capable of delivering high-quality technical solutions and making a strong impact on your organization.'
+        },
+        {
+          rating: 99,
+          name: 'Martin Georgiev',
+          role: 'Delivery Lead / Senior Business Analyst at NIQ/GFK',
+          avatar: 'testimonials/georgiev.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working with Vitalii during a critical time when our team urgently needed strong front-end expertise. He joined us when almost everyone else had left, but in no time, he rebuilt our entire application with outstanding speed, precision, and efficiency. His code was clean and flawless, and everything worked perfectly from day one. Beyond his technical skills, working with him was incredibly easy – he maintained clear communication and delivered results. Vitalii is the kind of developer every team dreams of: highly professional, reliable, and delivering beyond expectations. I highly recommend him for any front-end role.'
+        },
+      ]
+    },
   },
   de: {
     hireMe: 'Einstellen',
@@ -335,9 +452,9 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           { name: 'JavaScript', value: 92, icon: 'javascript' },
           { name: 'HTML5', value: 96, icon: 'html5' },
           { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
-          { name: 'StencilJS', value: 80, icon: 'stenciljs' },  // если есть иконка, если нет — убрать
-          { name: 'Redux', value: 85, icon: 'redux' }, // можно оставить только Redux для иконки
-          { name: 'Nx', value: 80, icon: 'nx' }, // если нет иконки — можно generic, например 'tools'
+          { name: 'StencilJS', value: 80, icon: 'stenciljs' },
+          { name: 'Redux', value: 85, icon: 'redux' },
+          { name: 'Nx', value: 80, icon: 'nx' },
           { name: 'Node.js', value: 78, icon: 'nodejs' },
           { name: 'Express.js', value: 75, icon: 'express' },
           { name: 'Jest', value: 82, icon: 'jest' },
@@ -345,9 +462,9 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           { name: 'Git', value: 88, icon: 'git' },
           { name: 'Webpack', value: 77, icon: 'webpack' },
           { name: 'Vite', value: 80, icon: 'vite' },
-          { name: 'Figma', value: 65, icon: 'figma' }, // базовые навыки для работы с UI
-          { name: 'REST API', value: 90, icon: 'api' }, // generic API иконка
-          { name: 'CI/CD', value: 75, icon: 'cicd' },  // generic иконка
+          { name: 'Figma', value: 65, icon: 'figma' },
+          { name: 'REST API', value: 90, icon: 'api' },
+          { name: 'CI/CD', value: 75, icon: 'cicd' },
           { name: 'React Native', value: 30, icon: 'react' },
         ]
       },
@@ -373,8 +490,112 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           'Verantwortungsbewusstsein'
         ]
       }
+    },
+    testimonials: {
+      badge: 'REFERENZEN',
+      title: 'Feedback von Kollegen und Managern',
+      description: 'Einige Worte von denjenigen, die mit mir gearbeitet haben.',
+      items: [
+        {
+          rating: 99,
+          name: 'Maksimilian Koita',
+          role: 'Driving Innovation and Business Growth as a Product Owner at NIQ/GFK',
+          avatar: 'testimonials/koita.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, mit Vitalii zu arbeiten, einem herausragenden Frontend-Entwickler, dessen technische Fähigkeiten und Aufmerksamkeit für Details mich durchweg beeindruckten. Seine Fähigkeit, nahtlose, benutzerfreundliche Interfaces zu erstellen und komplexe Designherausforderungen zu lösen, hatte einen erheblichen Einfluss auf unsere Projekte. Über seine Expertise hinaus war Vitalii ein kollaborativer und zuverlässiger Teamkollege, der immer bereit war, andere zu unterstützen und wertvolle Einsichten zu teilen. Ich empfehle Vitalii jedem Team, das nach einem kompetenten und engagierten Frontend-Entwickler sucht.'
+        },
+        {
+          rating: 99,
+          name: 'TEJASWINI MAHARANA',
+          role: 'Junior Software Test Engineer | QA and Testing at NIQ/GFK',
+          avatar: 'testimonials/teja.jpeg',
+          stars: 5,
+          text: 'Ich arbeitete mehrere Jahre lang mit Vitalii zusammen, und seine Beiträge als Frontend-Entwickler haben die Qualität unserer Produkte kontinuierlich verbessert. Er bringt eine durchdachte, nutzerzentrierte Denkweise in jedes Projekt ein und kombiniert technische Präzision mit einem intuitiven Verständnis für Design und Usability.\n' +
+            '\n' +
+            'Vitalii hat eine natürliche Fähigkeit, komplexe UI-Probleme zu analysieren und saubere, wartbare Lösungen zu liefern. Er ist proaktiv, zuverlässig und immer engagiert – egal ob er neue Features entwickelt oder die Performance optimiert. Sein ruhiger, lösungsorientierter Ansatz macht ihn zu einer wichtigen Ressource für jedes Engineering-Team.\n' +
+            '\n' +
+            'Ich würde Vitalii jedem Unternehmen empfehlen, das nach einem Frontend-Entwickler sucht, der sowohl technische Tiefe als auch Teamgeist mitbringt.'
+        },
+        {
+          rating: 99,
+          name: 'Philipp Bruchner',
+          role: 'Senior Front-end Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/bruchner.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, parallel zu Vitalii im selben Frontend-Chapter zu arbeiten, und er stach durchweg als demütiger, zugänglicher und hochkompetenter Entwickler hervor. Obwohl wir in verschiedenen Teams waren, war es leicht zu erkennen, dass er über schnelle Auffassungsgabe und einen pragmatischen Ansatz zur Problemlösung verfügt. Vitalii bringt ruhige Konzentration und solides Urteilsvermögen in seine Arbeit ein – Eigenschaften, die die Zusammenarbeit mit ihm sowohl effektiv als auch angenehm machen. Eine große Bereicherung für jedes Team.'
+        },
+        {
+          rating: 99,
+          name: 'Maximilian Sponsel',
+          role: 'Data Scientist at NIQ/GFK',
+          avatar: 'testimonials/sponsel.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, mehrere Jahre mit Vitalii zu arbeiten. Seine Frontend-Fähigkeiten haben uns massiv dabei geholfen, unser internes Produkt zu verbessern und zu erweitern sowie die Akzeptanz bei unseren Kunden zu steigern.\n' +
+            '\n' +
+            'Er war immer bereit, über das Erwartete hinauszugehen, um die nächsten Schritte in den Projektphasen zu erreichen. Als Teamkollege war er immer zugänglich und hilfsbereit!\n' +
+            '\n' +
+            'Ich kann ihn jedem wärmstens empfehlen, der einen kompetenten Entwickler und empathischen Teamkollegen sucht!'
+        },
+        {
+          rating: 99,
+          name: 'Mahesh S Manjunatha',
+          role: 'Machine Learning Engineer at NIQ/GFK',
+          avatar: 'testimonials/manjunatha.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, mit Vitalii Kasap am Design und Aufbau von KI-Systemen für die Ausreißererkennung in Kundendaten zur Bereitstellung von Marktinsights zu arbeiten.\n' +
+            '\n' +
+            'Er zeigte durchweg exzellente Software-Engineering-Fähigkeiten wie JavaScript/jQuery, Angular, React usw. Er hat starke analytische Fähigkeiten und eine ausgezeichnete Kommunikation.\n' +
+            'Er ist eine wertvolle Bereicherung für jedes Team und ich empfehle ihn für zukünftige Möglichkeiten.'
+        },
+        {
+          rating: 99,
+          name: 'Pricillia Gunawan',
+          role: 'Agile Coach | Digital & Agile Transformation at NIQ/GFK',
+          avatar: 'testimonials/gunawan.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, mit Vitalii zu arbeiten, und war immer beeindruckt von seiner positiven Einstellung, seinem Teamgeist und seiner Lernbereitschaft. Er ist ein freundlicher und kooperativer Frontend-Entwickler, der große Energie in jedes Team einbringt.\n' +
+            'Vitalii zeigt auch starkes Potenzial und eine echte Verpflichtung zur Verbesserung. Er ist eine Freude zu arbeiten, und ich bin zuversichtlich, dass er in der richtigen Umgebung gedeihen wird. Jedes Team würde Glück haben, ihn zu haben! :)'
+        },
+        {
+          rating: 99,
+          name: 'Dmitri Vasilev',
+          role: 'Principal Software Engineer/Tech Lead Data Enrichment at NIQ/GFK',
+          avatar: 'testimonials/vasilev.jpeg',
+          stars: 5,
+          text: 'Ich empfehle Vitalii von ganzem Herzen, einen vielversprechenden Software-Entwickler, mit dem ich über zwei Jahre zusammengearbeitet habe. Vitalii verfügt über gute Kenntnisse von Frontend-Technologien wie Angular und liefert kontinuierlich hochwertige Arbeit ab, was ein starkes Engagement für Exzellenz zeigt. Er bewies seine Anpassungsfähigkeit, indem er erfolgreich zu Projekten in zwei verschiedenen Teams beitrug und neue Herausforderungen mit Leichtigkeit annahm. Was wirklich heraussticht, ist seine bemerkenswerte Bereitschaft und Fähigkeit, schnell neue Technologien und bewährte Praktiken zu erlernen und anzuwenden. Gekoppelt mit seinem authentischen und offenen Kommunikationsstil ist Vitalii ein exzellenter Teamplayer mit enormem Potenzial.\n' +
+            'Ich bin zuversichtlich, dass er in seiner Karriere weiterhin großartige Dinge erreichen wird.'
+        },
+        {
+          rating: 99,
+          name: 'Ibrahim Izirov ',
+          role: 'Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/izirov.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, über zwei Jahre eng mit Vitalii zusammenzuarbeiten, und ich kann mit Sicherheit sagen, dass er einer der zuverlässigsten und kompetentesten Frontend-Entwickler ist, mit denen ich je zusammengearbeitet habe. Seine starke Beherrschung von Angular und modernen Frontend-Praktiken führte kontinuierlich zu sauberem, wartbarem und effizientem Code. Was mich am meisten beeindruckte, war Vitaliis Denkweise – er geht Herausforderungen mit Neugier und Entschlossenheit an, immer bestrebt, seine Fähigkeiten zu erweitern und mit sich entwickelnden Standards Schritt zu halten.\n' +
+            'Ich habe keinen Zweifel daran, dass er in jedem Engineering-Team, das das Glück hat, ihn zu haben, weiterhin herausragend abschneiden wird.'
+        },
+        {
+          rating: 99,
+          name: 'Ivan Sirosh',
+          role: 'Principal Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/sirosh.jpeg',
+          stars: 5,
+          text: 'Ich habe Vitalii in unserem vorherigen Unternehmen betreut. Gemeinsam haben wir mehrere Projekte umgesetzt, bei denen er kontinuierlich starke Frontend-Entwicklungsfähigkeiten zeigte, Aufgaben schnell aufgriff und zuverlässige Lösungen lieferte.\n' +
+            '\n' +
+            'Mit der Zeit zeigte Vitalii das Potenzial, in eine Senior-Rolle hineinzuwachsen, komplexe, hochbelastete Frontend-Anwendungen zu entwerfen und zu entwickeln. Er war ein wichtiger Beitrag zum Projekterfolg und leistete wertvolle Unterstützung für andere Teams bei der Bewältigung komplexer Feature-Anforderungen.\n' +
+            '\n' +
+            'Ich empfehle Vitalii als Frontend-Entwickler, der hochwertige technische Lösungen liefern und einen starken Einfluss auf Ihr Unternehmen haben kann.'
+        },
+        {
+          rating: 99,
+          name: 'Martin Georgiev',
+          role: 'Delivery Lead / Senior Business Analyst at NIQ/GFK',
+          avatar: 'testimonials/georgiev.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, mit Vitalii während einer kritischen Zeit zusammenzuarbeiten, als unser Team dringend starke Frontend-Expertise benötigte. Er kam zu uns, als fast alle anderen gegangen waren, aber in kürzester Zeit baute er unsere gesamte Anwendung mit außergewöhnlicher Geschwindigkeit, Präzision und Effizienz neu auf. Sein Code war sauber und fehlerfrei, und alles funktionierte vom ersten Tag an perfekt. Über seine technischen Fähigkeiten hinaus war die Zusammenarbeit mit ihm unglaublich einfach – er hielt klare Kommunikation aufrecht und lieferte Ergebnisse. Vitalii ist die Art von Entwickler, von der jedes Team träumt: hochprofessionell, zuverlässig und über die Erwartungen hinaus liefernd. Ich empfehle ihn für jede Frontend-Rolle.'
+        },
+      ]
     }
-
   },
   ru: {
     hireMe: 'Нанять',
@@ -482,9 +703,9 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           { name: 'JavaScript', value: 92, icon: 'javascript' },
           { name: 'HTML5', value: 96, icon: 'html5' },
           { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
-          { name: 'StencilJS', value: 80, icon: 'stenciljs' },  // если есть иконка, если нет — убрать
-          { name: 'Redux', value: 85, icon: 'redux' }, // можно оставить только Redux для иконки
-          { name: 'Nx', value: 80, icon: 'nx' }, // если нет иконки — можно generic, например 'tools'
+          { name: 'StencilJS', value: 80, icon: 'stenciljs' },
+          { name: 'Redux', value: 85, icon: 'redux' },
+          { name: 'Nx', value: 80, icon: 'nx' },
           { name: 'Node.js', value: 78, icon: 'nodejs' },
           { name: 'Express.js', value: 75, icon: 'express' },
           { name: 'Jest', value: 82, icon: 'jest' },
@@ -492,9 +713,9 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           { name: 'Git', value: 88, icon: 'git' },
           { name: 'Webpack', value: 77, icon: 'webpack' },
           { name: 'Vite', value: 80, icon: 'vite' },
-          { name: 'Figma', value: 65, icon: 'figma' }, // базовые навыки для работы с UI
-          { name: 'REST API', value: 90, icon: 'api' }, // generic API иконка
-          { name: 'CI/CD', value: 75, icon: 'cicd' },  // generic иконка
+          { name: 'Figma', value: 65, icon: 'figma' },
+          { name: 'REST API', value: 90, icon: 'api' },
+          { name: 'CI/CD', value: 75, icon: 'cicd' },
           { name: 'React Native', value: 30, icon: 'react' },
         ]
       },
@@ -520,8 +741,112 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           'Ответственность'
         ]
       }
+    },
+    testimonials: {
+      badge: 'ОТЗЫВЫ',
+      title: 'Отзывы коллег и руководителей',
+      description: 'Несколько слов от тех, кто работал со мной.',
+      items: [
+        {
+          rating: 99,
+          name: 'Максимилиан Койта',
+          role: 'Driving Innovation and Business Growth as a Product Owner at NIQ/GFK',
+          avatar: 'testimonials/koita.jpeg',
+          stars: 5,
+          text: 'Я имел удовольствие работать с Виталием, выдающимся frontend-разработчиком, чьи технические навыки и внимание к деталям постоянно впечатляли меня. Его способность создавать бесшовные, удобные для пользователя интерфейсы и решать сложные дизайнерские задачи оказала значительное влияние на наши проекты. Помимо его экспертизы, Виталий был отличным командным игроком, всегда готовым поддержать других и поделиться ценными идеями. Я настоятельно рекомендую Виталия любой команде, которая ищет квалифицированного и преданного frontend-разработчика.'
+        },
+        {
+          rating: 99,
+          name: 'ТЕДЖАСВИНИ МАХАРАНА',
+          role: 'Junior Software Test Engineer | QA and Testing at NIQ/GFK',
+          avatar: 'testimonials/teja.jpeg',
+          stars: 5,
+          text: 'Я работал с Виталием в течение нескольких лет, и его вклад как frontend-разработчика постоянно повышал качество наших продуктов. Он привносит вдумчивый, пользовательский подход в каждый проект, сочетая техническую точность с интуитивным пониманием дизайна и юзабилити.\n' +
+            '\n' +
+            'Виталий обладает естественной способностью разбивать сложные UI-проблемы и предоставлять чистые, поддерживаемые решения. Он проактивен, надёжен и всегда вовлечён — будь то разработка новых функций или оптимизация производительности. Его спокойный, ориентированный на решения подход делает его ключевым активом для любой инженерной команды.\n' +
+            '\n' +
+            'Я настоятельно рекомендую Виталия любой организации, которая ищет frontend-разработчика, который привносит как техническую глубину, так и дух сотрудничества.'
+        },
+        {
+          rating: 99,
+          name: 'Филипп Брухнер',
+          role: 'Senior Front-end Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/bruchner.jpeg',
+          stars: 5,
+          text: 'Я имел удовольствие работать параллельно с Виталием в одном frontend-отделе, и он постоянно выделялся как скромный, доступный и высококвалифицированный инженер. Несмотря на то, что мы были в разных командах, легко было заметить его быстрое восприятие и прагматичный подход к решению проблем. Виталий привносит спокойную концентрацию и здравые суждения в свою работу — качества, которые делают сотрудничество с ним эффективным и приятным. Отличное дополнение к любой команде.'
+        },
+        {
+          rating: 99,
+          name: 'Максимилиан Шпонсель',
+          role: 'Data Scientist at NIQ/GFK',
+          avatar: 'testimonials/sponsel.jpeg',
+          stars: 5,
+          text: 'Я имел удовольствие работать с Виталием в течение нескольких лет. Его frontend-способности значительно помогли нам в улучшении и расширении нашего внутреннего продукта и повышении принятия клиентами.\n' +
+            '\n' +
+            'Он всегда был готов выйти за рамки, чтобы достичь следующих шагов в фазах проекта. Как товарищ по команде он всегда был доступен и готов помочь!\n' +
+            '\n' +
+            'Я искренне рекомендую его всем, кто хочет нанять квалифицированного инженера и эмпатичного товарища по команде!'
+        },
+        {
+          rating: 99,
+          name: 'Махеш С Манджунатха',
+          role: 'Machine Learning Engineer at NIQ/GFK',
+          avatar: 'testimonials/manjunatha.jpeg',
+          stars: 5,
+          text: 'Я имел удовольствие работать с Виталием Касапом над проектированием и созданием ИИ-систем для обнаружения выбросов в данных клиентов для предоставления рыночных инсайтов.\n' +
+            '\n' +
+            'Он постоянно демонстрировал отличные навыки программной инженерии, такие как JavaScript/jQuery, Angular, React и т.д. У него сильные аналитические способности и отличная коммуникация.\n' +
+            'Он является ценным активом для любой команды, и я настоятельно рекомендую его для будущих возможностей.'
+        },
+        {
+          rating: 99,
+          name: 'Присиллия Гунаван',
+          role: 'Agile Coach | Digital & Agile Transformation at NIQ/GFK',
+          avatar: 'testimonials/gunawan.jpeg',
+          stars: 5,
+          text: 'Я имел удовольствие работать с Виталием и всегда был впечатлён его позитивным отношением, командным духом и стремлением к обучению. Он дружелюбный и отзывчивый frontend-разработчик, который привносит отличную энергию в любую команду.\n' +
+            'Виталий также показывает сильный потенциал и настоящую приверженность улучшению. С ним радость работать, и я уверен, что он будет процветать в правильной среде. Любая команда была бы счастлива иметь его! :)'
+        },
+        {
+          rating: 99,
+          name: 'Дмитрий Васильев',
+          role: 'Principal Software Engineer/Tech Lead Data Enrichment at NIQ/GFK',
+          avatar: 'testimonials/vasilev.jpeg',
+          stars: 5,
+          text: 'Я от всего сердца рекомендую Виталия, многообещающего программного инженера, с которым я работал более двух лет. Виталий обладает хорошими знаниями frontend-технологий, таких как Angular, и постоянно производит высококачественную работу, демонстрируя сильную приверженность к совершенству. Он доказал свою адаптивность, успешно внося вклад в проекты двух разных команд, легко принимая новые вызовы. Что действительно выделяется, так это его замечательная готовность и способность быстро изучать и принимать новые технологии и лучшие практики. В сочетании с его искренним и открытым стилем общения, Виталий является отличным командным игроком с огромным потенциалом.\n' +
+            'Я уверен, что он будет продолжать достигать великих результатов в своей карьере.'
+        },
+        {
+          rating: 99,
+          name: 'Ибрагим Изиров',
+          role: 'Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/izirov.jpeg',
+          stars: 5,
+          text: 'Я имел удовольствие тесно работать с Виталием более двух лет, и могу с уверенностью сказать, что он один из самых надёжных и способных frontend-разработчиков, с которыми я сотрудничал. Его сильное владение Angular и современными frontend-практиками постоянно превращалось в чистый, поддерживаемый и эффективный код. Что меня больше всего впечатлило — это мышление Виталия: он подходит к вызовам с любопытством и решимостью, всегда стремясь расширить свои навыки и оставаться в соответствии с развивающимися стандартами.\n' +
+            'У меня нет сомнений в том, что он будет продолжать превосходить результаты в любой инженерной команде, которой повезёт его иметь.'
+        },
+        {
+          rating: 99,
+          name: 'Иван Сирош',
+          role: 'Principal Software Engineer at NIQ/GFK',
+          avatar: 'testimonials/sirosh.jpeg',
+          stars: 5,
+          text: 'Я руководил Виталием в нашей предыдущей компании. Вместе мы реализовали несколько проектов, где он постоянно демонстрировал сильные навыки frontend-разработки, быстро схватывая задачи и предоставляя надёжные решения.\n' +
+            '\n' +
+            'Со временем Виталий продемонстрировал потенциал для роста в senior-роль, проектируя и создавая сложные, высоконагруженные frontend-приложения. Он был ключевым участником успеха проекта и оказывал ценную поддержку другим командам в решении сложных требований к функциям.\n' +
+            '\n' +
+            'Я настоятельно рекомендую Виталия как frontend-разработчика, способного предоставлять высококачественные технические решения и оказывать сильное влияние на вашу организацию.'
+        },
+        {
+          rating: 99,
+          name: 'Мартин Георгиев',
+          role: 'Delivery Lead / Senior Business Analyst at NIQ/GFK',
+          avatar: 'testimonials/georgiev.jpeg',
+          stars: 5,
+          text: 'Я имел удовольствие работать с Виталием в критическое время, когда наша команда срочно нуждалась в сильной frontend-экспертизе. Он присоединился к нам, когда почти все остальные ушли, но в кратчайшие сроки он перестроил всё наше приложение с выдающейся скоростью, точностью и эффективностью. Его код был чистым и безупречным, и всё работало идеально с первого дня. Помимо его технических навыков, работать с ним было невероятно легко — он поддерживал чёткую коммуникацию и достигал результатов. Виталий — тот тип разработчика, о котором мечтает каждая команда: высокопрофессиональный, надёжный и превосходящий ожидания. Я настоятельно рекомендую его для любой frontend-роли.'
+        },
+      ]
     }
-
   },
 };
 
