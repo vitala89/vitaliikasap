@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { t } from '../../../../shared/i18n/i18n.signal';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-intro-card',
   standalone: true,
+  imports: [LucideAngularModule],
   template: `
     <div
       class="flex gap-2 mb-4  flex-col h-full bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 min-h-[600px] transition-colors duration-300">
@@ -27,7 +29,7 @@ import { t } from '../../../../shared/i18n/i18n.signal';
         {{ t('intro.description.line3') }}<br>
         {{ t('intro.description.line4') }}
       </p>
-      <!-- Download CV Button -->
+      <!-- Download CV Button and LinkedIn -->
       <div class="flex gap-4 items-center mb-10">
         <a
           href="cv_vitalii_kasap.pdf"
@@ -38,6 +40,22 @@ import { t } from '../../../../shared/i18n/i18n.signal';
             <path d="M12 5v14m7-7l-7 7-7-7"/>
           </svg>
           {{ t('intro.downloadCv') }}
+        </a>
+        <!-- LinkedIn Button -->
+        <a
+          href="https://linkedin.com/in/vitaliikasap"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative flex items-center justify-center w-12 h-12 overflow-hidden text-lg font-semibold shadow text-white transition-all duration-300 bg-blue-600 hover:bg-transparent border-2 border-blue-600 rounded-2xl hover:rounded-none hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-600/20 hover:w-32"
+        >
+          <lucide-icon
+            name="linkedin"
+            class="w-5 h-5 transition-all duration-300 group-hover:mr-2 absolute group-hover:static"
+          />
+          <span
+            class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium whitespace-nowrap">
+    LinkedIn
+  </span>
         </a>
       </div>
     </div>
