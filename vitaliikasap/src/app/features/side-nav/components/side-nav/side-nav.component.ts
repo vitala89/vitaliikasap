@@ -69,7 +69,5 @@ export class SideNavComponent {
     { icon: 'layers', label: 'SKILLS', route: '/skills' },
     { icon: 'message-square-more', label: 'TESTIMONIALS', route: '/testimonials' },
     { icon: 'mail', label: 'CONTACT', route: '/contact' },
-    { icon: 'message-circle', label: 'BLOG', route: '/blog' },
-    { icon: 'book-open', label: 'NOTES', route: '/notes' },
   ];
 }

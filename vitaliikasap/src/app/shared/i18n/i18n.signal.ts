@@ -91,6 +91,23 @@ type Dictionary = {
         stars: number;
         text: string;
       }>;
+    },
+    contact: {
+      badge: string;
+      title: string;
+      description: string;
+      fields: {
+        name: string;
+        email: string;
+        phone: string;
+        subject: string;
+        message: string;
+        send: string;
+      },
+      toast: {
+        success: string;
+        error: string;
+      }
     }
   };
 };
@@ -195,26 +212,26 @@ My professional experience spans a wide range of projects and teams, from large 
       hard: {
         title: 'Hard Skills',
         list: [
-          { name: 'Angular', value: 95, icon: 'angular' },
-          { name: 'React', value: 90, icon: 'react' },
-          { name: 'TypeScript', value: 94, icon: 'typescript' },
-          { name: 'JavaScript', value: 92, icon: 'javascript' },
-          { name: 'HTML5', value: 96, icon: 'html5' },
-          { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
-          { name: 'StencilJS', value: 80, icon: 'stenciljs' },
-          { name: 'Redux', value: 85, icon: 'redux' },
-          { name: 'Nx', value: 80, icon: 'nx' },
-          { name: 'Node.js', value: 78, icon: 'nodejs' },
-          { name: 'Express.js', value: 75, icon: 'express' },
-          { name: 'Jest', value: 82, icon: 'jest' },
-          { name: 'Docker', value: 70, icon: 'docker' },
-          { name: 'Git', value: 88, icon: 'git' },
-          { name: 'Webpack', value: 77, icon: 'webpack' },
-          { name: 'Vite', value: 80, icon: 'vite' },
-          { name: 'Figma', value: 65, icon: 'figma' },
-          { name: 'REST API', value: 90, icon: 'api' },
-          { name: 'CI/CD', value: 75, icon: 'cicd' },
-          { name: 'React Native', value: 30, icon: 'react' },
+          {name: 'Angular', value: 95, icon: 'angular'},
+          {name: 'React', value: 90, icon: 'react'},
+          {name: 'TypeScript', value: 94, icon: 'typescript'},
+          {name: 'JavaScript', value: 92, icon: 'javascript'},
+          {name: 'HTML5', value: 96, icon: 'html5'},
+          {name: 'SCSS/CSS3', value: 90, icon: 'css3'},
+          {name: 'StencilJS', value: 80, icon: 'stenciljs'},
+          {name: 'Redux', value: 85, icon: 'redux'},
+          {name: 'Nx', value: 80, icon: 'nx'},
+          {name: 'Node.js', value: 78, icon: 'nodejs'},
+          {name: 'Express.js', value: 75, icon: 'express'},
+          {name: 'Jest', value: 82, icon: 'jest'},
+          {name: 'Docker', value: 70, icon: 'docker'},
+          {name: 'Git', value: 88, icon: 'git'},
+          {name: 'Webpack', value: 77, icon: 'webpack'},
+          {name: 'Vite', value: 80, icon: 'vite'},
+          {name: 'Figma', value: 65, icon: 'figma'},
+          {name: 'REST API', value: 90, icon: 'api'},
+          {name: 'CI/CD', value: 75, icon: 'cicd'},
+          {name: 'React Native', value: 30, icon: 'react'},
         ]
       },
       soft: {
@@ -345,6 +362,23 @@ My professional experience spans a wide range of projects and teams, from large 
         },
       ]
     },
+    contact: {
+      badge: 'CONTACT US',
+      title: "Let's Work Together!",
+      description: 'Get in touch via the form or email. I’ll respond as soon as possible!',
+      fields: {
+        name: "What's Your Name*",
+        email: 'Your Email*',
+        phone: 'Your Phone Number*',
+        subject: 'Subject*',
+        message: 'Tell us about your project*',
+        send: 'Send Message',
+      },
+      toast: {
+        success: 'Your message has been sent!',
+        error: 'Something went wrong. Please try again later.',
+      }
+    }
   },
   de: {
     hireMe: 'Einstellen',
@@ -437,35 +471,35 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
       language: {
         title: 'Sprachkenntnisse',
         list: [
-          { name: 'Englisch', value: 75 },
-          { name: 'Russisch', value: 100 },
-          { name: 'Ukrainisch', value: 90 },
-          { name: 'Deutsch', value: 20 }
+          {name: 'Englisch', value: 75},
+          {name: 'Russisch', value: 100},
+          {name: 'Ukrainisch', value: 90},
+          {name: 'Deutsch', value: 20}
         ]
       },
       hard: {
         title: 'Hard Skills',
         list: [
-          { name: 'Angular', value: 95, icon: 'angular' },
-          { name: 'React', value: 90, icon: 'react' },
-          { name: 'TypeScript', value: 94, icon: 'typescript' },
-          { name: 'JavaScript', value: 92, icon: 'javascript' },
-          { name: 'HTML5', value: 96, icon: 'html5' },
-          { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
-          { name: 'StencilJS', value: 80, icon: 'stenciljs' },
-          { name: 'Redux', value: 85, icon: 'redux' },
-          { name: 'Nx', value: 80, icon: 'nx' },
-          { name: 'Node.js', value: 78, icon: 'nodejs' },
-          { name: 'Express.js', value: 75, icon: 'express' },
-          { name: 'Jest', value: 82, icon: 'jest' },
-          { name: 'Docker', value: 70, icon: 'docker' },
-          { name: 'Git', value: 88, icon: 'git' },
-          { name: 'Webpack', value: 77, icon: 'webpack' },
-          { name: 'Vite', value: 80, icon: 'vite' },
-          { name: 'Figma', value: 65, icon: 'figma' },
-          { name: 'REST API', value: 90, icon: 'api' },
-          { name: 'CI/CD', value: 75, icon: 'cicd' },
-          { name: 'React Native', value: 30, icon: 'react' },
+          {name: 'Angular', value: 95, icon: 'angular'},
+          {name: 'React', value: 90, icon: 'react'},
+          {name: 'TypeScript', value: 94, icon: 'typescript'},
+          {name: 'JavaScript', value: 92, icon: 'javascript'},
+          {name: 'HTML5', value: 96, icon: 'html5'},
+          {name: 'SCSS/CSS3', value: 90, icon: 'css3'},
+          {name: 'StencilJS', value: 80, icon: 'stenciljs'},
+          {name: 'Redux', value: 85, icon: 'redux'},
+          {name: 'Nx', value: 80, icon: 'nx'},
+          {name: 'Node.js', value: 78, icon: 'nodejs'},
+          {name: 'Express.js', value: 75, icon: 'express'},
+          {name: 'Jest', value: 82, icon: 'jest'},
+          {name: 'Docker', value: 70, icon: 'docker'},
+          {name: 'Git', value: 88, icon: 'git'},
+          {name: 'Webpack', value: 77, icon: 'webpack'},
+          {name: 'Vite', value: 80, icon: 'vite'},
+          {name: 'Figma', value: 65, icon: 'figma'},
+          {name: 'REST API', value: 90, icon: 'api'},
+          {name: 'CI/CD', value: 75, icon: 'cicd'},
+          {name: 'React Native', value: 30, icon: 'react'},
         ]
       },
       soft: {
@@ -595,6 +629,23 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           text: 'Ich hatte das Vergnügen, mit Vitalii während einer kritischen Zeit zusammenzuarbeiten, als unser Team dringend starke Frontend-Expertise benötigte. Er kam zu uns, als fast alle anderen gegangen waren, aber in kürzester Zeit baute er unsere gesamte Anwendung mit außergewöhnlicher Geschwindigkeit, Präzision und Effizienz neu auf. Sein Code war sauber und fehlerfrei, und alles funktionierte vom ersten Tag an perfekt. Über seine technischen Fähigkeiten hinaus war die Zusammenarbeit mit ihm unglaublich einfach – er hielt klare Kommunikation aufrecht und lieferte Ergebnisse. Vitalii ist die Art von Entwickler, von der jedes Team träumt: hochprofessionell, zuverlässig und über die Erwartungen hinaus liefernd. Ich empfehle ihn für jede Frontend-Rolle.'
         },
       ]
+    },
+    contact: {
+      badge: 'CONTACT US',
+      title: "Let's Work Together!",
+      description: 'Get in touch via the form or email. I’ll respond as soon as possible!',
+      fields: {
+        name: "What's Your Name*",
+        email: 'Your Email*',
+        phone: 'Your Phone Number*',
+        subject: 'Subject*',
+        message: 'Tell us about your project*',
+        send: 'Send Message',
+      },
+      toast: {
+        success: 'Your message has been sent!',
+        error: 'Something went wrong. Please try again later.',
+      }
     }
   },
   ru: {
@@ -688,35 +739,35 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
       language: {
         title: 'Языковые навыки',
         list: [
-          { name: 'Английский', value: 75 },
-          { name: 'Русский', value: 100 },
-          { name: 'Украинский', value: 90 },
-          { name: 'Немецкий', value: 20 }
+          {name: 'Английский', value: 75},
+          {name: 'Русский', value: 100},
+          {name: 'Украинский', value: 90},
+          {name: 'Немецкий', value: 20}
         ]
       },
       hard: {
         title: 'Hard Skills',
         list: [
-          { name: 'Angular', value: 95, icon: 'angular' },
-          { name: 'React', value: 90, icon: 'react' },
-          { name: 'TypeScript', value: 94, icon: 'typescript' },
-          { name: 'JavaScript', value: 92, icon: 'javascript' },
-          { name: 'HTML5', value: 96, icon: 'html5' },
-          { name: 'SCSS/CSS3', value: 90, icon: 'css3' },
-          { name: 'StencilJS', value: 80, icon: 'stenciljs' },
-          { name: 'Redux', value: 85, icon: 'redux' },
-          { name: 'Nx', value: 80, icon: 'nx' },
-          { name: 'Node.js', value: 78, icon: 'nodejs' },
-          { name: 'Express.js', value: 75, icon: 'express' },
-          { name: 'Jest', value: 82, icon: 'jest' },
-          { name: 'Docker', value: 70, icon: 'docker' },
-          { name: 'Git', value: 88, icon: 'git' },
-          { name: 'Webpack', value: 77, icon: 'webpack' },
-          { name: 'Vite', value: 80, icon: 'vite' },
-          { name: 'Figma', value: 65, icon: 'figma' },
-          { name: 'REST API', value: 90, icon: 'api' },
-          { name: 'CI/CD', value: 75, icon: 'cicd' },
-          { name: 'React Native', value: 30, icon: 'react' },
+          {name: 'Angular', value: 95, icon: 'angular'},
+          {name: 'React', value: 90, icon: 'react'},
+          {name: 'TypeScript', value: 94, icon: 'typescript'},
+          {name: 'JavaScript', value: 92, icon: 'javascript'},
+          {name: 'HTML5', value: 96, icon: 'html5'},
+          {name: 'SCSS/CSS3', value: 90, icon: 'css3'},
+          {name: 'StencilJS', value: 80, icon: 'stenciljs'},
+          {name: 'Redux', value: 85, icon: 'redux'},
+          {name: 'Nx', value: 80, icon: 'nx'},
+          {name: 'Node.js', value: 78, icon: 'nodejs'},
+          {name: 'Express.js', value: 75, icon: 'express'},
+          {name: 'Jest', value: 82, icon: 'jest'},
+          {name: 'Docker', value: 70, icon: 'docker'},
+          {name: 'Git', value: 88, icon: 'git'},
+          {name: 'Webpack', value: 77, icon: 'webpack'},
+          {name: 'Vite', value: 80, icon: 'vite'},
+          {name: 'Figma', value: 65, icon: 'figma'},
+          {name: 'REST API', value: 90, icon: 'api'},
+          {name: 'CI/CD', value: 75, icon: 'cicd'},
+          {name: 'React Native', value: 30, icon: 'react'},
         ]
       },
       soft: {
@@ -846,6 +897,23 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           text: 'Я имел удовольствие работать с Виталием в критическое время, когда наша команда срочно нуждалась в сильной frontend-экспертизе. Он присоединился к нам, когда почти все остальные ушли, но в кратчайшие сроки он перестроил всё наше приложение с выдающейся скоростью, точностью и эффективностью. Его код был чистым и безупречным, и всё работало идеально с первого дня. Помимо его технических навыков, работать с ним было невероятно легко — он поддерживал чёткую коммуникацию и достигал результатов. Виталий — тот тип разработчика, о котором мечтает каждая команда: высокопрофессиональный, надёжный и превосходящий ожидания. Я настоятельно рекомендую его для любой frontend-роли.'
         },
       ]
+    },
+    contact: {
+      badge: 'CONTACT US',
+      title: "Let's Work Together!",
+      description: 'Get in touch via the form or email. I’ll respond as soon as possible!',
+      fields: {
+        name: "What's Your Name*",
+        email: 'Your Email*',
+        phone: 'Your Phone Number*',
+        subject: 'Subject*',
+        message: 'Tell us about your project*',
+        send: 'Send Message',
+      },
+      toast: {
+        success: 'Your message has been sent!',
+        error: 'Something went wrong. Please try again later.',
+      }
     }
   },
 };

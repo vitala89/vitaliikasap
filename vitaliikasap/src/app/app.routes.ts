@@ -23,7 +23,7 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent),
+    loadComponent: () => import('./pages/contact-page/contact-page.component').then(m => m.ContactPageComponent),
   },
   {
     path: '**',
