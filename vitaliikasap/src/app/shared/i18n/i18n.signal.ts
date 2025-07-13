@@ -905,7 +905,7 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
       fields: {
         name: "What's Your Name*",
         email: 'Your Email*',
-        phone: 'Your Phone Number*',
+        phone: 'Your Phone Number',
         subject: 'Subject*',
         message: 'Tell us about your project*',
         send: 'Send Message',
