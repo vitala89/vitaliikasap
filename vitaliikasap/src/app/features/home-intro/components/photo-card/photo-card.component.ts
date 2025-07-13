@@ -1,11 +1,12 @@
-import { Component, computed, signal, effect } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import {t} from '../../../../shared/i18n/i18n.signal';
+import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
 
 @Component({
   selector: 'app-photo-card',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, LucideIconsModule],
   template: `
     <div
       class="relative flex flex-col items-center rounded-[2.5rem] overflow-hidden shadow-2xl h-full w-full aspect-[3/4] min-h-[800px] [&::-webkit-scrollbar-thumb]:bg-indigo-300">
@@ -44,10 +45,11 @@ import {t} from '../../../../shared/i18n/i18n.signal';
           </div>
         </div>
         <button
-          class="cursor-hover mt-2 w-full bg-indigo-500 text-white font-semibold py-3 rounded-2xl border-2 border-transparent transition-all duration-200 text-lg font-main hover:bg-transparent hover:border-indigo-500 hover:rounded-none"
+          class="cursor-hover mt-2 w-full bg-indigo-500 text-white font-semibold py-3 rounded-2xl border-2 border-transparent transition-all duration-200 text-lg font-main hover:bg-transparent hover:border-indigo-500 hover:rounded-none flex items-center justify-center gap-2"
           type="button"
           (click)="onHire()"
         >
+          <lucide-icon name="mail" size="20"></lucide-icon>
           {{ t('hireMe') }}
         </button>
       </div>
