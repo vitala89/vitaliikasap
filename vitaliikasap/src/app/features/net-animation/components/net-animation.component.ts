@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
-import { themeSignal } from '../../../shared/services/theme-signal.service';
+import { themeSignal } from '../../../shared/services/theme.service';
 
 interface ICircle {
   pos: { x: number; y: number };

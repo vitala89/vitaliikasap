@@ -52,7 +52,7 @@ type MenuItem = {
         <!-- Close button -->
         <div class="flex justify-end mb-8">
           <button
-            class="p-2 rounded-xl hover:bg-indigo-50 dark:hover:bg-neutral-800 transition-all duration-150"
+            class="p-2 rounded-xl hover:bg-indigo-50 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-all duration-150"
             (click)="closeMenu()"
           >
             <lucide-icon
@@ -90,7 +90,7 @@ type MenuItem = {
                   size="28"
                 />
                 <span
-                  class="text-lg font-medium select-none"
+                  class="text-lg font-medium select-none group-hover:text-indigo-400 transition dark:text-neutral-300"
                   [class]="{
                     'text-indigo-500': rla.isActive,
                     'text-neutral-800 dark:text-neutral-300 group-hover:text-indigo-400 transition': !rla.isActive

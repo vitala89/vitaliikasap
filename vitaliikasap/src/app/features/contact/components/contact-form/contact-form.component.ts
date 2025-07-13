@@ -33,7 +33,7 @@ import { environment } from '../../../../../environments/environment';
           <input
             formControlName="name"
             [placeholder]="t('contact.fields.name')"
-            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
+            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
             autocomplete="off"
           />
         </div>
@@ -41,7 +41,7 @@ import { environment } from '../../../../../environments/environment';
           <input
             formControlName="email"
             [placeholder]="t('contact.fields.email')"
-            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
+            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
             autocomplete="off"
           />
         </div>
@@ -49,7 +49,7 @@ import { environment } from '../../../../../environments/environment';
           <input
             formControlName="phone"
             [placeholder]="t('contact.fields.phone')"
-            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
+            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
             autocomplete="off"
           />
         </div>
@@ -57,7 +57,7 @@ import { environment } from '../../../../../environments/environment';
           <input
             formControlName="subject"
             [placeholder]="t('contact.fields.subject')"
-            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
+            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
             autocomplete="off"
           />
         </div>
@@ -67,7 +67,7 @@ import { environment } from '../../../../../environments/environment';
           formControlName="message"
           rows="3"
           [placeholder]="t('contact.fields.message')"
-          class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main resize-none"
+          class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main resize-none"
         ></textarea>
       </div>
 
