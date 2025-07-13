@@ -13,15 +13,15 @@ import { environment } from '../../../../../environments/environment';
     <form
       [formGroup]="form"
       (ngSubmit)="submit()"
-      class="flex flex-col gap-8 bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 max-w-3xl mx-auto"
+      class="flex flex-col bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 h-full max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto"
       autocomplete="off"
     >
       <div class="mb-2 flex items-center gap-2">
-        <span class="px-4 py-1 rounded-xl bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-200 font-semibold text-sm tracking-wide">
+        <span class="inline-block mb-4 px-3 py-1 rounded-xl bg-neutral-200/80 dark:bg-neutral-700/80 text-neutral-600 dark:text-neutral-300 text-md font-semibold tracking-widest w-fit hover cursor-hover">
           {{ t('contact.badge') }}
         </span>
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold font-main mb-3 text-neutral-900 dark:text-white leading-tight">
+      <h1 class="text-4xl md:text-4xl font-bold font-main mb-3 text-neutral-900 dark:text-white leading-tight">
         {{ t('contact.title') }}
       </h1>
       <p class="mb-8 text-lg text-neutral-600 dark:text-neutral-300">

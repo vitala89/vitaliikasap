@@ -157,12 +157,12 @@ const dictionary: Dictionary = {
           },
           {
             title: 'Master’s Degree, Project Manager',
-            subtitle: 'Odessa National Maritime University / 09.2012 – 07.2013',
+            subtitle: 'Odesa National Maritime University / 09.2012 – 07.2013',
             description: 'Comprehensive study of project management methodologies, leadership, and business processes in engineering environments. Graduated with a strong emphasis on effective team and project coordination.',
           },
           {
             title: 'Master’s Degree, Mechanical Engineer',
-            subtitle: 'Odessa National Maritime University / 09.2006 – 12.2011',
+            subtitle: 'Odesa National Maritime University / 09.2006 – 12.2011',
             description: 'Advanced studies in mechanical engineering, technical systems design, and maintenance. Built solid analytical and problem-solving skills essential for tackling complex engineering tasks.',
           },
         ],
@@ -363,15 +363,15 @@ My professional experience spans a wide range of projects and teams, from large 
       ]
     },
     contact: {
-      badge: 'CONTACT US',
+      badge: 'CONTACT ME',
       title: "Let's Work Together!",
-      description: 'Get in touch via the form or email. I’ll respond as soon as possible!',
+      description: 'Get in touch via the form. I’ll respond as soon as possible!',
       fields: {
         name: "What's Your Name*",
         email: 'Your Email*',
-        phone: 'Your Phone Number*',
+        phone: 'Your Phone Number',
         subject: 'Subject*',
-        message: 'Tell us about your project*',
+        message: 'Tell me about your project*',
         send: 'Send Message',
       },
       toast: {
@@ -424,12 +424,12 @@ My professional experience spans a wide range of projects and teams, from large 
           },
           {
             title: 'Masterabschluss, Projektmanagement',
-            subtitle: 'Odessa Nationale Maritime Universität / 09.2012 – 07.2013',
+            subtitle: 'Odesa Nationale Maritime Universität / 09.2012 – 07.2013',
             description: 'Umfassendes Studium der Projektmanagement-Methoden, Führung und Geschäftsprozesse in technischen Umgebungen. Abschluss mit Schwerpunkt auf effektive Team- und Projektkoordination.',
           },
           {
             title: 'Masterabschluss, Maschinenbauingenieur',
-            subtitle: 'Odessa Nationale Maritime Universität / 09.2006 – 12.2011',
+            subtitle: 'Odesa Nationale Maritime Universität / 09.2006 – 12.2011',
             description: 'Vertiefte Studien in Maschinenbau, Konstruktion technischer Systeme und Wartung. Ausgeprägte analytische und problemlösende Fähigkeiten zur Bewältigung komplexer technischer Aufgaben entwickelt.',
           },
         ],
@@ -447,7 +447,7 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           },
           {
             title: 'Frontend-Entwickler (Freelance / Projektbasiert)',
-            subtitle: 'Odessa, Ukraine / 10.2021 – 12.2022',
+            subtitle: 'Odssa, Ukraine / 10.2021 – 12.2022',
             description: 'Entwicklung responsiver SPAs und Marketing-Websites auf Basis von React mit schnellen Ladezeiten und hoher Nutzerbindung. Umsetzung von SEO-Best Practices und Einhaltung von WCAG 2.1. Eigenverantwortliche Projektumsetzung von der Planung bis zum Deployment.',
           },
           {
@@ -457,7 +457,7 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           },
           {
             title: 'Webentwickler (Freelance)',
-            subtitle: 'Odessa, Ukraine / 09.2020 – 04.2021',
+            subtitle: 'Odesa, Ukraine / 09.2020 – 04.2021',
             description: 'Entwicklung von mobilen Websites mit React und Angular, Wiederverwendung von SCSS-Komponenten und komplette Projektabwicklung. Stärkung der Kundenkommunikation, technische Beratung und schnelles Prototyping.',
           },
         ]
@@ -631,20 +631,20 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
       ]
     },
     contact: {
-      badge: 'CONTACT US',
-      title: "Let's Work Together!",
-      description: 'Get in touch via the form or email. I’ll respond as soon as possible!',
+      badge: 'KONTAKT',
+      title: "Lass uns zusammenarbeiten!",
+      description: 'Nehmen Sie über das Formular Kontakt auf. Ich antworte so schnell wie möglich!',
       fields: {
-        name: "What's Your Name*",
-        email: 'Your Email*',
-        phone: 'Your Phone Number*',
-        subject: 'Subject*',
-        message: 'Tell us about your project*',
-        send: 'Send Message',
+        name: "Ihr Name*",
+        email: 'Ihre E-Mail-Adresse*',
+        phone: 'Ihre Telefonnummer',
+        subject: 'Betreff*',
+        message: 'Beschreiben Sie Ihr Projekt*',
+        send: 'Nachricht senden',
       },
       toast: {
-        success: 'Your message has been sent!',
-        error: 'Something went wrong. Please try again later.',
+        success: 'Ihre Nachricht wurde gesendet!',
+        error: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es später noch einmal.',
       }
     }
   },
@@ -693,12 +693,12 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           },
           {
             title: 'Master’s Degree, Project Manager',
-            subtitle: 'Odessa National Maritime University / 09.2012 – 07.2013',
+            subtitle: 'Odesa National Maritime University / 09.2012 – 07.2013',
             description: 'Comprehensive study of project management methodologies, leadership, and business processes in engineering environments. Graduated with a strong emphasis on effective team and project coordination.',
           },
           {
             title: 'Master’s Degree, Mechanical Engineer',
-            subtitle: 'Odessa National Maritime University / 09.2006 – 12.2011',
+            subtitle: 'Odesa National Maritime University / 09.2006 – 12.2011',
             description: 'Advanced studies in mechanical engineering, technical systems design, and maintenance. Built solid analytical and problem-solving skills essential for tackling complex engineering tasks.',
           },
         ],
@@ -899,20 +899,20 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
       ]
     },
     contact: {
-      badge: 'CONTACT US',
-      title: "Let's Work Together!",
-      description: 'Get in touch via the form or email. I’ll respond as soon as possible!',
+      badge: 'СВЯЗАТЬСЯ СО МНОЙ',
+      title: 'Давайте работать вместе!',
+      description: 'Свяжитесь со мной через форму. Я отвечу вам как можно скорее!',
       fields: {
-        name: "What's Your Name*",
-        email: 'Your Email*',
-        phone: 'Your Phone Number',
-        subject: 'Subject*',
-        message: 'Tell us about your project*',
-        send: 'Send Message',
+        name: "Ваше имя*",
+        email: 'Ваш email*',
+        phone: 'Ваш номер телефона',
+        subject: 'Тема сообщения*',
+        message: 'Расскажите о вашем проекте*',
+        send: 'Отправить сообщение',
       },
       toast: {
-        success: 'Your message has been sent!',
-        error: 'Something went wrong. Please try again later.',
+        success: 'Ваше сообщение отправлено!',
+        error: 'Что-то пошло не так. Пожалуйста, попробуйте позже.',
       }
     }
   },
