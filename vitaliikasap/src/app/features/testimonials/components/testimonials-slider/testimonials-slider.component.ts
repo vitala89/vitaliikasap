@@ -14,6 +14,7 @@ import { Swiper, SwiperOptions } from 'swiper/types';
 import { register } from 'swiper/element/bundle';
 import { t } from '../../../../shared/i18n/i18n.signal';
 import { TestimonialCardComponent } from '../testimonial-card/testimonial-card.component';
+import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';
 
 // Register Swiper custom elements
 register();
@@ -31,66 +32,70 @@ interface Testimonial {
   selector: 'app-testimonials-slider',
   standalone: true,
   imports: [TestimonialCardComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  animations: [staggeredContentAnimation],
   template: `
-    <div class="flex flex-col bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto">
-      <div class="mb-3 flex items-center gap-2">
+    <div
+      class="flex flex-col bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto">
+      <div [@staggeredContent]>
+        <div class="stagger-item mb-3 flex items-center gap-2">
         <span
           class="inline-block mb-4 px-3 py-1 rounded-xl bg-neutral-200/80 dark:bg-neutral-700/80 text-neutral-600 dark:text-neutral-300 text-md font-semibold tracking-widest w-fit hover cursor-hover">
           {{ t('testimonials.badge') }}
         </span>
-      </div>
-      <h1 class="text-4xl md:text-4xl font-bold font-main mb-3 text-neutral-900 dark:text-white leading-tight">
-        {{ t('testimonials.title') }}
-      </h1>
-      <p class="mb-8 text-lg text-neutral-600 dark:text-neutral-300">
-        {{ t('testimonials.description') }}
-      </p>
+        </div>
+        <h1 class="stagger-item text-4xl md:text-4xl font-bold font-main mb-3 text-neutral-900 dark:text-white leading-tight">
+          {{ t('testimonials.title') }}
+        </h1>
+        <p class="stagger-item mb-8 text-lg text-neutral-600 dark:text-neutral-300">
+          {{ t('testimonials.description') }}
+        </p>
 
-      <!-- Swiper Container -->
-      <div class="relative">
-        <swiper-container
-          #swiperRef
-          init="false"
-          class="testimonials-swiper"
-        >
-          @for (testimonial of testimonials(); track testimonial.name) {
-            <swiper-slide>
-              <app-testimonial-card
-                [rating]="testimonial.rating"
-                [avatar]="testimonial.avatar"
-                [name]="testimonial.name"
-                [role]="testimonial.role"
-                [stars]="testimonial.stars"
-                [text]="testimonial.text"
-              />
-            </swiper-slide>
-          }
-        </swiper-container>
-
-        <!-- Custom Navigation -->
-        <div class="flex items-center gap-2 mt-4 justify-center">
-          <button
-            class="swiper-button-prev-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
-            [disabled]="testimonials().length <= 1"
+        <!-- Swiper Container -->
+        <div class="relative">
+          <swiper-container
+            #swiperRef
+            init="false"
+            class="testimonials-swiper"
           >
-            <svg class="w-5 h-5 dark:text-white" viewBox="0 0 24 24">
-              <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-          </button>
+            @for (testimonial of testimonials(); track testimonial.name) {
+              <swiper-slide>
+                <app-testimonial-card
+                  [rating]="testimonial.rating"
+                  [avatar]="testimonial.avatar"
+                  [name]="testimonial.name"
+                  [role]="testimonial.role"
+                  [stars]="testimonial.stars"
+                  [text]="testimonial.text"
+                />
+              </swiper-slide>
+            }
+          </swiper-container>
 
-          <span class="mx-2 font-medium text-neutral-600 dark:text-neutral-300">
+          <!-- Custom Navigation -->
+          <div class="stagger-item flex items-center gap-2 mt-4 justify-center">
+            <button
+              class="swiper-button-prev-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
+              [disabled]="testimonials().length <= 1"
+            >
+              <svg class="w-5 h-5 dark:text-white" viewBox="0 0 24 24">
+                <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </button>
+
+            <span class="mx-2 font-medium text-neutral-600 dark:text-neutral-300">
             {{ currentSlideIndex() + 1 }} / {{ testimonials().length }}
           </span>
 
-          <button
-            class="swiper-button-next-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
-            [disabled]="testimonials().length <= 1"
-          >
-            <svg class="w-5 h-5 dark:text-white" viewBox="0 0 24 24">
-              <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-          </button>
+            <button
+              class="swiper-button-next-custom w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
+              [disabled]="testimonials().length <= 1"
+            >
+              <svg class="w-5 h-5 dark:text-white" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -82,7 +82,6 @@ export class PhotoCardComponent {
   showFrontend = this.state.asReadonly();
 
   constructor() {
-    // Меняем state каждые 1.6 секунды (можно регулировать)
     setInterval(() => {
       this.state.set(!this.state());
     }, 2600);

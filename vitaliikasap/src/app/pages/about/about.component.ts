@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {PhotoCardComponent} from '../../features/home-intro/components/photo-card/photo-card.component';
 import {AboutInfoCardComponent} from '../../features/about-info-card/about-info-card.component';
-import {IntroCardComponent} from '../../features/home-intro/components/intro-card/intro-card.component';
 
 @Component({
   selector: 'app-about',

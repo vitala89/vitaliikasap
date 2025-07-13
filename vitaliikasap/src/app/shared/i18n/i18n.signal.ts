@@ -116,7 +116,7 @@ const dictionary: Dictionary = {
   en: {
     hireMe: 'Hire Me',
     frontend: 'Frontend',
-    developer: 'Developer',
+    developer: 'Engineer',
     name: 'Vitalii Kasap',
     intro: {
       badge: 'INTRO',
@@ -384,7 +384,7 @@ My professional experience spans a wide range of projects and teams, from large 
   de: {
     hireMe: 'Einstellen',
     frontend: 'Frontend',
-    developer: 'Entwickler',
+    developer: 'Ingenieur',
     name: 'Vitalii Kasap',
     intro: {
       badge: 'EINFÜHRUNG',
@@ -652,7 +652,7 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
   ru: {
     hireMe: 'Нанять',
     frontend: 'Фронтенд',
-    developer: 'Разработчик',
+    developer: 'Инженер',
     name: 'Виталий Касап',
     intro: {
       badge: 'ПРИВЕТСТВИЕ',

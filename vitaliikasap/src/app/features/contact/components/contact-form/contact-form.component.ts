@@ -4,11 +4,13 @@ import { t } from '../../../../shared/i18n/i18n.signal';
 import { ToastrService } from 'ngx-toastr';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../../../../environments/environment';
+import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
   imports: [ReactiveFormsModule],
+  animations: [staggeredContentAnimation],
   template: `
     <form
       [formGroup]="form"
@@ -16,82 +18,84 @@ import { environment } from '../../../../../environments/environment';
       class="flex flex-col bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 h-full max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto"
       autocomplete="off"
     >
-      <div class="mb-2 flex items-center gap-2">
-        <span class="inline-block mb-4 px-3 py-1 rounded-xl bg-neutral-200/80 dark:bg-neutral-700/80 text-neutral-600 dark:text-neutral-300 text-md font-semibold tracking-widest w-fit hover cursor-hover">
+      <div [@staggeredContent]>
+        <div class="stagger-item mb-2 flex items-center gap-2">
+        <span
+          class="inline-block mb-4 px-3 py-1 rounded-xl bg-neutral-200/80 dark:bg-neutral-700/80 text-neutral-600 dark:text-neutral-300 text-md font-semibold tracking-widest w-fit hover cursor-hover">
           {{ t('contact.badge') }}
         </span>
-      </div>
-      <h1 class="text-4xl md:text-4xl font-bold font-main mb-3 text-neutral-900 dark:text-white leading-tight">
-        {{ t('contact.title') }}
-      </h1>
-      <p class="mb-8 text-lg text-neutral-600 dark:text-neutral-300">
-        {{ t('contact.description') }}
-      </p>
+        </div>
+        <h1 class="stagger-item text-4xl md:text-4xl font-bold font-main mb-3 text-neutral-900 dark:text-white leading-tight">
+          {{ t('contact.title') }}
+        </h1>
+        <p class="stagger-item mb-8 text-lg text-neutral-600 dark:text-neutral-300">
+          {{ t('contact.description') }}
+        </p>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <input
-            formControlName="name"
-            [placeholder]="t('contact.fields.name')"
-            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
-            autocomplete="off"
-          />
+        <div class="stagger-item grid md:grid-cols-2 gap-6">
+          <div>
+            <input
+              formControlName="name"
+              [placeholder]="t('contact.fields.name')"
+              class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
+              autocomplete="off"
+            />
+          </div>
+          <div>
+            <input
+              formControlName="email"
+              [placeholder]="t('contact.fields.email')"
+              class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
+              autocomplete="off"
+            />
+          </div>
+          <div>
+            <input
+              formControlName="phone"
+              [placeholder]="t('contact.fields.phone')"
+              class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
+              autocomplete="off"
+            />
+          </div>
+          <div>
+            <input
+              formControlName="subject"
+              [placeholder]="t('contact.fields.subject')"
+              class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
+              autocomplete="off"
+            />
+          </div>
         </div>
         <div>
-          <input
-            formControlName="email"
-            [placeholder]="t('contact.fields.email')"
-            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
-            autocomplete="off"
-          />
-        </div>
-        <div>
-          <input
-            formControlName="phone"
-            [placeholder]="t('contact.fields.phone')"
-            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
-            autocomplete="off"
-          />
-        </div>
-        <div>
-          <input
-            formControlName="subject"
-            [placeholder]="t('contact.fields.subject')"
-            class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main"
-            autocomplete="off"
-          />
-        </div>
-      </div>
-      <div>
         <textarea
           formControlName="message"
           rows="3"
           [placeholder]="t('contact.fields.message')"
-          class="w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main resize-none"
+          class="stagger-item w-full px-0 py-2 bg-transparent border-b border-neutral-200 dark:text-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-indigo-500 transition placeholder:font-normal placeholder:text-neutral-400 text-lg font-main resize-none"
         ></textarea>
-      </div>
+        </div>
 
-      <button
-        type="submit"
-        [disabled]="loading() || form.invalid"
-        class="w-56 py-3 mt-6 rounded-2xl bg-indigo-400 border-transparent hover:bg-transparent hover:border-indigo-500 hover:rounded-none hover:border-2 hover:border-indigo-400 hover:text-indigo-500 hover:rounded-lg text-lg font-semibold shadow transition-all duration-200 flex items-center justify-center gap-2 text-neutral-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-neutral-900 disabled:hover:border-1 cursor-hover overflow-hidden relative"
-      >
-        <svg
-          class="w-6 h-6 transition-transform duration-300"
-          [class.animate-spin]="loading()"
-          [class.animate-plane-fly]="success()"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
+        <button
+          type="submit"
+          [disabled]="loading() || form.invalid"
+          class="stagger-item w-56 py-3 mt-6 rounded-2xl bg-indigo-400 border-transparent hover:bg-transparent hover:border-indigo-500 hover:rounded-none hover:border-2 hover:border-indigo-400 hover:text-indigo-500 hover:rounded-lg text-lg font-semibold shadow transition-all duration-200 flex items-center justify-center gap-2 text-neutral-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-neutral-900 disabled:hover:border-1 cursor-hover overflow-hidden relative"
         >
-          <path d="M22 2L11 13"></path>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-        </svg>
-        <span
-          class="transition-opacity duration-300"
-          [class.animate-pulse-text]="loading()"
-        >
+          <svg
+            class="w-6 h-6 transition-transform duration-300"
+            [class.animate-spin]="loading()"
+            [class.animate-plane-fly]="success()"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M22 2L11 13"></path>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          <span
+            class="transition-opacity duration-300"
+            [class.animate-pulse-text]="loading()"
+          >
           @if (loading()) {
             Wait...
           } @else if (success()) {
@@ -100,7 +104,8 @@ import { environment } from '../../../../../environments/environment';
             {{ t('contact.fields.send') }}
           }
         </span>
-      </button>
+        </button>
+      </div>
     </form>
   `,
   styles: [`
