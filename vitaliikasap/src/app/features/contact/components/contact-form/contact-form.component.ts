@@ -74,20 +74,83 @@ import { environment } from '../../../../../environments/environment';
       <button
         type="submit"
         [disabled]="loading() || form.invalid"
-        class="w-56 py-3 mt-6 rounded-2xl bg-indigo-400 border-transparent hover:bg-transparent hover:border-indigo-500 hover:rounded-none hover:border-2 hover:border-indigo-400 hover:text-indigo-500 hover:rounded-lg text-lg font-semibold shadow transition-all duration-200 flex items-center justify-center gap-2 text-neutral-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-neutral-900 disabled:hover:border-1 cursor-hover"
+        class="w-56 py-3 mt-6 rounded-2xl bg-indigo-400 border-transparent hover:bg-transparent hover:border-indigo-500 hover:rounded-none hover:border-2 hover:border-indigo-400 hover:text-indigo-500 hover:rounded-lg text-lg font-semibold shadow transition-all duration-200 flex items-center justify-center gap-2 text-neutral-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-neutral-900 disabled:hover:border-1 cursor-hover overflow-hidden relative"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg
+          class="w-6 h-6 transition-transform duration-300"
+          [class.animate-spin]="loading()"
+          [class.animate-plane-fly]="success()"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
           <path d="M22 2L11 13"></path>
           <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
         </svg>
-        {{ t('contact.fields.send') }}
+        <span
+          class="transition-opacity duration-300"
+          [class.animate-pulse-text]="loading()"
+        >
+          @if (loading()) {
+            Wait...
+          } @else if (success()) {
+            Sent!
+          } @else {
+            {{ t('contact.fields.send') }}
+          }
+        </span>
       </button>
     </form>
-  `
+  `,
+  styles: [`
+    @keyframes plane-fly {
+      0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      25% {
+        transform: translateX(200px) translateY(-20px) rotate(15deg);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateX(400px) translateY(-10px) rotate(0deg);
+        opacity: 0.6;
+      }
+      75% {
+        transform: translateX(200px) translateY(5px) rotate(-5deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse-text {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.7;
+        transform: scale(0.95);
+      }
+    }
+
+    .animate-plane-fly {
+      animation: plane-fly 2s ease-in-out forwards;
+    }
+
+    .animate-pulse-text {
+      animation: pulse-text 1.5s ease-in-out infinite;
+    }
+  `]
 })
 export class ContactFormComponent implements OnInit {
   t = t;
   loading = signal(false);
+  success = signal(false);
 
   private fb = inject(FormBuilder);
   private toastr = inject(ToastrService);
@@ -112,6 +175,7 @@ export class ContactFormComponent implements OnInit {
     }
 
     this.loading.set(true);
+    this.success.set(false);
 
     try {
       // Prepare template parameters
@@ -124,17 +188,21 @@ export class ContactFormComponent implements OnInit {
         to_name: 'Vitalii Kasap', // Replace with your actual name
         reply_to: this.form.value.email || ''
       };
-
-      console.log('Sending email with params:', templateParams);
-
       // Send email using EmailJS
-      const response = await emailjs.send(
+      await emailjs.send(
         environment.emailjs.serviceId,
         environment.emailjs.templateId,
         templateParams
       );
 
-      console.log('Email sent successfully:', response);
+      // Trigger success animation
+      this.success.set(true);
+
+      // Reset success state after animation completes
+      setTimeout(() => {
+        this.success.set(false);
+      }, 2000);
+
       this.toastr.success(this.t('contact.toast.success'));
       this.form.reset();
     } catch (error) {
@@ -145,4 +213,3 @@ export class ContactFormComponent implements OnInit {
     }
   }
 }
-
