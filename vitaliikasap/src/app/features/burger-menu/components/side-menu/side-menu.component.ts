@@ -45,26 +45,26 @@ type MenuItem = {
 
       <!-- Side menu with slide animation -->
       <aside
-        class="relative z-10 bg-white/90 dark:bg-neutral-900/80 h-full w-80 shadow-2xl p-6 flex flex-col"
+        class="relative z-10 bg-white/90 dark:bg-neutral-900/80 h-full w-80 shadow-2xl  flex flex-col"
         @sideMenu
         (click)="$event.stopPropagation()"
       >
         <!-- Close button -->
         <div class="flex justify-end mb-8">
           <button
-            class="p-2 rounded-xl hover:bg-indigo-50 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-all duration-150"
+            class="p-2 hover:bg-indigo-50 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-all duration-150 rounded-full "
             (click)="closeMenu()"
           >
             <lucide-icon
               name="x"
               size="28"
-              className="text-neutral-800 dark:text-neutral-300 hover:text-indigo-400 transition"
+              class="text-neutral-800 dark:text-neutral-300 hover:text-indigo-400 transition cursor-pointer cursor-hover"
             />
           </button>
         </div>
 
         <!-- Navigation items -->
-        <nav class="flex flex-col gap-2">
+        <nav class="flex flex-col">
           <ng-container *ngFor="let item of items; let idx = index">
             <div class="relative group">
               <a
@@ -72,7 +72,7 @@ type MenuItem = {
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: item.route === '' }"
                 #rla="routerLinkActive"
-                class="flex items-center gap-4 p-4 rounded-xl transition-all duration-150
+                class="flex items-center gap-4 p-4 transition-all duration-150
                        hover:bg-indigo-50 dark:hover:bg-neutral-800 group"
                 [class]="{
                   'border-l-4 border-indigo-400 bg-indigo-50 dark:bg-neutral-800': rla.isActive,
@@ -104,7 +104,7 @@ type MenuItem = {
             <!-- Divider -->
             <div
               *ngIf="idx !== items.length - 1"
-              class="w-full mx-4"
+              class="w-full"
               [ngClass]="{
                 'border-b-2 border-indigo-400': rla.isActive,
                 'border-b border-neutral-200 dark:border-neutral-700': !rla.isActive
