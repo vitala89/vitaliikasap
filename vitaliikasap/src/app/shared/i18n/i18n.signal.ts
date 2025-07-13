@@ -361,6 +361,14 @@ My professional experience spans a wide range of projects and teams, from large 
           stars: 5,
           text: 'I had the pleasure of working with Vitalii during a critical time when our team urgently needed strong front-end expertise. He joined us when almost everyone else had left, but in no time, he rebuilt our entire application with outstanding speed, precision, and efficiency. His code was clean and flawless, and everything worked perfectly from day one. Beyond his technical skills, working with him was incredibly easy – he maintained clear communication and delivered results. Vitalii is the kind of developer every team dreams of: highly professional, reliable, and delivering beyond expectations. I highly recommend him for any front-end role.'
         },
+        {
+          rating: 99,
+          name: 'Carlos Cabrera Hisado',
+          role: 'Design Systems Specialist at NIQ/GFK',
+          avatar: 'testimonials/carlos.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working with Vitalii on the Data Platform team, where we teamed up on the Enterprise Design System and the SQCX tool. He’s a talented and reliable developer who was always great to collaborate with—proactive, thoughtful, and easy to work with. His input made a real difference in our projects, and I’d be happy to work with him again anytime.'
+        },
       ]
     },
     contact: {
@@ -629,6 +637,14 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           stars: 5,
           text: 'Ich hatte das Vergnügen, mit Vitalii während einer kritischen Zeit zusammenzuarbeiten, als unser Team dringend starke Frontend-Expertise benötigte. Er kam zu uns, als fast alle anderen gegangen waren, aber in kürzester Zeit baute er unsere gesamte Anwendung mit außergewöhnlicher Geschwindigkeit, Präzision und Effizienz neu auf. Sein Code war sauber und fehlerfrei, und alles funktionierte vom ersten Tag an perfekt. Über seine technischen Fähigkeiten hinaus war die Zusammenarbeit mit ihm unglaublich einfach – er hielt klare Kommunikation aufrecht und lieferte Ergebnisse. Vitalii ist die Art von Entwickler, von der jedes Team träumt: hochprofessionell, zuverlässig und über die Erwartungen hinaus liefernd. Ich empfehle ihn für jede Frontend-Rolle.'
         },
+        {
+          rating: 99,
+          name: 'Carlos Cabrera Hisado',
+          role: 'Design Systems Specialist at NIQ/GFK',
+          avatar: 'testimonials/carlos.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, mit Vitalii im Data Platform Team zusammenzuarbeiten, wo wir gemeinsam am Enterprise Design System und dem SQCX Tool gearbeitet haben. Er ist ein talentierter und zuverlässiger Entwickler, mit dem die Zusammenarbeit immer angenehm war – proaktiv, umsichtig und unkompliziert. Sein Beitrag hat unsere Projekte wirklich vorangebracht, und ich würde jederzeit wieder gerne mit ihm arbeiten.'
+        },
       ]
     },
     contact: {
@@ -896,6 +912,14 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           avatar: 'testimonials/georgiev.jpeg',
           stars: 5,
           text: 'Я имел удовольствие работать с Виталием в критическое время, когда наша команда срочно нуждалась в сильной frontend-экспертизе. Он присоединился к нам, когда почти все остальные ушли, но в кратчайшие сроки он перестроил всё наше приложение с выдающейся скоростью, точностью и эффективностью. Его код был чистым и безупречным, и всё работало идеально с первого дня. Помимо его технических навыков, работать с ним было невероятно легко — он поддерживал чёткую коммуникацию и достигал результатов. Виталий — тот тип разработчика, о котором мечтает каждая команда: высокопрофессиональный, надёжный и превосходящий ожидания. Я настоятельно рекомендую его для любой frontend-роли.'
+        },
+        {
+          rating: 99,
+          name: 'Carlos Cabrera Hisado',
+          role: 'Design Systems Specialist at NIQ/GFK',
+          avatar: 'testimonials/carlos.jpeg',
+          stars: 5,
+          text: 'Я имел удовольствие работать с Виталием в команде Data Platform, где мы вместе занимались Enterprise Design System и инструментом SQCX. Он талантливый и надёжный разработчик, с которым всегда приятно сотрудничать — проактивный, вдумчивый и лёгкий в общении. Его вклад действительно повлиял на наши проекты, и я с радостью поработал бы с ним снова в любое время.'
         },
       ]
     },

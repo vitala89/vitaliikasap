@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { t } from '../../../../shared/i18n/i18n.signal';
 import { LucideAngularModule } from 'lucide-angular';
 import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';
+import {LogoComponent} from '../../../../shared/ui/components/logo/logo.component';
 
 @Component({
   selector: 'app-intro-card',
   standalone: true,
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, LogoComponent],
   animations: [staggeredContentAnimation],
   template: `
     <div
@@ -62,6 +63,13 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
               LinkedIn
             </span>
           </a>
+        </div>
+      </div>
+
+      <!-- Logo at the bottom center -->
+      <div class="mt-auto flex justify-center items-center pt-6">
+        <div class="w-32 h-32">
+          <app-logo [size]="32" [useGradient]="true"/>
         </div>
       </div>
     </div>

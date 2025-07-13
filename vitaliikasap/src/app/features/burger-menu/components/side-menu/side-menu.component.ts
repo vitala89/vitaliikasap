@@ -3,7 +3,7 @@ import { LucideIconsModule } from '../../../../shared/modules/lucide-icons/lucid
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import {NgClass, NgFor, NgIf, NgOptimizedImage} from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
-import {LogoComponent} from '../../../../shared/components/logo.component';
+import {LogoComponent} from '../../../../shared/ui/components/logo/logo.component';
 
 type MenuItem = {
   icon: string;
@@ -46,12 +46,15 @@ type MenuItem = {
 
       <!-- Side menu with slide animation -->
       <aside
-        class="relative z-10 bg-white/90 dark:bg-neutral-900/80 h-full w-80 shadow-2xl  flex flex-col"
+        class="relative z-10 bg-white/90 dark:bg-neutral-900/80 h-full w-80 shadow-2xl flex flex-col"
         @sideMenu
         (click)="$event.stopPropagation()"
       >
         <!-- Close button -->
-        <div class="flex justify-end mb-8">
+        <div class="flex justify-between items-center px-4 py-2">
+          <div class="w-24 h-24">
+            <app-logo [size]="32" [useGradient]="true"/>
+          </div>
           <button
             class="p-2 hover:bg-indigo-50 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-all duration-150 rounded-full "
             (click)="closeMenu()"
@@ -62,10 +65,6 @@ type MenuItem = {
               class="text-neutral-800 dark:text-neutral-300 hover:text-indigo-400 transition cursor-pointer cursor-hover"
             />
           </button>
-        </div>
-        <!-- Logo -->
-        <div class="w-32 h-32 ">
-          <app-logo [size]="64" colorClass="text-indigo-500 dark:text-white"/>
         </div>
         <!-- Navigation items -->
         <nav class="flex flex-col">
