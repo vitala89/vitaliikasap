@@ -135,8 +135,9 @@ const dictionary: Dictionary = {
     },
     about: {
       badge: 'ABOUT ME',
-      title: 'Crafting stories through Design and Innovation',
-      description: `Since beginning my journey as a frontend developer nearly 8 years ago, I’ve done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I’m quietly confident, naturally curious, and perpetually working on improving my chops.`,
+      title: 'Frontend Engineer Crafting Stories Through Design and Innovation',
+      description: `I’m a Frontend Engineer with over five years of hands-on experience developing scalable and high-performance web applications. My journey began as a hobby when I started building websites for friends at the age of 14, and after a decade working as a marine engineer, I decided to fully dedicate myself to frontend development. Since then, I have collaborated remotely and onsite with teams across Europe, from agile startups to large international enterprises. I specialize in Angular, React, and TypeScript, focusing on clean architecture, reusable components, and seamless user experiences. I thrive in multicultural environments, enjoy solving complex challenges, and am always eager to learn new technologies and improve my craft. For me, frontend development is not just a job—it’s a lifelong passion for turning ideas into digital solutions that make a difference.
+`,
       stats: {
         years: '5+',
         yearsLabel: 'YEARS OF EXPERIENCE',
@@ -402,8 +403,8 @@ My professional experience spans a wide range of projects and teams, from large 
     },
     about: {
       badge: 'ÜBER MICH',
-      title: 'Geschichten gestalten durch Design und Innovation',
-      description: `Seit ich vor fast 8 Jahren meine Karriere als Frontend-Entwickler begonnen habe, habe ich für Agenturen gearbeitet, Startups beraten und mit talentierten Menschen zusammengearbeitet, um digitale Produkte für Unternehmen und Privatkunden zu entwickeln. Ich bin selbstbewusst, neugierig und arbeite ständig daran, meine Fähigkeiten zu verbessern.`,
+      title: 'Frontend Engineer, der Geschichten durch Design und Innovation gestaltet',
+      description: `Ich bin ein Frontend Engineer mit über fünf Jahren praktischer Erfahrung in der Entwicklung skalierbarer und leistungsstarker Webanwendungen. Meine Reise begann als Hobby, als ich im Alter von 14 Jahren anfing, Websites für Freunde zu erstellen. Nach einem Jahrzehnt als Schiffsingenieur habe ich mich entschieden, mich voll und ganz der Frontend-Entwicklung zu widmen. Seitdem habe ich remote und vor Ort mit Teams in ganz Europa zusammengearbeitet – von agilen Startups bis zu großen internationalen Unternehmen. Ich spezialisiere mich auf Angular, React und TypeScript und lege Wert auf saubere Architektur, wiederverwendbare Komponenten und nahtlose Nutzererlebnisse. Ich gedeihe in multikulturellen Umgebungen, löse gerne komplexe Herausforderungen und bin immer neugierig auf neue Technologien und darauf, mein Handwerk zu verbessern. Für mich ist Frontend-Entwicklung nicht nur ein Beruf – es ist eine lebenslange Leidenschaft, Ideen in digitale Lösungen zu verwandeln, die einen Unterschied mach`,
       stats: {
         years: '5+',
         yearsLabel: 'JAHRE ERFAHRUNG',
@@ -671,8 +672,8 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
     },
     about: {
       badge: 'ОБО МНЕ',
-      title: 'Создаю истории через дизайн и инновации',
-      description: `С тех пор, как я начал свой путь фронтенд-разработчика почти 8 лет назад, я работал удалённо в агентствах, консультировал стартапы и сотрудничал с талантливыми людьми над созданием цифровых продуктов как для бизнеса, так и для обычных пользователей. Я сдержанно уверен в себе, от природы любознателен и постоянно работаю над совершенствованием своих навыков.`,
+      title: 'Frontend инженер, создающий истории через дизайн и инновации',
+      description: `Я Frontend инженер с более чем пятью годами практического опыта в разработке масштабируемых и высокопроизводительных веб-приложений. Мой путь начался с хобби — я начал создавать сайты для друзей в 14 лет, а после десятилетия работы морским инженером решил полностью посвятить себя frontend-разработке. С тех пор я сотрудничал с командами по всей Европе — как удалённо, так и на месте, от стартапов до крупных международных компаний. Я специализируюсь на Angular, React и TypeScript, уделяю особое внимание чистой архитектуре, переиспользуемым компонентам и бесшовному пользовательскому опыту. Мне нравится работать в мультикультурной среде, решать сложные задачи и постоянно учиться новым технологиям, совершенствуя свои навыки. Для меня frontend — это не просто работа, а страсть всей жизни, превращать идеи в цифровые решения, которые меняют мир.`,
       stats: {
         years: '5+',
         yearsLabel: 'ЛЕТ ОПЫТА',
