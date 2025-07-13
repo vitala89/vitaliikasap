@@ -22,6 +22,7 @@ type MenuItem = {
         <div class="relative group flex w-full justify-center">
           <a [routerLink]="item.route"
              routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: item.route === '' }"
              #rla="routerLinkActive"
              class="w-14 h-14 flex items-center justify-center mb-0.5 transition-all duration-150
                     rounded-xl hover:bg-indigo-50 dark:hover:bg-neutral-800

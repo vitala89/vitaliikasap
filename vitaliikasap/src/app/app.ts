@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavComponent } from './shared/ui/components/nav/nav.component';
 import { ThemeSwitcherComponent } from './shared/ui/components/theme-switcher/theme-switcher.component';
 import { RouterOutlet } from '@angular/router';
 import {SideNavComponent} from './features/side-nav/components/side-nav/side-nav.component';
