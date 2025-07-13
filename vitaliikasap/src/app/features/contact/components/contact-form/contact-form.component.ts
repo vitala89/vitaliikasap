@@ -121,7 +121,7 @@ export class ContactFormComponent implements OnInit {
         phone: this.form.value.phone || '',
         subject: this.form.value.subject || '',
         message: this.form.value.message || '',
-        to_name: 'Your Name', // Replace with your actual name
+        to_name: 'Vitalii Kasap', // Replace with your actual name
         reply_to: this.form.value.email || ''
       };
 
