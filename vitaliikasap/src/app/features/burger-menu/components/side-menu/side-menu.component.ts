@@ -1,8 +1,9 @@
 import { Component, input, output } from '@angular/core';
 import { LucideIconsModule } from '../../../../shared/modules/lucide-icons/lucide-icons.module';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import {NgClass, NgFor, NgIf, NgOptimizedImage} from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
+import {LogoComponent} from '../../../../shared/components/logo.component';
 
 type MenuItem = {
   icon: string;
@@ -13,7 +14,7 @@ type MenuItem = {
 @Component({
   selector: 'app-side-menu',
   standalone: true,
-  imports: [LucideIconsModule, RouterLink, RouterLinkActive, NgClass, NgFor, NgIf],
+  imports: [LucideIconsModule, RouterLink, RouterLinkActive, NgClass, NgFor, NgIf, NgOptimizedImage, LogoComponent],
   animations: [
     trigger('sideMenu', [
       transition(':enter', [
@@ -35,7 +36,7 @@ type MenuItem = {
     ])
   ],
   template: `
-    <div class="fixed inset-0 z-50 flex">
+    <div class="fixed inset-0 z-5000 flex">
       <!-- Background overlay with fade animation -->
       <div
         class="fixed inset-0 bg-black/30 backdrop-blur-sm"
@@ -62,7 +63,10 @@ type MenuItem = {
             />
           </button>
         </div>
-
+        <!-- Logo -->
+        <div class="w-32 h-32 ">
+          <app-logo [size]="64" colorClass="text-indigo-500 dark:text-white"/>
+        </div>
         <!-- Navigation items -->
         <nav class="flex flex-col">
           <ng-container *ngFor="let item of items; let idx = index">

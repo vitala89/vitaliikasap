@@ -16,7 +16,7 @@ type MenuItem = {
   imports: [LucideIconsModule, RouterLink, RouterLinkActive, NgIf, NgFor, NgClass],
   template: `
     <aside
-      class="fixed left-4 top-16 z-50 flex flex-col bg-white/90 dark:bg-neutral-900/80 rounded-[2rem] shadow-lg py-2 px-1 gap-1 items-center"
+      class="fixed left-4 top-1/2 z-50 flex flex-col bg-white/90 dark:bg-neutral-900/80 rounded-[2rem] shadow-lg py-2 px-1 gap-1 items-center -translate-y-1/2"
       style="width: 72px;">
       <ng-container *ngFor="let item of items; let idx = index">
         <div class="relative group flex w-full justify-center">
