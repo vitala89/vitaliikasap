@@ -1,7 +1,7 @@
 import {Component, input, output} from '@angular/core';
 import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
 import {RouterLink, RouterLinkActive} from '@angular/router';
-import {NgClass, NgFor, NgIf, NgOptimizedImage} from '@angular/common';
+import {NgClass, NgFor, NgIf} from '@angular/common';
 import {trigger, transition, style, animate} from '@angular/animations';
 import {LogoComponent} from '../../../../shared/ui/components/logo/logo.component';
 import {t} from '../../../../shared/i18n/i18n.signal';
@@ -97,7 +97,7 @@ type MenuItem = {
                 />
                 <span
                   class="text-lg font-medium select-none group-hover:text-indigo-400 transition dark:text-neutral-300"
-                  [class]="{
+                  [ngClass]="{
                     'text-indigo-500': rla.isActive,
                     'text-neutral-800 dark:text-neutral-300 group-hover:text-indigo-400 transition': !rla.isActive
                   }"
