@@ -34,13 +34,13 @@ export class HomeComponent {
   private title = inject(Title);
 
   constructor() {
-    this.title.setTitle('Vitalii Kasap — Frontend Engineer | Portfolio');
+    this.title.setTitle('Vitalii Kasap — Frontend Engineer | Home');
     this.meta.updateTag({
       name: 'description',
-      content: 'Welcome to the portfolio of Vitalii Kasap — Frontend Engineer. Explore my projects, skills, resume and contact details.'
+      content: 'Welcome to the webapp of Vitalii Kasap — Frontend Engineer. Explore my projects, skills, resume and contact details.'
     });
-    this.meta.updateTag({ property: 'og:title', content: 'Vitalii Kasap — Frontend Engineer | Portfolio' });
-    this.meta.updateTag({ property: 'og:description', content: 'Welcome to the portfolio of Vitalii Kasap — Frontend Engineer. Explore my projects, skills, resume and contact details.' });
+    this.meta.updateTag({ property: 'og:title', content: 'Vitalii Kasap — Frontend Engineer' });
+    this.meta.updateTag({ property: 'og:description', content: 'Welcome to the webapp of Vitalii Kasap — Frontend Engineer. Explore my projects, skills, resume and contact details.' });
     this.meta.updateTag({ property: 'og:image', content: '/assets/og-image.png' });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
   }

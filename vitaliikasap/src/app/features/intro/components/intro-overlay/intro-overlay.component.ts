@@ -15,7 +15,7 @@ import { LogoComponent } from '../../../../shared/ui/components/logo/logo.compon
       [class.pointer-events-none]="hide()"
     >
       <div class="flex flex-col items-center gap-4 sm:gap-6 select-none max-w-full">
-        <h1 #name class="text-[42px] sm:text-[64px] md:text-[96px] font-main font-extrabold tracking-wide opacity-0 text-center leading-tight">
+        <h1 #name class="text-[38px] sm:text-[64px] md:text-[96px] font-main font-extrabold tracking-wide opacity-0 text-center leading-tight">
           {{ nameText() }}
         </h1>
         <div #subtitle class="text-xl sm:text-2xl md:text-3xl font-semibold text-indigo-400 opacity-0 translate-x-[-100px] text-center px-2">
@@ -436,7 +436,7 @@ export class IntroOverlayComponent implements AfterViewInit {
         // Phase 4: Fill with color
         letterTl.to(fill, {
           opacity: 1,
-          color: '#10b981',
+          color: '#6366f1',
           duration: 0.6,
           ease: 'power2.out'
         }, 0.7);
