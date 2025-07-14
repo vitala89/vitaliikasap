@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
 import {NgClass, NgFor, NgIf} from '@angular/common';
+import {t} from '../../../../shared/i18n/i18n.signal';
+
+type TranslationKey = Parameters<typeof t>[0];
 
 type MenuItem = {
   icon: string;
-  label: string;
+  labelKey: TranslationKey;
   route: string;
-  color?: string;
 };
 
 @Component({
@@ -48,7 +50,7 @@ type MenuItem = {
             [class]="rla.isActive ? '#232323' : '#232323ee'"
             style="min-width: 92px"
           >
-            {{ item.label }}
+            {{ t(item.labelKey) }}
           </div>
         </div>
         <div *ngIf="idx !== items.length - 1"
@@ -64,11 +66,12 @@ type MenuItem = {
 })
 export class SideNavComponent {
   items: MenuItem[] = [
-    { icon: 'home', label: 'HOME', route: '' },
-    { icon: 'user', label: 'ABOUT', route: '/about' },
-    { icon: 'briefcase', label: 'RESUME', route: '/resume' },
-    { icon: 'layers', label: 'SKILLS', route: '/skills' },
-    { icon: 'message-square-more', label: 'TESTIMONIALS', route: '/testimonials' },
-    { icon: 'mail', label: 'CONTACT', route: '/contact' },
+    { icon: 'home', labelKey: 'sideNav.home', route: '' },
+    { icon: 'user', labelKey: 'sideNav.about', route: '/about' },
+    { icon: 'briefcase', labelKey: 'sideNav.resume', route: '/resume' },
+    { icon: 'layers', labelKey: 'sideNav.skills', route: '/skills' },
+    { icon: 'message-square-more', labelKey: 'sideNav.testimonials', route: '/testimonials' },
+    { icon: 'mail', labelKey: 'sideNav.contact', route: '/contact' },
   ];
+  protected readonly t = t;
 }

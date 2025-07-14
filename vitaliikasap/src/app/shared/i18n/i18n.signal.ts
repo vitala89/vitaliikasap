@@ -108,6 +108,22 @@ type Dictionary = {
         success: string;
         error: string;
       }
+    },
+    sideMenu: {
+      home: string;
+      about: string;
+      resume: string;
+      skills: string;
+      testimonials: string;
+      contact: string;
+    },
+    sideNav: {
+      home: string;
+      about: string;
+      resume: string;
+      skills: string;
+      testimonials: string;
+      contact: string;
     }
   };
 };
@@ -387,6 +403,22 @@ My professional experience spans a wide range of projects and teams, from large 
         success: 'Your message has been sent!',
         error: 'Something went wrong. Please try again later.',
       }
+    },
+    sideMenu: {
+      home: "HOME",
+      about: "ABOUT",
+      resume: "RESUME",
+      skills: "SKILLS",
+      testimonials: "TESTIMONIALS",
+      contact: "CONTACT",
+    },
+    sideNav: {
+      home: "HOME",
+      about: "ABOUT",
+      resume: "RESUME",
+      skills: "SKILLS",
+      testimonials: "TESTIMONIALS",
+      contact: "CONTACT",
     }
   },
   de: {
@@ -663,6 +695,22 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
         success: 'Ihre Nachricht wurde gesendet!',
         error: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es später noch einmal.',
       }
+    },
+    sideMenu: {
+      home: "HOME",
+      about: "ÜBER MICH",
+      resume: "RESUME",
+      skills: "FÄHIGKEITEN",
+      testimonials: "REFERENZEN",
+      contact: "KONTAKT"
+    },
+    sideNav: {
+      home: "HOME",
+      about: "ÜBER MICH",
+      resume: "RESUME",
+      skills: "FÄHIGKEITEN",
+      testimonials: "REFERENZEN",
+      contact: "KONTAKT"
     }
   },
   ru: {
@@ -939,6 +987,22 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
         success: 'Ваше сообщение отправлено!',
         error: 'Что-то пошло не так. Пожалуйста, попробуйте позже.',
       }
+    },
+    sideMenu: {
+      home: "ГЛАВНАЯ",
+      about : "ОБО МНЕ",
+      resume: "РЕЗЮМЕ",
+      skills: "НАВЫКИ",
+      testimonials: "ОТЗЫВЫ",
+      contact: "КОНТАКТ",
+    },
+    sideNav: {
+      home: "ГЛАВНАЯ",
+      about : "ОБО МНЕ",
+      resume: "РЕЗЮМЕ",
+      skills: "НАВЫКИ",
+      testimonials: "ОТЗЫВЫ",
+      contact: "КОНТАКТ",
     }
   },
 };

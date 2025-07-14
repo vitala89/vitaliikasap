@@ -1,37 +1,40 @@
-import { Component, input, output } from '@angular/core';
-import { LucideIconsModule } from '../../../../shared/modules/lucide-icons/lucide-icons.module';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import {Component, input, output} from '@angular/core';
+import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 import {NgClass, NgFor, NgIf, NgOptimizedImage} from '@angular/common';
-import { trigger, transition, style, animate } from '@angular/animations';
+import {trigger, transition, style, animate} from '@angular/animations';
 import {LogoComponent} from '../../../../shared/ui/components/logo/logo.component';
+import {t} from '../../../../shared/i18n/i18n.signal';
+
+type TranslationKey = Parameters<typeof t>[0];
 
 type MenuItem = {
   icon: string;
-  label: string;
+  labelKey: TranslationKey;
   route: string;
 };
 
 @Component({
   selector: 'app-side-menu',
   standalone: true,
-  imports: [LucideIconsModule, RouterLink, RouterLinkActive, NgClass, NgFor, NgIf, NgOptimizedImage, LogoComponent],
+  imports: [LucideIconsModule, RouterLink, RouterLinkActive, NgClass, NgFor, NgIf, LogoComponent],
   animations: [
     trigger('sideMenu', [
       transition(':enter', [
-        style({ transform: 'translateX(-100%)', opacity: 0 }),
-        animate('300ms cubic-bezier(0.4, 0, 0.2, 1)', style({ transform: 'translateX(0)', opacity: 1 }))
+        style({transform: 'translateX(-100%)', opacity: 0}),
+        animate('300ms cubic-bezier(0.4, 0, 0.2, 1)', style({transform: 'translateX(0)', opacity: 1}))
       ]),
       transition(':leave', [
-        animate('300ms cubic-bezier(0.4, 0, 0.2, 1)', style({ transform: 'translateX(-100%)', opacity: 0 }))
+        animate('300ms cubic-bezier(0.4, 0, 0.2, 1)', style({transform: 'translateX(-100%)', opacity: 0}))
       ])
     ]),
     trigger('overlay', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('300ms', style({ opacity: 1 }))
+        style({opacity: 0}),
+        animate('300ms', style({opacity: 1}))
       ]),
       transition(':leave', [
-        animate('300ms', style({ opacity: 0 }))
+        animate('300ms', style({opacity: 0}))
       ])
     ])
   ],
@@ -99,7 +102,7 @@ type MenuItem = {
                     'text-neutral-800 dark:text-neutral-300 group-hover:text-indigo-400 transition': !rla.isActive
                   }"
                 >
-                  {{ item.label }}
+                  {{ t(item.labelKey) }}
                 </span>
               </a>
             </div>
@@ -121,16 +124,18 @@ type MenuItem = {
   `
 })
 export class SideMenuComponent {
+  protected readonly t = t;
+
   open = input.required<boolean>();
   closed = output<void>();
 
   items: MenuItem[] = [
-    { icon: 'home', label: 'HOME', route: '' },
-    { icon: 'user', label: 'ABOUT', route: '/about' },
-    { icon: 'briefcase', label: 'RESUME', route: '/resume' },
-    { icon: 'layers', label: 'SKILLS', route: '/skills' },
-    { icon: 'message-square-more', label: 'TESTIMONIALS', route: '/testimonials' },
-    { icon: 'mail', label: 'CONTACT', route: '/contact' },
+    { icon: 'home', labelKey: 'sideNav.home', route: '' },
+    { icon: 'user', labelKey: 'sideNav.about', route: '/about' },
+    { icon: 'briefcase', labelKey: 'sideNav.resume', route: '/resume' },
+    { icon: 'layers', labelKey: 'sideNav.skills', route: '/skills' },
+    { icon: 'message-square-more', labelKey: 'sideNav.testimonials', route: '/testimonials' },
+    { icon: 'mail', labelKey: 'sideNav.contact', route: '/contact' },
   ];
 
   closeMenu() {
