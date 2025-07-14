@@ -3,29 +3,32 @@ import {
   computed,
   effect,
   inject,
-  PLATFORM_ID
+  PLATFORM_ID,
+  signal,
 } from '@angular/core';
-import {isPlatformBrowser} from '@angular/common';
-import {LucideIconsModule} from '../../../modules/lucide-icons/lucide-icons.module';
-import {themeSignal} from '../../../services/theme.service';
+import {isPlatformBrowser, NgClass} from '@angular/common';
+import { LucideIconsModule } from '../../../modules/lucide-icons/lucide-icons.module';
+import { themeSignal } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-theme-switcher',
   standalone: true,
-  imports: [LucideIconsModule],
+  imports: [LucideIconsModule, NgClass],
   template: `
     @if (isBrowser) {
       <button
         (click)="toggle()"
-        class="cursor-hover top-4 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-yellow-400 focus:ring-blue-500 dark:focus:ring-yellow-400"
+        class="cursor-hover top-4 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 text-yellow-400 hover:scale-120 bg-white dark:bg-gray-800 text-gray-700 dark:text-yellow-400"
         [attr.aria-label]="ariaLabel()"
         type="button"
       >
+        <div [ngClass]="{ 'animate-spin': spinning() }" style="animation-duration:2s">
         <lucide-icon
           [name]="iconName()"
-          [size]="24"
-          class="transition-all duration-300"
+          [size]="28"
+          class="text-lg"
         ></lucide-icon>
+        </div>
       </button>
     }
   `
@@ -35,24 +38,25 @@ export class ThemeSwitcherComponent {
   readonly isBrowser = isPlatformBrowser(this.platformId);
 
   readonly iconName = computed(() => themeSignal() === 'dark' ? 'moon' : 'sun');
-
   readonly ariaLabel = computed(() =>
     themeSignal() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
   );
 
+  spinning = signal(true); // Вращается при старте
+
   constructor() {
     if (this.isBrowser) {
       this.initializeTheme();
-
       effect(() => {
         this.applyTheme(themeSignal());
       });
+      // Стартовая анимация
+      setTimeout(() => this.spinning.set(false), 2000);
     }
   }
 
   private initializeTheme(): void {
     const saved = localStorage.getItem('theme');
-
     if (saved === 'dark' || saved === 'light') {
       themeSignal.set(saved);
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -63,16 +67,13 @@ export class ThemeSwitcherComponent {
   toggle(): void {
     const newTheme = themeSignal() === 'dark' ? 'light' : 'dark';
     themeSignal.set(newTheme);
-    console.log('Theme switched to:', newTheme);
+    this.spinning.set(true);
+    setTimeout(() => this.spinning.set(false), 2000);
   }
 
   private applyTheme(theme: 'dark' | 'light'): void {
     if (!this.isBrowser) return;
-
-    // Apply dark class to html element
     document.documentElement.classList.toggle('dark', theme === 'dark');
-
-    // Save to localStorage
     localStorage.setItem('theme', theme);
   }
 }
