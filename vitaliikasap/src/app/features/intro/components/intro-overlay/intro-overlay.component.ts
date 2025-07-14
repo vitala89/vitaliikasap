@@ -1,10 +1,12 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild, AfterViewInit, signal, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { LogoComponent } from '../../../../shared/ui/components/logo/logo.component';
 
 
 @Component({
   selector: 'app-intro-overlay',
   standalone: true,
+  imports: [LogoComponent],
   template: `
     <div
       #wrapper
@@ -12,12 +14,15 @@ import { isPlatformBrowser } from '@angular/common';
       [class.opacity-0]="hide()"
       [class.pointer-events-none]="hide()"
     >
-      <div class="flex flex-col items-center gap-4 select-none">
+      <div class="flex flex-col items-center gap-6 select-none">
         <h1 #name class="text-[64px] md:text-[96px] font-main font-extrabold tracking-wide opacity-0">
           {{ nameText() }}
         </h1>
         <div #subtitle class="text-3xl font-semibold text-indigo-400 opacity-0 translate-x-[-100px]">
           {{ professionText() }}
+        </div>
+        <div #logo class="opacity-0 translate-y-[20px]">
+          <app-logo [size]="128" [useGradient]="true"/>
         </div>
       </div>
     </div>
@@ -26,6 +31,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class IntroOverlayComponent implements AfterViewInit {
   @ViewChild('name', { static: true }) nameEl!: ElementRef<HTMLHeadingElement>;
   @ViewChild('subtitle', { static: true }) subtitleEl!: ElementRef<HTMLDivElement>;
+  @ViewChild('logo', { static: true }) logoEl!: ElementRef<HTMLDivElement>;
   @ViewChild('wrapper', { static: true }) wrapperEl!: ElementRef<HTMLDivElement>;
 
 
@@ -64,6 +70,9 @@ export class IntroOverlayComponent implements AfterViewInit {
 
     // Animate subtitle sliding from left to center
     await this.animateSubtitleFromLeft(this.subtitleEl.nativeElement);
+
+    // Animate logo appearing from bottom
+    await this.animateLogoFromBottom(this.logoEl.nativeElement);
 
 
     // Small delay before starting scale animation
@@ -121,6 +130,24 @@ export class IntroOverlayComponent implements AfterViewInit {
     });
   }
 
+  /**
+   * Animate logo appearing from bottom
+   */
+  private async animateLogoFromBottom(element: HTMLElement): Promise<void> {
+    const { gsap } = await import('gsap/all');
+
+    return new Promise((resolve) => {
+      gsap.to(element, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+        delay: 0.3,
+        onComplete: resolve
+      });
+    });
+  }
+
 
   /**
    * Scale each letter from left to right for both name and subtitle
@@ -173,7 +200,7 @@ export class IntroOverlayComponent implements AfterViewInit {
       const tl = gsap.timeline({ onComplete: resolve });
 
 
-      tl.to([this.nameEl.nativeElement, this.subtitleEl.nativeElement], {
+      tl.to([this.nameEl.nativeElement, this.subtitleEl.nativeElement, this.logoEl.nativeElement], {
         opacity: 0,
         y: -30,
         duration: 0.8,
@@ -182,7 +209,6 @@ export class IntroOverlayComponent implements AfterViewInit {
       });
     });
   }
-
 
   /**
    * Circuit-like animation for letters - first draws border, then fills inside
@@ -386,20 +412,21 @@ export class IntroOverlayComponent implements AfterViewInit {
         // Phase 4: Fill with color
         letterTl.to(fill, {
           opacity: 1,
-          color: '#6366f1',
+          color: '#10b981',
           duration: 0.6,
           ease: 'power2.out'
         }, 0.7);
 
 
-        // Phase 5: Final glow
+        // Phase 5: Final glow effect
         letterTl.to(fill, {
-          textShadow: '0 0 15px #6366f1',
+          textShadow: '0 0 10px #10b981',
           duration: 0.4,
           ease: 'power2.out'
         }, 1.1);
 
 
+        // Add to main timeline
         tl.add(letterTl, index * stagger + delay);
       });
     });

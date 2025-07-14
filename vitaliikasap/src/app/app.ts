@@ -14,7 +14,7 @@ import {IntroFeatureService, IntroOverlayComponent} from './features/intro';
   standalone: true,
   imports: [ThemeSwitcherComponent, RouterOutlet, SideNavComponent, LangSwitcherComponent, BurgerMenuComponent, CursorComponent, NetAnimationComponent, NgIf, IntroOverlayComponent],
   template: `
-<!--    <app-intro-overlay *ngIf="!introShown()" (finished)="onIntroEnd()"/>-->
+    <app-intro-overlay *ngIf="!introShown()" (finished)="onIntroEnd()"/>
     <app-net-animation></app-net-animation>
     <app-burger-menu class="show xl:hidden" />
     <app-cursor></app-cursor>
