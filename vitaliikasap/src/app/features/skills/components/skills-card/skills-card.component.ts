@@ -11,7 +11,7 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
   imports: [SkillCircleComponent, SkillIconComponent],
   template: `
     <div
-      class="flex flex-col bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto">
+      class="flex flex-col bg-white/80 dark:bg-neutral-800/80 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto">
       <div [@staggeredContent]>
         <div class="stagger-item mb-3 flex items-center gap-2">
         <span

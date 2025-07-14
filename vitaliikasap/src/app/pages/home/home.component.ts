@@ -12,7 +12,7 @@ import {Meta, Title} from '@angular/platform-browser';
     IntroCardComponent,
   ],
   template: `
-    <div class="flex justify-center items-center min-h-screen ml-0 md:ml-0 xl:ml-14 px-4">
+    <div class="flex justify-center items-center min-h-screen ml-0 md:ml-0 xl:ml-14 px-4 ">
       <div class="max-w-6xl w-full py-20">
         <div class="flex flex-col lg:flex-row gap-8 w-full">
           <!-- Photo Card - Taller but narrower -->

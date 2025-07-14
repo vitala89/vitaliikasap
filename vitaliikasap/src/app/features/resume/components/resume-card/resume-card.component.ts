@@ -11,7 +11,7 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
   animations: [staggeredContentAnimation],
   template: `
     <div
-      class="flex flex-col h-full bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide">
+      class="flex flex-col h-full bg-white/80 dark:bg-neutral-800/80 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide">
       <div [@staggeredContent]>
         <div class="stagger-item flex items-center gap-2 mb-4">
       <span

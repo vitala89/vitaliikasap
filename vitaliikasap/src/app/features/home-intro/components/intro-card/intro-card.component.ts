@@ -11,7 +11,7 @@ import {LogoComponent} from '../../../../shared/ui/components/logo/logo.componen
   animations: [staggeredContentAnimation],
   template: `
     <div
-      class="flex gap-2 mb-4 flex-col h-full bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 min-h-[600px] transition-colors duration-300">
+      class="flex gap-2 mb-4 flex-col h-full bg-white/80 dark:bg-neutral-800/80 rounded-3xl shadow-2xl p-8 min-h-[600px] transition-colors duration-300">
       <div [@staggeredContent]>
 
         <!-- Badge with translation -->

@@ -7,7 +7,7 @@ import {staggeredContentAnimation} from '../../shared/animations/staggered-conte
   standalone: true,
   animations: [staggeredContentAnimation],
   template: `
-    <div class="flex flex-col h-full bg-white/90 dark:bg-neutral-800/90 rounded-3xl shadow-2xl p-8 min-h-[600px]">
+    <div class="flex flex-col h-full bg-white/80 dark:bg-neutral-800/80 rounded-3xl shadow-2xl p-8 min-h-[600px]">
       <div  [@staggeredContent]>
       <!-- Бейдж About Me -->
       <div class="stagger-item flex items-center gap-2 mb-4">

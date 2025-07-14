@@ -9,43 +9,41 @@ import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-
   imports: [NgOptimizedImage, LucideIconsModule],
   template: `
     <div
-      class="relative flex flex-col items-center rounded-[2.5rem] overflow-hidden shadow-2xl h-full w-full aspect-[3/4] min-h-[800px] [&::-webkit-scrollbar-thumb]:bg-indigo-300">
-      <!-- Фото (фон, absolute) -->
-      <img
-        [ngSrc]="avatarImg"
-        alt="Vitalii Kasap"
-        width="480" height="600"
-        class="absolute inset-0 w-full h-full object-cover z-[1]"
-        priority
-      />
-      <!-- Блюр и градиент -->
-      <div
-        class="absolute bottom-0 left-0 w-full h-1/4 z-10
-          bg-gradient-to-t from-black/70 via-black/30 to-transparent
-          backdrop-blur-[8px] pointer-events-none"
-      ></div>
-      <!-- Контент -->
-      <div class="text-center relative z-20 flex flex-col w-full h-full justify-end p-5">
-        <div class="mb-4 ">
-          <h2 class="text-4xl md:text-5xl font-bold mb-2 text-white font-main">
+      class="relative flex flex-col rounded-3xl overflow-hidden shadow-2xl h-full w-full aspect-[3/4] min-h-[700px] bg-white/80 dark:bg-neutral-800/80">
+      <!-- Image Container -->
+      <div class="flex-1 p-6 pb-0">
+        <img
+          [ngSrc]="avatarImg"
+          alt="Vitalii Kasap"
+          width="480" height="600"
+          class="w-full h-full object-cover rounded-2xl"
+          priority
+        />
+      </div>
+
+      <!-- Content Section -->
+      <div class="p-6 pt-8">
+        <div class="text-center mb-6">
+          <h2 class="text-3xl font-bold mb-3 text-indigo-500 dark:text-indigo-400 font-main">
             {{ t('name') }}
           </h2>
           <div
-            class="text-xl md:text-2xl font-bold transition-all duration-700 h-[32px] flex items-center justify-center font-main text-white text-center"
+            class="text-xl font-semibold transition-all duration-700 h-[28px] flex items-center justify-center font-main text-indigo-500 dark:text-indigo-400"
           >
             @if (showFrontend()) {
               <span class="transition-opacity duration-700 opacity-100 animate-fade-in-out">
-      {{ t('frontend') }}
-    </span>
+                {{ t('frontend') }}
+              </span>
             } @else {
               <span class="transition-opacity duration-700 opacity-100 animate-fade-in-out">
-            {{ t('developer') }}
-    </span>
+                {{ t('developer') }}
+              </span>
             }
           </div>
         </div>
+
         <button
-          class="cursor-hover mt-2 w-full bg-indigo-500 text-white font-semibold py-3 rounded-2xl border-2 border-transparent transition-all duration-200 text-lg font-main hover:bg-transparent hover:border-indigo-500 hover:rounded-none flex items-center justify-center gap-2"
+          class="w-full bg-indigo-500 text-white font-semibold py-4 px-6 rounded-2xl border-2 border-indigo-500 transition-all duration-300 text-lg font-main hover:bg-indigo-600 hover:border-indigo-600 hover:shadow-lg active:scale-[0.98] flex items-center justify-center gap-3"
           type="button"
           (click)="onHire()"
         >
