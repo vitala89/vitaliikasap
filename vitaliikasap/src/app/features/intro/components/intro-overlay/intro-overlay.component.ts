@@ -10,19 +10,19 @@ import { LogoComponent } from '../../../../shared/ui/components/logo/logo.compon
   template: `
     <div
       #wrapper
-      class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-neutral-100 dark:bg-neutral-900 transition-all duration-1000"
+      class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-neutral-100 dark:bg-neutral-900 transition-all duration-1000 px-4"
       [class.opacity-0]="hide()"
       [class.pointer-events-none]="hide()"
     >
-      <div class="flex flex-col items-center gap-6 select-none">
-        <h1 #name class="text-[64px] md:text-[96px] font-main font-extrabold tracking-wide opacity-0">
+      <div class="flex flex-col items-center gap-4 sm:gap-6 select-none max-w-full">
+        <h1 #name class="text-[42px] sm:text-[64px] md:text-[96px] font-main font-extrabold tracking-wide opacity-0 text-center leading-tight">
           {{ nameText() }}
         </h1>
-        <div #subtitle class="text-3xl font-semibold text-indigo-400 opacity-0 translate-x-[-100px]">
+        <div #subtitle class="text-xl sm:text-2xl md:text-3xl font-semibold text-indigo-400 opacity-0 translate-x-[-100px] text-center px-2">
           {{ professionText() }}
         </div>
-        <div #logo class="opacity-0 translate-y-[20px]">
-          <app-logo [size]="128" [useGradient]="true"/>
+        <div #logo class="opacity-0 translate-y-[20px] mt-2">
+          <app-logo [size]="getMobileLogoSize()" [useGradient]="true"/>
         </div>
       </div>
     </div>
@@ -43,6 +43,14 @@ export class IntroOverlayComponent implements AfterViewInit {
   professionText = signal('FRONTEND ENGINEER');
   private platformId = inject(PLATFORM_ID);
 
+  // Get mobile-appropriate logo size
+  getMobileLogoSize(): number {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 640 ? 80 : window.innerWidth < 768 ? 100 : 128;
+    }
+    return 128;
+  }
+
 
   async ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) {
@@ -61,7 +69,7 @@ export class IntroOverlayComponent implements AfterViewInit {
 
     // Animate name with circuit-like animation
     await this.animateLettersCircuit(this.nameEl.nativeElement, {
-      stagger: 0.15,
+      stagger: this.getMobileStagger(),
       borderDuration: 0.8,
       fillDuration: 0.6,
       delay: 0.3
@@ -96,6 +104,22 @@ export class IntroOverlayComponent implements AfterViewInit {
         this.finished.emit();
       }
     });
+  }
+
+  // Get mobile-appropriate stagger timing
+  private getMobileStagger(): number {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 640 ? 0.08 : 0.15;
+    }
+    return 0.15;
+  }
+
+  // Get mobile-appropriate scale factor
+  private getMobileScaleFactor(): number {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 640 ? 2.5 : window.innerWidth < 768 ? 3.5 : 4.3;
+    }
+    return 4.3;
   }
 
 
@@ -177,7 +201,7 @@ export class IntroOverlayComponent implements AfterViewInit {
 
 
         tl.to(letter, {
-          scale: 4.3,
+          scale: this.getMobileScaleFactor(),
           duration: 0.2,
           ease: 'back.out(1.7)',
           yoyo: true,

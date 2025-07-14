@@ -16,13 +16,13 @@ import {Meta, Title} from '@angular/platform-browser';
       <div class="max-w-6xl w-full py-20">
         <div class="flex flex-col lg:flex-row gap-8 w-full">
           <!-- Photo Card - Taller but narrower -->
-          <div class="w-full lg:w-2/5">
+            <div class="w-full lg:w-2/5">
             <app-photo-card class="h-full"/>
           </div>
 
           <!-- Intro Card - Wider but shorter -->
           <div class="w-full lg:w-3/5">
-            <app-intro-card class="h-full"/>
+            <app-intro-card />
           </div>
         </div>
       </div>
