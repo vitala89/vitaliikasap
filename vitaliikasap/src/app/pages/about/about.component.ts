@@ -25,7 +25,6 @@ import {Meta, Title} from '@angular/platform-browser';
       </div>
     </div>
   `,
-  styleUrl: './about.component.scss'
 })
 export class AboutComponent {
   private meta = inject(Meta);

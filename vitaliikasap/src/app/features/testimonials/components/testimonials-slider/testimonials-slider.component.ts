@@ -36,7 +36,7 @@ interface Testimonial {
   animations: [staggeredContentAnimation],
   template: `
     <div
-      class="flex flex-col bg-white/80 dark:bg-neutral-800/80 rounded-3xl shadow-2xl p-8 max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto">
+      class="flex flex-col bg-white/80 dark:bg-neutral-800/80 rounded-3xl shadow-2xl p-8 h-full lg:max-h-[900px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto">
       <div [@staggeredContent]>
         <div class="stagger-item mb-3 flex items-center gap-2">
         <span
@@ -105,7 +105,7 @@ interface Testimonial {
     width: 100%;
     height: auto;
     overflow: visible; /* Allow overflow to show partial slides */
-    padding: 0 20px; /* Add padding to prevent clipping */
+    padding: 0 4px; /* Add padding to prevent clipping */
   }
 
   .testimonials-swiper swiper-slide {

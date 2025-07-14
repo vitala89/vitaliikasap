@@ -15,7 +15,7 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
     <form
       [formGroup]="form"
       (ngSubmit)="submit()"
-      class="flex flex-col bg-white/80 dark:bg-neutral-800/80 rounded-3xl shadow-2xl p-8 h-full max-h-[800px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto"
+      class="flex flex-col bg-white/80 dark:bg-neutral-800/80 rounded-3xl shadow-2xl p-8 h-full lg:max-h-[900px] overflow-y-auto scrollbar-hide max-w-5xl mx-auto"
       autocomplete="off"
     >
       <div [@staggeredContent]>

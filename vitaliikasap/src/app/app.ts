@@ -16,9 +16,9 @@ import { isPlatformBrowser } from '@angular/common';
   standalone: true,
   imports: [ThemeSwitcherComponent, RouterOutlet, SideNavComponent, LangSwitcherComponent, BurgerMenuComponent, CursorComponent, NetAnimationComponent, IntroOverlayComponent],
   template: `
-    @if (!introShown()) {
-      <app-intro-overlay (finished)="onIntroEnd()"/>
-    }
+<!--    @if (!introShown()) {-->
+<!--      <app-intro-overlay (finished)="onIntroEnd()"/>-->
+<!--    }-->
 
     <app-net-animation></app-net-animation>
     <app-burger-menu class="show xl:hidden" />

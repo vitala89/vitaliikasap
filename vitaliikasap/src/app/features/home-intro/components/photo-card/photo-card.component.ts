@@ -9,7 +9,7 @@ import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-
   imports: [NgOptimizedImage, LucideIconsModule],
   template: `
     <div
-      class="relative flex flex-col rounded-3xl overflow-hidden shadow-2xl h-full w-full aspect-[3/4] min-h-[800px] bg-white/80 dark:bg-neutral-800/80">
+      class="relative flex flex-col rounded-3xl shadow-2xl h-full w-full  md:min-h-[900px] bg-white/80 dark:bg-neutral-800/80">
       <!-- Image Container -->
       <div class="flex-1 p-6 pb-0">
         <img
