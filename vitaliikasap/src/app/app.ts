@@ -16,13 +16,13 @@ import {IntroFeatureService, IntroOverlayComponent} from './features/intro';
   template: `
 <!--    <app-intro-overlay *ngIf="!introShown()" (finished)="onIntroEnd()"/>-->
     <app-net-animation></app-net-animation>
-    <app-burger-menu />
+    <app-burger-menu class="show xl:hidden" />
     <app-cursor></app-cursor>
     <div class="fixed top-4 right-4 z-50 flex items-center gap-3">
       <app-lang-switcher/>
       <app-theme-switcher/>
     </div>
-    <app-side-nav/>
+    <app-side-nav class="hidden xl:block"/>
     <main>
       <router-outlet></router-outlet>
     </main>

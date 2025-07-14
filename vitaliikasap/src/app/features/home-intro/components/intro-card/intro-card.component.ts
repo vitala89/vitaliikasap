@@ -36,7 +36,7 @@ import {LogoComponent} from '../../../../shared/ui/components/logo/logo.componen
         </p>
 
         <!-- Download CV Button and LinkedIn -->
-        <div class="stagger-item flex gap-4 items-center mb-10">
+        <div class="stagger-item flex gap-4 items-center mb-10 flex-col xl:flex-row">
           <a
             href="cv_vitalii_kasap.pdf"
             download
