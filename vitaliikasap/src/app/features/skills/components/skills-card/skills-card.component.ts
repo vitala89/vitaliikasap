@@ -31,7 +31,6 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
           @for (lang of languageSkills(); track lang.name) {
             <div class="flex flex-col items-center w-32 hover:scale-110">
               <app-skill-circle [value]="lang.value" class="mb-2"/>
-              <div class="stagger-item text-xl font-semibold dark:text-neutral-200">{{ lang.value }}%</div>
               <div class="stagger-item mt-2 text-base text-neutral-700 dark:text-neutral-200">{{ lang.name }}</div>
             </div>
           }
@@ -44,7 +43,6 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
             <div
               class="stagger-item cursor-hover flex flex-col items-center justify-center py-6 rounded-3xl bg-neutral-50 dark:bg-neutral-900 shadow-sm border border-neutral-100 dark:border-neutral-700 transition hover:shadow-lg hover:shadow-gray-400">
               <app-skill-icon [icon]="hard.icon"/>
-              <div class="text-indigo-500 font-semibold text-xl mb-1">{{ hard.value }}%</div>
               <div class="text-base text-neutral-700 dark:text-neutral-200">{{ hard.name }}</div>
             </div>
           }
