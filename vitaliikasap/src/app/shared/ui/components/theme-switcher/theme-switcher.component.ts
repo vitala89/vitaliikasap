@@ -18,7 +18,7 @@ import { themeSignal } from '../../../services/theme.service';
     @if (isBrowser) {
       <button
         (click)="toggle()"
-        class="cursor-hover top-4 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 text-yellow-400 hover:scale-120 bg-white dark:bg-gray-800 text-gray-700 dark:text-yellow-400"
+        class="cursor-hover top-4 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 text-yellow-400 hover:scale-120 bg-white/70 dark:bg-neutral-800/70 text-indigo-500 dark:text-yellow-400"
         [attr.aria-label]="ariaLabel()"
         type="button"
       >

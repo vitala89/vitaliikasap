@@ -6,7 +6,7 @@ import {langSignal} from '../../../i18n/i18n.signal';
   standalone: true,
   template: `
     <button
-      class="cursor-hover top-4 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 bg-white dark:bg-gray-800 text-gray-700 dark:text-yellow-400"
+      class="cursor-hover top-4 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 bg-white/70 dark:bg-neutral-800/70 text-indigo-500 dark:text-indigo-400"
       (click)="toggle()"
       aria-label="Switch language"
     >

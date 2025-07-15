@@ -11,7 +11,7 @@ import { LucideIconsModule } from '../../../../shared/modules/lucide-icons/lucid
       <app-side-menu [open]="isOpen()" (closed)="closeMenu()"></app-side-menu>
     } @else {
       <button
-        class="fixed top-4 left-4 z-50 p-3 rounded-full bg-white dark:text-neutral-300 dark:bg-neutral-800 shadow-lg transition-all duration-300 hover:scale-120  hover:bg-indigo-50 dark:hover:bg-indigo-800"
+        class="fixed top-4 left-4 z-50 p-3 rounded-full text-indigo-500 bg-white/70 dark:text-indigo-300 dark:bg-neutral-800/70 shadow-lg transition-all duration-300 hover:scale-120  hover:bg-indigo-50 dark:hover:bg-indigo-800"
         aria-label="Open menu"
         (click)="openMenu()"
       >

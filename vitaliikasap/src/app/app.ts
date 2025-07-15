@@ -10,11 +10,12 @@ import {IntroFeatureService, IntroOverlayComponent} from './features/intro';
 import { OnInit } from '@angular/core';
 import {DeviceDetectionService} from './shared/services/device-detection.service';
 import { isPlatformBrowser } from '@angular/common';
+import {MobileNavArrowsComponent} from './shared/ui/components/mobile-nav-arrows/mobile-nav-arrows.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ThemeSwitcherComponent, RouterOutlet, SideNavComponent, LangSwitcherComponent, BurgerMenuComponent, CursorComponent, NetAnimationComponent, IntroOverlayComponent],
+  imports: [ThemeSwitcherComponent, RouterOutlet, SideNavComponent, LangSwitcherComponent, BurgerMenuComponent, CursorComponent, NetAnimationComponent, IntroOverlayComponent, MobileNavArrowsComponent],
   template: `
     @if (!introShown()) {
       <app-intro-overlay (finished)="onIntroEnd()"/>
@@ -35,6 +36,7 @@ import { isPlatformBrowser } from '@angular/common';
     <main>
       <router-outlet></router-outlet>
     </main>
+    <app-mobile-nav-arrows></app-mobile-nav-arrows>
   `,
 })
 export class App implements OnInit {
