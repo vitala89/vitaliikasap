@@ -1,7 +1,8 @@
-import {Component, inject} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, inject, OnDestroy, ViewChild} from '@angular/core';
 import {PhotoCardComponent} from '../../features/home-intro/components/photo-card/photo-card.component';
 import {ContactComponent} from '../../features/contact';
 import {Meta, Title} from '@angular/platform-browser';
+import {ScrollService} from '../../shared/services/scroll.service';
 
 @Component({
   selector: 'app-contact-page',
@@ -19,7 +20,7 @@ import {Meta, Title} from '@angular/platform-browser';
           </div>
 
           <!-- Intro Card - Wider but shorter -->
-          <div class="w-full lg:w-3/5">
+          <div class="w-full lg:w-3/5" #contactCard>
             <app-contact class="h-full"/>
           </div>
         </div>
@@ -27,9 +28,13 @@ import {Meta, Title} from '@angular/platform-browser';
     </div>
   `,
 })
-export class ContactPageComponent {
+export class ContactPageComponent implements AfterViewInit, OnDestroy {
   private meta = inject(Meta);
   private title = inject(Title);
+  private scrollService = inject(ScrollService);
+  private unsubscribe: () => void = () => {};
+
+  @ViewChild('contactCard') contactCard!: ElementRef;
 
   constructor() {
     this.title.setTitle('Contact | Vitalii Kasap — Frontend Engineer');
@@ -40,5 +45,24 @@ export class ContactPageComponent {
     this.meta.updateTag({ property: 'og:title', content: 'Contact | Vitalii Kasap — Frontend Engineer' });
     this.meta.updateTag({ property: 'og:description', content: 'Get in touch with Vitalii Kasap for job opportunities, collaborations, or frontend consulting.' });
     this.meta.updateTag({ property: 'og:image', content: '/assets/og-image.png' });
+  }
+
+  ngAfterViewInit() {
+    // Setup the scroll behavior once the view is initialized
+    this.unsubscribe = this.scrollService.setupScrollOnNavigation(
+      this.contactCard,
+      {
+        mobileOnly: true,
+        delay: 300,
+        behavior: 'smooth',
+        block: 'start',
+        immediate: true
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    // Clean up subscription when component is destroyed
+    this.unsubscribe();
   }
 }
