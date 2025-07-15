@@ -8,7 +8,7 @@ import { DeviceDetectionService } from '../../../services/device-detection.servi
   standalone: true,
   imports: [LucideIconsModule],
   template: `
-    @if (isMobile) {
+    @if (deviceService.isMobile) {
       <div
         class="fixed bottom-6 right-6 z-50 flex items-center gap-4"
       >
@@ -36,11 +36,7 @@ import { DeviceDetectionService } from '../../../services/device-detection.servi
 })
 export class MobileNavArrowsComponent {
   private readonly router = inject(Router);
-  private readonly deviceService = inject(DeviceDetectionService);
-
-  // Expose isMobile from the service for the template.
-  // Assuming isMobile is a signal for optimal change detection.
-  readonly isMobile = this.deviceService.isMobile;
+  readonly deviceService = inject(DeviceDetectionService);
 
   // Define the order of routes for navigation
   private readonly routes = ['', 'about', 'resume', 'skills', 'testimonials', 'contact'];

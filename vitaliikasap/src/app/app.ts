@@ -36,7 +36,7 @@ import {MobileNavArrowsComponent} from './shared/ui/components/mobile-nav-arrows
     <main>
       <router-outlet></router-outlet>
     </main>
-    <app-mobile-nav-arrows></app-mobile-nav-arrows>
+    <app-mobile-nav-arrows class="block lg:hidden"></app-mobile-nav-arrows>
   `,
 })
 export class App implements OnInit {
