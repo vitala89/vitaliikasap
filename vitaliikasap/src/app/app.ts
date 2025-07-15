@@ -17,7 +17,7 @@ import { isPlatformBrowser } from '@angular/common';
   imports: [ThemeSwitcherComponent, RouterOutlet, SideNavComponent, LangSwitcherComponent, BurgerMenuComponent, CursorComponent, NetAnimationComponent, IntroOverlayComponent],
   template: `
     @if (!introShown()) {
-<!--      <app-intro-overlay (finished)="onIntroEnd()"/>-->
+      <app-intro-overlay (finished)="onIntroEnd()"/>
     }
 
     <app-net-animation></app-net-animation>
