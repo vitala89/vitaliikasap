@@ -43,7 +43,7 @@ import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-
         </div>
 
         <button
-          class="w-full bg-indigo-500 text-white font-semibold py-4 px-6 rounded-2xl border-2 border-indigo-500 transition-all duration-300 text-lg font-main hover:bg-indigo-600 hover:border-indigo-600 hover:shadow-lg active:scale-[0.98] flex items-center justify-center gap-3"
+          class="cursor-hover w-full bg-indigo-500 text-white font-semibold py-4 px-6 rounded-2xl border-2 border-indigo-500 transition-all duration-300 text-lg font-main hover:bg-transparent hover:rounded-none hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-600 hover:shadow-lg active:scale-[0.98] flex items-center justify-center gap-3"
           type="button"
           (click)="onHire()"
         >
