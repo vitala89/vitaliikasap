@@ -20,7 +20,7 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
       </span>
         </div>
         <app-education-section/>
-        <div class="border-t border-neutral-200 dark:border-neutral-700 my-4"></div>
+        <div class="stagger-item border-t border-neutral-200 dark:border-neutral-700 my-4"></div>
         <app-experience-section/>
       </div>
     </div>
