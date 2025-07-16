@@ -1,11 +1,13 @@
 import {Component, input} from '@angular/core';
+import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';
 
 @Component({
   selector: 'app-timeline-item',
   standalone: true,
+  animations: [staggeredContentAnimation],
   template: `
-    <li class="flex gap-3 mb-8 relative group">
-      <div class="flex flex-col items-center">
+    <li [@staggeredContent] class="flex gap-3 mb-8 relative group">
+      <div class="stagger-item flex flex-col items-center">
         <span
           class="w-5 h-5 border-2 border-indigo-500 rounded-full flex items-center justify-center bg-white dark:bg-neutral-800">
           <span class="block w-2.5 h-2.5 bg-indigo-500 rounded-full"></span>
@@ -14,7 +16,7 @@ import {Component, input} from '@angular/core';
           <span class="h-full w-px bg-neutral-300 dark:bg-neutral-700 absolute top-5 left-2.5"></span>
         }
       </div>
-      <div class="flex-1">
+      <div class="flex-1 stagger-item">
         <div class="font-bold text-lg mb-0.5 font-main text-neutral-900 dark:text-white transition-colors duration-300">
           {{ title() }}
         </div>
@@ -26,7 +28,7 @@ import {Component, input} from '@angular/core';
         </div>
       </div>
       @if (icon()) {
-        <div class="flex items-start pt-2 pl-4 min-w-[32px]">
+        <div class="stagger-item flex items-start pt-2 pl-4 min-w-[32px]">
           @switch (icon()) {
             @case ('envato') {
               <svg class="w-6 h-6 text-indigo-500 dark:text-indigo-400" viewBox="0 0 24 24">

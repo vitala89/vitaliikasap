@@ -25,7 +25,6 @@ interface EducationItem {
       <ol>
         @for (item of educationItems(); track $index; let last = $last) {
           <app-timeline-item
-            class="stagger-item"
             [title]="item.title"
             [subtitle]="item.subtitle"
             [description]="item.description"
