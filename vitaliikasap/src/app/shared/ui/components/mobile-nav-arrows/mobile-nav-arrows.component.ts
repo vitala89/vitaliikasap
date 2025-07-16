@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { LucideIconsModule } from '../../../modules/lucide-icons/lucide-icons.module';
 import { DeviceDetectionService } from '../../../services/device-detection.service';
+import { PushedEffectDirective } from '../../directives/pushed-effect.directive';
 
 @Component({
   selector: 'app-mobile-nav-arrows',
   standalone: true,
-  imports: [LucideIconsModule],
+  imports: [LucideIconsModule, PushedEffectDirective],
   template: `
     @if (deviceService.isMobile) {
       <div
@@ -16,26 +17,16 @@ import { DeviceDetectionService } from '../../../services/device-detection.servi
           class="relative flex flex-col items-center gap-2 rounded-full shadow-2xl border border-gray-100/10 bg-background/80 p-2 backdrop-blur-md dark:bg-background/60 transition-colors duration-200"
         >
           <button
+            appPushedEffect
             (click)="navigateToNext($event)"
-            (mousedown)="applyPushedEffect($event)"
-            (mouseup)="removePushedEffect($event)"
-            (mouseleave)="removePushedEffect($event)"
-            (touchstart)="applyPushedEffect($event)"
-            (touchend)="removePushedEffect($event)"
-            (touchcancel)="removePushedEffect($event)"
             class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-100/10 bg-primary/20 text-indigo-500 shadow-lg transition-all duration-200 hover:bg-primary/30 dark:bg-primary/10 dark:text-primary-foreground"
             aria-label="Next page"
           >
             <lucide-icon name="chevron-right" class="h-5 w-5"></lucide-icon>
           </button>
           <button
+            appPushedEffect
             (click)="navigateToPrevious($event)"
-            (mousedown)="applyPushedEffect($event)"
-            (mouseup)="removePushedEffect($event)"
-            (mouseleave)="removePushedEffect($event)"
-            (touchstart)="applyPushedEffect($event)"
-            (touchend)="removePushedEffect($event)"
-            (touchcancel)="removePushedEffect($event)"
             class="flex h-10 w-10 items-center justify-center border border-gray-100/10 rounded-full bg-primary/20 text-indigo-500 shadow-sm transition-all duration-200 hover:bg-primary/30 dark:bg-primary/10 dark:text-primary-foreground"
             aria-label="Previous page"
           >
@@ -45,29 +36,6 @@ import { DeviceDetectionService } from '../../../services/device-detection.servi
       </div>
     }
   `,
-  styles: [`
-    @keyframes click-pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(0.5);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .click-animation {
-      animation: click-pulse 0.3s ease-in-out;
-    }
-
-    .pushed-effect {
-      transform: scale(0.85);
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-      background-color: rgba(var(--color-primary), 0.3);
-    }
-  `]
 })
 export class MobileNavArrowsComponent {
   private readonly router = inject(Router);
@@ -94,16 +62,6 @@ export class MobileNavArrowsComponent {
     setTimeout(() => {
       element.classList.remove('click-animation');
     }, 300); // Match the animation duration
-  }
-
-  applyPushedEffect(event: MouseEvent | TouchEvent): void {
-    const element = event.currentTarget as HTMLElement;
-    element.classList.add('pushed-effect');
-  }
-
-  removePushedEffect(event: MouseEvent | TouchEvent): void {
-    const element = event.currentTarget as HTMLElement;
-    element.classList.remove('pushed-effect');
   }
 
   private navigate(direction: 1 | -1): void {

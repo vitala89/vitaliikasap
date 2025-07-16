@@ -1,24 +1,53 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild, AfterViewInit, signal, PLATFORM_ID, inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { LogoComponent } from '../../../../shared/ui/components/logo/logo.component';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+  AfterViewInit,
+  signal,
+  PLATFORM_ID,
+  inject,
+  HostListener
+} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
+import {LogoComponent} from '../../../../shared/ui/components/logo/logo.component';
+import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
+import {PushedEffectDirective} from '../../../../shared/ui/directives/pushed-effect.directive';
+import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';
 
 
 @Component({
   selector: 'app-intro-overlay',
   standalone: true,
-  imports: [LogoComponent],
+  imports: [LogoComponent, LucideIconsModule, PushedEffectDirective],
+  animations: [staggeredContentAnimation],
   template: `
     <div
       #wrapper
+      [@staggeredContent]
       class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-neutral-100 dark:bg-neutral-900 transition-all duration-1000 px-4"
       [class.opacity-0]="hide()"
       [class.pointer-events-none]="hide()"
     >
+      <button
+        #escButton
+        appPushedEffect
+        (click)="skipIntro($event)"
+        class="stagger-item absolute top-4 left-4 flex flex-col items-center justify-center h-14 w-14 rounded-lg border border-gray-300 bg-white/90 text-gray-700 shadow-lg transition-all duration-200 hover:bg-gray-200 dark:border-gray-600 dark:bg-neutral-900 dark:text-gray-200 dark:hover:bg-gray-700 z-[10000] focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        aria-label="Skip intro"
+      >
+        <span class="text-xs font-bold">ESC</span>
+        <span class="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">skip</span>
+      </button>
+
       <div class="flex flex-col items-center gap-4 sm:gap-6 select-none max-w-full">
-        <h1 #name class="text-[38px] sm:text-[64px] md:text-[96px] font-main font-extrabold tracking-wide opacity-0 text-center leading-tight">
+        <h1 #name
+            class="text-[38px] sm:text-[64px] md:text-[96px] font-main font-extrabold tracking-wide opacity-0 text-center leading-tight">
           {{ nameText() }}
         </h1>
-        <div #subtitle class="text-xl sm:text-2xl md:text-3xl font-semibold text-indigo-400 opacity-0 translate-x-[-100px] text-center px-2">
+        <div #subtitle
+             class="text-xl sm:text-2xl md:text-3xl font-semibold text-indigo-400 opacity-0 translate-x-[-100px] text-center px-2">
           {{ professionText() }}
         </div>
         <div #logo class="opacity-0 translate-y-[20px] mt-2">
@@ -26,13 +55,14 @@ import { LogoComponent } from '../../../../shared/ui/components/logo/logo.compon
         </div>
       </div>
     </div>
-  `
+  `,
 })
 export class IntroOverlayComponent implements AfterViewInit {
-  @ViewChild('name', { static: true }) nameEl!: ElementRef<HTMLHeadingElement>;
-  @ViewChild('subtitle', { static: true }) subtitleEl!: ElementRef<HTMLDivElement>;
-  @ViewChild('logo', { static: true }) logoEl!: ElementRef<HTMLDivElement>;
-  @ViewChild('wrapper', { static: true }) wrapperEl!: ElementRef<HTMLDivElement>;
+  @ViewChild('name', {static: true}) nameEl!: ElementRef<HTMLHeadingElement>;
+  @ViewChild('subtitle', {static: true}) subtitleEl!: ElementRef<HTMLDivElement>;
+  @ViewChild('logo', {static: true}) logoEl!: ElementRef<HTMLDivElement>;
+  @ViewChild('wrapper', {static: true}) wrapperEl!: ElementRef<HTMLDivElement>;
+  @ViewChild('escButton', {static: true}) escButtonEl!: ElementRef<HTMLButtonElement>;
 
 
   @Output() finished = new EventEmitter<void>();
@@ -43,6 +73,14 @@ export class IntroOverlayComponent implements AfterViewInit {
   professionText = signal('FRONTEND ENGINEER');
   private platformId = inject(PLATFORM_ID);
 
+  @HostListener('document:keydown', ['$event'])
+  handleEscapeKey(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      this.skipIntro(event);
+    }
+  }
+
   // Get mobile-appropriate logo size
   getMobileLogoSize(): number {
     if (typeof window !== 'undefined') {
@@ -52,6 +90,26 @@ export class IntroOverlayComponent implements AfterViewInit {
   }
 
 
+  // Skip intro animation and emit finished event
+  skipIntro(event?: KeyboardEvent | MouseEvent): void {
+    if (event && event instanceof MouseEvent) {
+      this.applyClickAnimation(event.currentTarget as HTMLElement);
+    }
+    this.hide.set(true);
+    this.finished.emit();
+  }
+
+  // Apply click animation to button
+  private applyClickAnimation(element: HTMLElement): void {
+    // Add the animation class
+    element.classList.add('click-animation');
+
+    // Remove the animation class after the animation completes
+    setTimeout(() => {
+      element.classList.remove('click-animation');
+    }, 300); // Match the animation duration
+  }
+
   async ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) {
       setTimeout(() => this.finished.emit(), 100);
@@ -59,11 +117,11 @@ export class IntroOverlayComponent implements AfterViewInit {
     }
 
 
-    const { gsap } = await import('gsap/all');
+    const {gsap} = await import('gsap/all');
 
 
     const tl = gsap.timeline({
-      defaults: { ease: 'power2.out' }
+      defaults: {ease: 'power2.out'}
     });
 
 
@@ -127,7 +185,7 @@ export class IntroOverlayComponent implements AfterViewInit {
    * Animate subtitle sliding from left to center
    */
   private async animateSubtitleFromLeft(element: HTMLElement): Promise<void> {
-    const { gsap } = await import('gsap/all');
+    const {gsap} = await import('gsap/all');
 
 
     // Split subtitle into letters for later scaling (preserving color)
@@ -158,7 +216,7 @@ export class IntroOverlayComponent implements AfterViewInit {
    * Animate logo appearing from bottom
    */
   private async animateLogoFromBottom(element: HTMLElement): Promise<void> {
-    const { gsap } = await import('gsap/all');
+    const {gsap} = await import('gsap/all');
 
     return new Promise((resolve) => {
       gsap.to(element, {
@@ -177,7 +235,7 @@ export class IntroOverlayComponent implements AfterViewInit {
    * Scale each letter from left to right for both name and subtitle
    */
   private async scaleLettersSequentially(): Promise<void> {
-    const { gsap } = await import('gsap/all');
+    const {gsap} = await import('gsap/all');
 
 
     // Get letters from both elements (they should already be split)
@@ -190,7 +248,7 @@ export class IntroOverlayComponent implements AfterViewInit {
 
 
     return new Promise((resolve) => {
-      const tl = gsap.timeline({ onComplete: resolve });
+      const tl = gsap.timeline({onComplete: resolve});
 
 
       allLetters.forEach((letter, index) => {
@@ -217,11 +275,11 @@ export class IntroOverlayComponent implements AfterViewInit {
    * Hide all texts smoothly
    */
   private async hideAllTexts(): Promise<void> {
-    const { gsap } = await import('gsap/all');
+    const {gsap} = await import('gsap/all');
 
 
     return new Promise((resolve) => {
-      const tl = gsap.timeline({ onComplete: resolve });
+      const tl = gsap.timeline({onComplete: resolve});
 
 
       tl.to([this.nameEl.nativeElement, this.subtitleEl.nativeElement, this.logoEl.nativeElement], {
@@ -248,7 +306,7 @@ export class IntroOverlayComponent implements AfterViewInit {
       fillColor?: string;
     } = {}
   ): Promise<void> {
-    const { gsap } = await import('gsap/all');
+    const {gsap} = await import('gsap/all');
 
 
     const {
@@ -351,7 +409,7 @@ export class IntroOverlayComponent implements AfterViewInit {
       delay?: number;
     } = {}
   ): Promise<void> {
-    const { gsap } = await import('gsap/all');
+    const {gsap} = await import('gsap/all');
 
 
     const {
@@ -394,7 +452,7 @@ export class IntroOverlayComponent implements AfterViewInit {
 
 
     return new Promise((resolve) => {
-      const tl = gsap.timeline({ onComplete: resolve });
+      const tl = gsap.timeline({onComplete: resolve});
 
 
       containers.forEach((container, index) => {

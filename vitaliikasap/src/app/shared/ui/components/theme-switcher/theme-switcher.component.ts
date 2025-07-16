@@ -22,12 +22,14 @@ import { themeSignal } from '../../../services/theme.service';
         [attr.aria-label]="ariaLabel()"
         type="button"
       >
-        <div [ngClass]="{ 'animate-spin': spinning() }" style="animation-duration:2s">
-        <lucide-icon
-          [name]="iconName()"
-          [size]="28"
-          class="text-lg"
-        ></lucide-icon>
+        <div [ngClass]="{ 'animate-spin': spinning() }"
+             style="animation-duration:2s"
+        >
+          <lucide-icon
+            [name]="iconName()"
+            [size]="28"
+            class="text-lg"
+          ></lucide-icon>
         </div>
       </button>
     }
@@ -42,7 +44,7 @@ export class ThemeSwitcherComponent {
     themeSignal() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
   );
 
-  spinning = signal(true); // Вращается при старте
+  spinning = signal(true);
 
   constructor() {
     if (this.isBrowser) {

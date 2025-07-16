@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Vitalii Kasap — Frontend Engineer</title>
@@ -33,6 +33,26 @@
 
   <!-- Optional: Manifest for PWA -->
   <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Theme prevention script - prevents FOUC -->
+  <script>
+    (function() {
+      // Check for saved theme preference or default to 'light'
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+      // Apply theme immediately to prevent flash
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+      // Store the theme for Angular to use later
+      window.__theme = theme;
+    })();
+  </script>
 </head>
 <body>
 <app-root></app-root>
