@@ -19,9 +19,9 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
         {{ t('resume.badge') }}
       </span>
         </div>
-        <app-education-section class="stagger-item"/>
+        <app-education-section/>
         <div class="border-t border-neutral-200 dark:border-neutral-700 my-4"></div>
-        <app-experience-section class="stagger-item"/>
+        <app-experience-section/>
       </div>
     </div>
   `
