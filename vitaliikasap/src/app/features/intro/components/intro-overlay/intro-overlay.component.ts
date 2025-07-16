@@ -31,7 +31,6 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
       [class.pointer-events-none]="hide()"
     >
       <button
-        #escButton
         appPushedEffect
         (click)="skipIntro($event)"
         class="stagger-item absolute top-4 left-4 flex flex-col items-center justify-center h-14 w-14 rounded-lg border border-gray-300 bg-white/90 text-gray-700 shadow-lg transition-all duration-200 hover:bg-gray-200 dark:border-gray-600 dark:bg-neutral-900 dark:text-gray-200 dark:hover:bg-gray-700 z-[10000] focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -62,8 +61,6 @@ export class IntroOverlayComponent implements AfterViewInit {
   @ViewChild('subtitle', {static: true}) subtitleEl!: ElementRef<HTMLDivElement>;
   @ViewChild('logo', {static: true}) logoEl!: ElementRef<HTMLDivElement>;
   @ViewChild('wrapper', {static: true}) wrapperEl!: ElementRef<HTMLDivElement>;
-  @ViewChild('escButton', {static: true}) escButtonEl!: ElementRef<HTMLButtonElement>;
-
 
   @Output() finished = new EventEmitter<void>();
 
