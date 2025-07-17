@@ -33,7 +33,7 @@ import {staggeredContentAnimation} from '../../../../shared/animations/staggered
       <button
         appPushedEffect
         (click)="skipIntro($event)"
-        class="stagger-item absolute top-4 left-4 flex flex-col items-center justify-center h-14 w-14 rounded-lg border border-gray-300 bg-white/90 text-gray-700 shadow-lg transition-all duration-200 hover:bg-gray-200 dark:border-gray-600 dark:bg-neutral-900 dark:text-gray-200 dark:hover:bg-gray-700 z-[10000] focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        class="stagger-item absolute top-4 left-4 flex flex-col items-center justify-center h-14 w-14 rounded-xl bg-neutral-100 dark:bg-neutral-900 shadow-[8px_8px_16px_#d1d9e6,_-8px_-8px_16px_#ffffff] dark:shadow-[8px_8px_16px_#181a1b,_-8px_-8px_16px_#23272f]  dark:border dark:border-indigo-700 text-gray-700 dark:text-gray-200 transition-all duration-200 z-[10000] focus:outline-none"
         aria-label="Skip intro"
       >
         <span class="text-xs font-bold">ESC</span>
