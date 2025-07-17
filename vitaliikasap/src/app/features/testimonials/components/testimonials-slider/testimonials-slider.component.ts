@@ -52,7 +52,7 @@ interface Testimonial {
         </p>
 
         <!-- Swiper Container -->
-        <div class="relative">
+        <div class="lg:w-[600px]">
           <swiper-container
             #swiperRef
             init="false"

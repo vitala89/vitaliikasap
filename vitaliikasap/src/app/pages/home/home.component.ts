@@ -34,8 +34,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   private meta = inject(Meta);
   private title = inject(Title);
   private scrollService = inject(ScrollService);
-  private unsubscribe: () => void = () => {
-  };
+  private unsubscribe: () => void = () => {};
 
   @ViewChild('homePhotoCard') homePhotoCard!: ElementRef;
 
