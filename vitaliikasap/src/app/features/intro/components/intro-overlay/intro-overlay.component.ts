@@ -11,9 +11,9 @@ import {
   HostListener
 } from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
-import {LogoComponent} from '../../../../shared/ui/components/logo/logo.component';
+import {LogoComponent} from '../../../../shared/components/logo/logo.component';
 import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
-import {PushedEffectDirective} from '../../../../shared/ui/directives/pushed-effect.directive';
+import {PushedEffectDirective} from '../../../../shared/directives/pushed-effect.directive';
 import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';
 
 

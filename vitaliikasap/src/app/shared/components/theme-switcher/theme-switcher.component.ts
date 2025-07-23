@@ -7,8 +7,8 @@ import {
   signal,
 } from '@angular/core';
 import {isPlatformBrowser, NgClass} from '@angular/common';
-import { LucideIconsModule } from '../../../modules/lucide-icons/lucide-icons.module';
-import { themeSignal } from '../../../services/theme.service';
+import { LucideIconsModule } from '../../modules/lucide-icons/lucide-icons.module';
+import { themeSignal } from '../../services/theme.service';
 
 @Component({
   selector: 'app-theme-switcher',

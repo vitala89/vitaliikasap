@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { LucideIconsModule } from '../../../modules/lucide-icons/lucide-icons.module';
-import { DeviceDetectionService } from '../../../services/device-detection.service';
+import { LucideIconsModule } from '../../modules/lucide-icons/lucide-icons.module';
+import { DeviceDetectionService } from '../../services/device-detection.service';
 import { PushedEffectDirective } from '../../directives/pushed-effect.directive';
 
 @Component({

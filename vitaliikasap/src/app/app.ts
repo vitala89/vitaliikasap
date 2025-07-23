@@ -1,16 +1,16 @@
 import {Component, inject, Inject, PLATFORM_ID} from '@angular/core';
-import {ThemeSwitcherComponent} from './shared/ui/components/theme-switcher/theme-switcher.component';
+import {ThemeSwitcherComponent} from './shared/components/theme-switcher/theme-switcher.component';
 import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {SideNavComponent} from './features/side-nav/components/side-nav/side-nav.component';
-import {LangSwitcherComponent} from './shared/ui/components/lang-switcher/lang-switcher.component';
+import {LangSwitcherComponent} from './shared/components/lang-switcher/lang-switcher.component';
 import {BurgerMenuComponent} from './features/burger-menu/components/burger-menu/burger-menu.component';
-import {CursorComponent} from './shared/ui/components/cursor/cursor.component';
+import {CursorComponent} from './shared/components/cursor/cursor.component';
 import {NetAnimationComponent} from './features/net-animation/components/net-animation.component';
 import {IntroFeatureService, IntroOverlayComponent} from './features/intro';
 import {OnInit} from '@angular/core';
 import {DeviceDetectionService} from './shared/services/device-detection.service';
 import {isPlatformBrowser} from '@angular/common';
-import {MobileNavArrowsComponent} from './shared/ui/components/mobile-nav-arrows/mobile-nav-arrows.component';
+import {MobileNavArrowsComponent} from './shared/components/mobile-nav-arrows/mobile-nav-arrows.component';
 import {DOCUMENT} from '@angular/common';
 import {filter} from 'rxjs/operators';
 
