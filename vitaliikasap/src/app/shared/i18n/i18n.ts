@@ -139,7 +139,7 @@ const dictionary: Dictionary = {
       title: {
         part1: 'Say Hi from',
         name: 'Vitalii Kasap',
-        role: 'Frontend Engineer and Developer',
+        role: 'Frontend Engineer',
       },
       description: {
         line1: 'I am passionate about creating modern, high-performance and beautiful interfaces.',

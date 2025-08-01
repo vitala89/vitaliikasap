@@ -1,5 +1,5 @@
 import {Component, computed, effect} from '@angular/core';
-import { t } from '../../../../shared/i18n/i18n.signal';
+import { t } from '../../../../shared/i18n/i18n';
 import { TimelineItemComponent } from '../timeline-item/timeline-item.component';
 import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';
 

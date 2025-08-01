@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import {t} from '../../../../shared/i18n/i18n.signal';
+import {t} from '../../../../shared/i18n/i18n';
 import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
 
 @Component({

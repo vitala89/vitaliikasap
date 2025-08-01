@@ -2,7 +2,7 @@ import { Component, input, output, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { LogoComponent } from '../../../../shared/components/logo/logo.component';
-import { t } from '../../../../shared/i18n/i18n.signal';
+import { t } from '../../../../shared/i18n/i18n';
 import {LucideIconsModule} from '../../../../shared/modules/lucide-icons/lucide-icons.module';
 
 type TranslationKey = Parameters<typeof t>[0];

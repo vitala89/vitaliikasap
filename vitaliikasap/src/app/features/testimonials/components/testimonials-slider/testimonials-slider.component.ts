@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { Swiper, SwiperOptions } from 'swiper/types';
 import { register } from 'swiper/element/bundle';
-import { t } from '../../../../shared/i18n/i18n.signal';
+import { t } from '../../../../shared/i18n/i18n';
 import { TestimonialCardComponent } from '../testimonial-card/testimonial-card.component';
 import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';
 

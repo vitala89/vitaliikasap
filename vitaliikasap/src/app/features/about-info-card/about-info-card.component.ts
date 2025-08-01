@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {t} from '../../shared/i18n/i18n.signal';
+import {t} from '../../shared/i18n/i18n';
 import {staggeredContentAnimation} from '../../shared/animations/staggered-content.animation';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, computed } from '@angular/core';
-import { t } from '../../../../shared/i18n/i18n.signal';
+import { t } from '../../../../shared/i18n/i18n';
 import { SkillCircleComponent } from '../skill-circle/skill-circle.component';
 import { SkillIconComponent } from '../skill-icon/skill-icon.component';
 import {staggeredContentAnimation} from '../../../../shared/animations/staggered-content.animation';

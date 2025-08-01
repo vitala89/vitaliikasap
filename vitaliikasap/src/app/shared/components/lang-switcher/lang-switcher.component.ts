@@ -1,5 +1,5 @@
 import {Component, computed} from '@angular/core';
-import {langSignal} from '../../i18n/i18n.signal';
+import {langSignal} from '../../i18n/i18n';
 
 @Component({
   selector: 'app-lang-switcher',

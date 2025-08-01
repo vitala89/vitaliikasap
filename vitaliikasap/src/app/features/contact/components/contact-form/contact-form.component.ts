@@ -1,6 +1,6 @@
 import {Component, inject, OnInit, signal} from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { t } from '../../../../shared/i18n/i18n.signal';
+import { t } from '../../../../shared/i18n/i18n';
 import { ToastrService } from 'ngx-toastr';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../../../../environments/environment';
