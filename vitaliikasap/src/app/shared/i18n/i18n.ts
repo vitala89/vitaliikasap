@@ -1,4 +1,4 @@
-import {signal} from '@angular/core';
+import { signal } from '@angular/core';
 
 type Lang = 'en' | 'de' | 'ru';
 
@@ -385,6 +385,52 @@ My professional experience spans a wide range of projects and teams, from large 
           stars: 5,
           text: 'I had the pleasure of working with Vitalii on the Data Platform team, where we teamed up on the Enterprise Design System and the SQCX tool. He’s a talented and reliable developer who was always great to collaborate with—proactive, thoughtful, and easy to work with. His input made a real difference in our projects, and I’d be happy to work with him again anytime.'
         },
+        {
+          rating: 99,
+          name: 'Kiran Kumar',
+          role: 'Cloud Architect | SRE | DevOps Lead | Platform Engineering at NIQ/GFK',
+          avatar: 'testimonials/kiran.jpeg',
+          stars: 5,
+          text: 'I had the pleasure of working closely with Vitalii on a project at NIQ-GfK, where we collaborated as an SRE and a frontend engineer. Throughout our time working together, Vitali consistently brought a high level of dedication, technical expertise, and ownership to everything he touched.\n' +
+            '\n' +
+            'We built several Angular and React pipelines together, and I was particularly impressed with how seamlessly Vitali handled the containerization of frontend components — a critical piece that enabled smoother deployments and greater scalability. His ability to pick up complex requirements with ease and translate them into clean, efficient solutions made a real difference to the team’s productivity.'
+        },
+        {
+          rating: 99,
+          name: 'Kristiyan Tashev',
+          role: 'Senior Python Developer at NIQ/GFK',
+          avatar: 'testimonials/tashev.jpeg',
+          stars: 5,
+          text: 'I had the opportunity to work closely with Vitalii Kasap as part of our development team, where he took on the role of a Frontend Developer with a focus on Angular. From day one, Vitalii impressed everyone with his exceptional speed and productivity. He consistently delivered high-quality work, often ahead of schedule, while maintaining clean, maintainable, and scalable code.\n' +
+            '\n' +
+            'What sets Vitalii apart is not just how fast he works, but how responsible and reliable he is. He always approached his tasks with ownership and professionalism. Whether it was implementing complex UI features, fixing tricky bugs, or reviewing others\' code, Vitalii was fully engaged and always brought a thoughtful and detail-oriented perspective.\n' +
+            '\n' +
+            'Beyond his technical skills, he’s also a great team player — easy to communicate with, supportive of others, and focused on delivering value to the product and end users.'
+        },
+        {
+          rating: 99,
+          name: 'Alexandrina Alexieva',
+          role: 'Technical Business Analyst at NIQ/GFK',
+          avatar: 'testimonials/alexieva.jpeg',
+          stars: 5,
+          text: 'I had the opportunity to work closely with Vitalii Kasap as part of our development team, where he took on the role of a Frontend Developer with a focus on Angular. From day one, Vitalii impressed everyone with his exceptional speed and productivity. He consistently delivered high-quality work, often ahead of schedule, while maintaining clean, maintainable, and scalable code.\n' +
+            '\n' +
+            'What sets Vitalii apart is not just how fast he works, but how responsible and reliable he is. He always approached his tasks with ownership and professionalism. Whether it was implementing complex UI features, fixing tricky bugs, or reviewing others\' code, Vitalii was fully engaged and always brought a thoughtful and detail-oriented perspective.\n' +
+            '\n' +
+            'Beyond his technical skills, he’s also a great team player — easy to communicate with, supportive of others, and focused on delivering value to the product and end users.'
+        },
+        {
+          rating: 99,
+          name: 'Anton Sellner',
+          role: 'Principal Front-end Engineer at NIQ/GFK',
+          avatar: 'testimonials/sellner.jpeg',
+          stars: 5,
+          text: 'During several years under my management, Vitalii evolved impressively from mid-level to near-senior software engineer, requiring minimal supervision throughout.\n' +
+            '\n' +
+            'His standout qualities include exceptional self-directed problem-solving – researching multiple solutions before seeking strategic guidance – and remarkable adaptability across teams. Vitalii quickly absorbed different workflows while sharing knowledge effectively, demonstrating strong cognitive flexibility.\n' +
+            '\n' +
+            'Technically, he excels in Angular and TypeScript with a focus on architecture and maintainability. He also brings React experience and has made significant contributions to code reusability through web components and StencilJS.'
+        },
       ]
     },
     contact: {
@@ -676,6 +722,38 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           avatar: 'testimonials/carlos.jpeg',
           stars: 5,
           text: 'Ich hatte das Vergnügen, mit Vitalii im Data Platform Team zusammenzuarbeiten, wo wir gemeinsam am Enterprise Design System und dem SQCX Tool gearbeitet haben. Er ist ein talentierter und zuverlässiger Entwickler, mit dem die Zusammenarbeit immer angenehm war – proaktiv, umsichtig und unkompliziert. Sein Beitrag hat unsere Projekte wirklich vorangebracht, und ich würde jederzeit wieder gerne mit ihm arbeiten.'
+        },
+        {
+          rating: 99,
+          name: 'Kiran Kumar',
+          role: 'Cloud Architect | SRE | DevOps Lead | Platform Engineering at NIQ/GFK',
+          avatar: 'testimonials/kiran.jpeg',
+          stars: 5,
+          text: 'Ich hatte das Vergnügen, eng mit Vitalii an einem Projekt bei NIQ-GfK zusammenzuarbeiten, bei dem wir als SRE und Frontend-Entwickler zusammenarbeiteten. Während unserer gesamten Zusammenarbeit zeigte Vitali stets ein hohes Maß an Engagement, technischem Fachwissen und Eigenverantwortung für alles, was er anpackte. Wir bauten gemeinsam mehrere Angular- und React-Pipelines, und ich war besonders beeindruckt, wie reibungslos Vitali die Containerisierung der Frontend-Komponenten handhabte – ein entscheidender Faktor für reibungslosere Bereitstellungen und höhere Skalierbarkeit. Seine Fähigkeit, komplexe Anforderungen mühelos zu erfassen und in klare, effiziente Lösungen umzusetzen, trug maßgeblich zur Produktivität des Teams bei.'
+        },
+        {
+          rating: 99,
+          name: 'Kristiyan Tashev',
+          role: 'Senior Python Developer at NIQ/GFK',
+          avatar: 'testimonials/tashev.jpeg',
+          stars: 5,
+          text: 'Ich hatte die Gelegenheit, als Teil unseres Entwicklungsteams eng mit Vitalii Kasap zusammenzuarbeiten, wo er die Rolle des Frontend-Entwicklers mit Schwerpunkt Angular übernahm. Vom ersten Tag an beeindruckte Vitalii alle mit seiner außergewöhnlichen Geschwindigkeit und Produktivität. Er lieferte stets qualitativ hochwertige Arbeit ab, oft sogar vorzeitig, und sorgte dabei für sauberen, wartungsfreundlichen und skalierbaren Code. Was Vitalii auszeichnet, ist nicht nur seine Geschwindigkeit, sondern auch seine Verantwortungsbewusstsein und Zuverlässigkeit. Er ging seine Aufgaben stets mit Eigenverantwortung und Professionalität an. Ob es um die Implementierung komplexer UI-Funktionen, die Behebung kniffliger Fehler oder die Überprüfung des Codes anderer ging, Vitalii war voll engagiert und brachte stets eine durchdachte und detailorientierte Perspektive ein. Neben seinen technischen Fähigkeiten ist er auch ein großartiger Teamplayer – die Kommunikation mit ihm ist unkompliziert, er unterstützt andere und konzentriert sich darauf, dem Produkt und den Endbenutzern einen Mehrwert zu bieten.'
+        },
+        {
+          rating: 99,
+          name: 'Alexandrina Alexieva',
+          role: 'Technical Business Analyst at NIQ/GFK',
+          avatar: 'testimonials/alexieva.jpeg',
+          stars: 5,
+          text: 'Ich hatte die Gelegenheit, als Teil unseres Entwicklungsteams eng mit Vitalii Kasap zusammenzuarbeiten, wo er die Rolle eines Frontend-Entwicklers mit Schwerpunkt Angular übernahm. Vom ersten Tag an beeindruckte Vitalii alle mit seiner außergewöhnlichen Geschwindigkeit und Produktivität. Er lieferte stets qualitativ hochwertige Arbeit ab, oft sogar früher als geplant, und sorgte dabei für sauberen, wartungsfreundlichen und skalierbaren Code. Was Vitalii auszeichnet, ist nicht nur seine Geschwindigkeit, sondern auch seine Verantwortungsbewusstsein und Zuverlässigkeit. Er ging seine Aufgaben stets verantwortungsbewusst und professionell an. Ob es darum ging, komplexe UI-Funktionen zu implementieren, knifflige Fehler zu beheben oder den Code anderer zu überprüfen, Vitalii war voll engagiert und brachte stets eine durchdachte und detailorientierte Perspektive ein. Neben seinen technischen Fähigkeiten ist er auch ein großartiger Teamplayer – die Kommunikation mit ihm ist unkompliziert, er unterstützt andere und konzentriert sich darauf, dem Produkt und den Endbenutzern einen Mehrwert zu bieten.'
+        },
+        {
+          rating: 99,
+          name: 'Anton Sellner',
+          role: 'Principal Front-end Engineer at NIQ/GFK',
+          avatar: 'testimonials/sellner.jpeg',
+          stars: 5,
+          text: 'Während meiner mehrjährigen Tätigkeit unter meiner Leitung entwickelte sich Vitalii eindrucksvoll vom mittleren zum nahezu leitenden Softwareentwickler und benötigte dabei nur minimale Aufsicht. Zu seinen herausragenden Qualitäten zählen außergewöhnliche, eigenverantwortliche Problemlösungskompetenz, die Recherche mehrerer Lösungen vor der Suche nach strategischer Beratung und eine bemerkenswerte Anpassungsfähigkeit an verschiedene Teams. Vitalii hat sich schnell in verschiedene Arbeitsabläufe eingearbeitet und gleichzeitig sein Wissen effektiv weitergegeben, was eine hohe kognitive Flexibilität bewies. Technisch überzeugt er mit Angular und TypeScript, wobei er sich auf Architektur und Wartbarkeit konzentriert. Er bringt außerdem Erfahrung mit React mit und hat durch Webkomponenten und StencilJS maßgeblich zur Wiederverwendbarkeit von Code beigetragen.'
         },
       ]
     },
@@ -969,6 +1047,38 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
           stars: 5,
           text: 'Я имел удовольствие работать с Виталием в команде Data Platform, где мы вместе занимались Enterprise Design System и инструментом SQCX. Он талантливый и надёжный разработчик, с которым всегда приятно сотрудничать — проактивный, вдумчивый и лёгкий в общении. Его вклад действительно повлиял на наши проекты, и я с радостью поработал бы с ним снова в любое время.'
         },
+        {
+          rating: 99,
+          name: 'Kiran Kumar',
+          role: 'Cloud Architect | SRE | DevOps Lead | Platform Engineering at NIQ/GFK',
+          avatar: 'testimonials/kiran.jpeg',
+          stars: 5,
+          text: 'Мне посчастливилось тесно сотрудничать с Виталием над проектом в NIQ-GfK, где мы работали как SRE и фронтенд-инженер. На протяжении всего времени нашей совместной работы Виталий неизменно проявлял высокий уровень самоотдачи, технической компетентности и ответственности во всём, к чему прикасался. Мы вместе разработали несколько конвейеров Angular и React, и меня особенно впечатлило то, как безупречно Виталий справился с контейнеризацией фронтенд-компонентов — критически важной частью, обеспечившей более плавное развертывание и большую масштабируемость. Его способность легко распознавать сложные требования и трансформировать их в понятные и эффективные решения существенно повысила производительность команды.'
+        },
+        {
+          rating: 99,
+          name: 'Kristiyan Tashev',
+          role: 'Senior Python Developer at NIQ/GFK',
+          avatar: 'testimonials/tashev.jpeg',
+          stars: 5,
+          text: 'Мне довелось тесно сотрудничать с Виталием Касапом в нашей команде разработчиков, где он занял должность фронтенд-разработчика, специализирующегося на Angular. С первого дня Виталий поражал всех своей исключительной скоростью и продуктивностью. Он неизменно выполнял высококачественную работу, часто опережая сроки, при этом сохраняя чистый, поддерживаемый и масштабируемый код. Виталия отличает не только скорость работы, но и ответственность и надёжность. Он всегда подходил к своим задачам с чувством ответственности и профессионализмом. Будь то реализация сложных функций пользовательского интерфейса, исправление сложных ошибок или проверка чужого кода, Виталий был полностью вовлечён в процесс и всегда предлагал вдумчивый и внимательный подход к деталям. Помимо технических навыков, он также отличный командный игрок: с ним легко общаться, он поддерживает других и нацелен на создание ценности для продукта и конечных пользователей.'
+        },
+        {
+          rating: 99,
+          name: 'Alexandrina Alexieva',
+          role: 'Technical Business Analyst at NIQ/GFK',
+          avatar: 'testimonials/alexieva.jpeg',
+          stars: 5,
+          text: 'Мне довелось тесно сотрудничать с Виталием Касапом в нашей команде разработчиков, где он занял должность фронтенд-разработчика, специализирующегося на Angular. С первого дня Виталий поражал всех своей исключительной скоростью и продуктивностью. Он неизменно выполнял высококачественную работу, часто опережая сроки, при этом сохраняя чистый, поддерживаемый и масштабируемый код. Виталия отличает не только скорость работы, но и ответственность и надёжность. Он всегда подходил к своим задачам с чувством ответственности и профессионализмом. Будь то реализация сложных функций пользовательского интерфейса, исправление сложных ошибок или проверка чужого кода, Виталий был полностью вовлечён в процесс и всегда предлагал вдумчивый и внимательный подход к деталям. Помимо технических навыков, он также отличный командный игрок: с ним легко общаться, он поддерживает других и нацелен на создание ценности для продукта и конечных пользователей.'
+        },
+        {
+          rating: 99,
+          name: 'Anton Sellner',
+          role: 'Principal Front-end Engineer at NIQ/GFK',
+          avatar: 'testimonials/sellner.jpeg',
+          stars: 5,
+          text: 'За несколько лет под моим руководством Виталий проделал впечатляющий путь от инженера-программиста среднего уровня до почти старшего, требуя минимального контроля. Его выдающиеся качества включают исключительную способность самостоятельно решать проблемы — изучать несколько вариантов, прежде чем искать стратегическое руководство, — и замечательную способность адаптироваться к работе в разных командах. Виталий быстро осваивал различные рабочие процессы, эффективно делясь знаниями и демонстрируя высокую когнитивную гибкость. В техническом плане он превосходно владеет Angular и TypeScript, уделяя особое внимание архитектуре и удобству поддержки. Он также обладает опытом работы с React и внёс значительный вклад в обеспечение повторного использования кода с помощью веб-компонентов и StencilJS.'
+        },
       ]
     },
     contact: {
@@ -990,7 +1100,7 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
     },
     sideMenu: {
       home: "ГЛАВНАЯ",
-      about : "ОБО МНЕ",
+      about: "ОБО МНЕ",
       resume: "РЕЗЮМЕ",
       skills: "НАВЫКИ",
       testimonials: "ОТЗЫВЫ",
@@ -998,7 +1108,7 @@ Meine berufliche Erfahrung umfasst eine Vielzahl von Projekten und Teams, von gr
     },
     sideNav: {
       home: "ГЛАВНАЯ",
-      about : "ОБО МНЕ",
+      about: "ОБО МНЕ",
       resume: "РЕЗЮМЕ",
       skills: "НАВЫКИ",
       testimonials: "ОТЗЫВЫ",
